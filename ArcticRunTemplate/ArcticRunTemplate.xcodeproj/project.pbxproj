@@ -20,6 +20,8 @@
 		7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA411C7AA8430093037E /* PedometerViewController.swift */; };
 		7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */; };
 		7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA451C7AA8750093037E /* SettingsViewController.swift */; };
+		7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA471C7AADE00093037E /* CustomCell.swift */; };
+		7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		7C3EBA411C7AA8430093037E /* PedometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerViewController.swift; sourceTree = "<group>"; };
 		7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGoalsViewController.swift; sourceTree = "<group>"; };
 		7C3EBA451C7AA8750093037E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7C3EBA471C7AADE00093037E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				7C3EBA101C7AA6220093037E /* Assets.xcassets */,
 				7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */,
 				7C3EBA151C7AA6220093037E /* Info.plist */,
+				7C3EBA471C7AADE00093037E /* CustomCell.swift */,
 			);
 			path = ArcticRunTemplate;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				7C3EBA411C7AA8430093037E /* PedometerViewController.swift */,
 				7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */,
 				7C3EBA451C7AA8750093037E /* SettingsViewController.swift */,
+				7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,10 +307,12 @@
 				7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */,
 				7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */,
 				7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */,
+				7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */,
 				7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */,
 				7C3EBA3E1C7AA80B0093037E /* HomeViewController.swift in Sources */,
 				7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */,
 				7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */,
+				7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

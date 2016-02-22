@@ -67,7 +67,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg3-BN-NOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2385" y="-148"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="0br-Pn-Lnb">
+            <objects>
+                <viewController id="v31-vt-xvr" customClass="MissionsViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EZ1-K7-g9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="VCV-Hm-43e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9nA-yY-7IW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVL-OH-q8n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="MIf-WP-BK7">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="NoC-QY-Rg8"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ar5-2e-qtf"/>
+                    <connections>
+                        <outlet property="menuButton" destination="NoC-QY-Rg8" id="JOb-AV-vOr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aca-ef-hcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="2385" y="602"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="6sf-MG-Mac">
+            <objects>
+                <tableViewController id="5bk-LN-Gqv" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="166" sectionHeaderHeight="28" sectionFooterHeight="28" id="Sr8-1b-spW" userLabel="Party Table">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="g3o-If-8MH" userLabel="myCell" customClass="CustomCell" customModule="ArcticRunTemplate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="166"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3o-If-8MH" id="tJn-fG-vxw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="165.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5bk-LN-Gqv" id="xat-iE-A79"/>
+                            <outlet property="delegate" destination="5bk-LN-Gqv" id="WBL-pM-lmC"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="VlT-zU-RmN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTX-PI-GjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="1416"/>
         </scene>
         <!--Fitness View Controller-->
         <scene sceneID="hZl-Ga-yva">
@@ -373,6 +434,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="NMH-UA-fp0" kind="relationship" relationship="viewControllers" id="cl6-lx-fDj"/>
+                        <segue destination="v31-vt-xvr" kind="relationship" relationship="viewControllers" id="PB6-sQ-sar"/>
+                        <segue destination="5bk-LN-Gqv" kind="relationship" relationship="viewControllers" id="7Mh-D8-KVZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yt-2C-vdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
