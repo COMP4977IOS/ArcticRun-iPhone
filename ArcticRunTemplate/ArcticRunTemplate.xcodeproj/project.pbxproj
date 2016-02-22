@@ -14,6 +14,12 @@
 		7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */; };
 		7C3EBA1F1C7AA6220093037E /* ArcticRunTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA1E1C7AA6220093037E /* ArcticRunTemplateTests.swift */; };
 		7C3EBA2A1C7AA6220093037E /* ArcticRunTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA291C7AA6220093037E /* ArcticRunTemplateUITests.swift */; };
+		7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA3A1C7AA6F70093037E /* SWRevealViewController.m */; };
+		7C3EBA3E1C7AA80B0093037E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA3D1C7AA80B0093037E /* HomeViewController.swift */; };
+		7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA3F1C7AA82F0093037E /* FitnessViewController.swift */; };
+		7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA411C7AA8430093037E /* PedometerViewController.swift */; };
+		7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */; };
+		7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA451C7AA8750093037E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,14 @@
 		7C3EBA251C7AA6220093037E /* ArcticRunTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcticRunTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EBA291C7AA6220093037E /* ArcticRunTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcticRunTemplateUITests.swift; sourceTree = "<group>"; };
 		7C3EBA2B1C7AA6220093037E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C3EBA381C7AA6F60093037E /* ArcticRunTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArcticRunTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C3EBA391C7AA6F70093037E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		7C3EBA3A1C7AA6F70093037E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		7C3EBA3D1C7AA80B0093037E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7C3EBA3F1C7AA82F0093037E /* FitnessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
+		7C3EBA411C7AA8430093037E /* PedometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedometerViewController.swift; sourceTree = "<group>"; };
+		7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGoalsViewController.swift; sourceTree = "<group>"; };
+		7C3EBA451C7AA8750093037E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +111,8 @@
 		7C3EBA081C7AA6220093037E /* ArcticRunTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7C3EBA3C1C7AA70F0093037E /* ViewControllers */,
+				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
@@ -123,6 +139,28 @@
 				7C3EBA2B1C7AA6220093037E /* Info.plist */,
 			);
 			path = ArcticRunTemplateUITests;
+			sourceTree = "<group>";
+		};
+		7C3EBA371C7AA6E70093037E /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C3EBA391C7AA6F70093037E /* SWRevealViewController.h */,
+				7C3EBA3A1C7AA6F70093037E /* SWRevealViewController.m */,
+				7C3EBA381C7AA6F60093037E /* ArcticRunTemplate-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		7C3EBA3C1C7AA70F0093037E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C3EBA3D1C7AA80B0093037E /* HomeViewController.swift */,
+				7C3EBA3F1C7AA82F0093037E /* FitnessViewController.swift */,
+				7C3EBA411C7AA8430093037E /* PedometerViewController.swift */,
+				7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */,
+				7C3EBA451C7AA8750093037E /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */,
 				7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */,
+				7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */,
 				7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */,
+				7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */,
+				7C3EBA3E1C7AA80B0093037E /* HomeViewController.swift in Sources */,
+				7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */,
+				7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +446,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun.ArcticRunTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -413,10 +460,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun.ArcticRunTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -487,6 +536,7 @@
 				7C3EBA301C7AA6220093037E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C3EBA311C7AA6220093037E /* Build configuration list for PBXNativeTarget "ArcticRunTemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +545,7 @@
 				7C3EBA331C7AA6220093037E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C3EBA341C7AA6220093037E /* Build configuration list for PBXNativeTarget "ArcticRunTemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +554,7 @@
 				7C3EBA361C7AA6220093037E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
