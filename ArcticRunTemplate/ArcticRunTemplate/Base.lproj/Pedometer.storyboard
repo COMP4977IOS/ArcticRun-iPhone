@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EbQ-Oy-thU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Pedometer View Controller-->
+        <scene sceneID="fZy-OL-O6H">
+            <objects>
+                <viewController id="EbQ-Oy-thU" customClass="PedometerViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A0x-Zi-hcs"/>
+                        <viewControllerLayoutGuide type="bottom" id="8iF-2y-LV6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ml9-7t-bdW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pedometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmo-ex-di6">
+                                <rect key="frame" x="237" y="289" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3S-f1-VHv">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Pedometer" id="oMY-Br-wfe">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="ce4-fj-Ubc"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="y3S-f1-VHv" secondAttribute="trailing" id="3sD-Ce-PV9"/>
+                            <constraint firstItem="y3S-f1-VHv" firstAttribute="leading" secondItem="Ml9-7t-bdW" secondAttribute="leading" id="PU6-7K-ek9"/>
+                            <constraint firstItem="Pmo-ex-di6" firstAttribute="centerX" secondItem="Ml9-7t-bdW" secondAttribute="centerX" id="QFF-nI-wfO"/>
+                            <constraint firstItem="y3S-f1-VHv" firstAttribute="top" secondItem="A0x-Zi-hcs" secondAttribute="bottom" id="UMk-Ky-Er8"/>
+                            <constraint firstItem="Pmo-ex-di6" firstAttribute="centerY" secondItem="Ml9-7t-bdW" secondAttribute="centerY" id="u8Y-MX-q5n"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cId-ia-9mT">
+                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="xA8-gA-1P5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="ce4-fj-Ubc" id="aEV-NF-3Uj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmX-OD-gVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="3038"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuButton" width="57" height="57"/>
+    </resources>
+</document>

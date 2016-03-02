@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="skM-cg-m4q">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Fitness-->
+        <scene sceneID="hZl-Ga-yva">
+            <objects>
+                <viewController id="skM-cg-m4q" customClass="FitnessViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e6b-dF-QCR"/>
+                        <viewControllerLayoutGuide type="bottom" id="pmq-5d-KMb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6eB-DZ-e5G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-xK-6Jf">
+                                <rect key="frame" x="266" y="289" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2V-mG-ivG">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Fitness" id="gbK-VX-tkI">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="Z6l-ci-iND"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hz1-xK-6Jf" firstAttribute="centerY" secondItem="6eB-DZ-e5G" secondAttribute="centerY" id="6d8-tR-MOQ"/>
+                            <constraint firstItem="hz1-xK-6Jf" firstAttribute="centerX" secondItem="6eB-DZ-e5G" secondAttribute="centerX" id="WJN-fm-Ghs"/>
+                            <constraint firstItem="D2V-mG-ivG" firstAttribute="leading" secondItem="6eB-DZ-e5G" secondAttribute="leading" id="YR5-pV-Xzh"/>
+                            <constraint firstItem="D2V-mG-ivG" firstAttribute="top" secondItem="e6b-dF-QCR" secondAttribute="bottom" id="bCs-Nv-1rv"/>
+                            <constraint firstAttribute="trailing" secondItem="D2V-mG-ivG" secondAttribute="trailing" id="yDw-Ze-5SC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fitness" id="ZxT-OO-T0U"/>
+                    <navigationItem key="navigationItem" id="8hM-cg-smF">
+                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="c1R-4o-ysz"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menuButton" destination="Z6l-ci-iND" id="DBG-WX-Ovt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVv-s9-2uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="2268"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuButton" width="57" height="57"/>
+    </resources>
+</document>

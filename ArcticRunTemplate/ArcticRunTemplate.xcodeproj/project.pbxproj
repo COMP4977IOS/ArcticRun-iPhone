@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */; };
+		5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C71C862010009D9779 /* Fitness.storyboard */; };
+		5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C91C862040009D9779 /* Settings.storyboard */; };
+		5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */; };
+		5B89F1D01C862082009D9779 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CE1C862082009D9779 /* Home.storyboard */; };
 		7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA091C7AA6220093037E /* AppDelegate.swift */; };
 		7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA0B1C7AA6220093037E /* ViewController.swift */; };
 		7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EBA0D1C7AA6220093037E /* Main.storyboard */; };
@@ -42,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B89F1C51C861FFD009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pedometer.storyboard; sourceTree = "<group>"; };
+		5B89F1C71C862010009D9779 /* Fitness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fitness.storyboard; sourceTree = "<group>"; };
+		5B89F1CA1C862040009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyGoals.storyboard; sourceTree = "<group>"; };
+		5B89F1CF1C862082009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		7C3EBA061C7AA6220093037E /* ArcticRunTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcticRunTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EBA091C7AA6220093037E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3EBA0B1C7AA6220093037E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +130,11 @@
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
+				5B89F1CE1C862082009D9779 /* Home.storyboard */,
+				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
+				5B89F1C91C862040009D9779 /* Settings.storyboard */,
+				5B89F1C71C862010009D9779 /* Fitness.storyboard */,
+				5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */,
 				7C3EBA101C7AA6220093037E /* Assets.xcassets */,
 				7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */,
 				7C3EBA151C7AA6220093037E /* Info.plist */,
@@ -276,9 +291,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */,
+				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
+				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
+				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
+				5B89F1D01C862082009D9779 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +368,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B89F1C51C861FFD009D9779 /* Base */,
+			);
+			name = Pedometer.storyboard;
+			sourceTree = "<group>";
+		};
+		5B89F1C91C862040009D9779 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B89F1CA1C862040009D9779 /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		5B89F1CE1C862082009D9779 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B89F1CF1C862082009D9779 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
 		7C3EBA0D1C7AA6220093037E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

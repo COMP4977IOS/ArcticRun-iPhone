@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3PV-0j-a5a">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="vNi-AK-iek">
+            <objects>
+                <viewController id="3PV-0j-a5a" customClass="SettingsViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ddo-lM-KdE"/>
+                        <viewControllerLayoutGuide type="bottom" id="KAt-dQ-v3b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SaQ-Fy-fFA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ran-52-PQ1">
+                                <rect key="frame" x="257" y="289" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyy-Jd-XAp">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="zG9-ax-5nc">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="YjG-1i-Nds"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ran-52-PQ1" firstAttribute="centerX" secondItem="SaQ-Fy-fFA" secondAttribute="centerX" id="Ekt-Du-7Sr"/>
+                            <constraint firstAttribute="trailing" secondItem="vyy-Jd-XAp" secondAttribute="trailing" id="NsQ-cW-oFl"/>
+                            <constraint firstItem="vyy-Jd-XAp" firstAttribute="top" secondItem="ddo-lM-KdE" secondAttribute="bottom" id="gKD-tP-e6S"/>
+                            <constraint firstItem="vyy-Jd-XAp" firstAttribute="leading" secondItem="SaQ-Fy-fFA" secondAttribute="leading" id="iYx-KZ-cvc"/>
+                            <constraint firstItem="Ran-52-PQ1" firstAttribute="centerY" secondItem="SaQ-Fy-fFA" secondAttribute="centerY" id="wpY-Pj-p3j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UOw-Hq-IZG">
+                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="5OR-M6-Yb5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="YjG-1i-Nds" id="Hes-kx-91E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PE0-ez-7T2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="4522"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuButton" width="57" height="57"/>
+    </resources>
+</document>

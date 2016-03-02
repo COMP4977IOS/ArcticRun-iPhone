@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wax-M7-bbE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Daily Goals View Controller-->
+        <scene sceneID="Mvw-bF-YaV">
+            <objects>
+                <viewController id="wax-M7-bbE" customClass="DailyGoalsViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TGO-Qe-Lv8"/>
+                        <viewControllerLayoutGuide type="bottom" id="oEo-Lc-0o8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sDo-Mp-8l5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Daily Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edx-7S-0Kv">
+                                <rect key="frame" x="235" y="289" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yof-XN-Q4P">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Daily Goals" id="YjL-uE-NQd">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="P2m-0n-2pc"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="edx-7S-0Kv" firstAttribute="centerX" secondItem="sDo-Mp-8l5" secondAttribute="centerX" id="MF1-OK-fLb"/>
+                            <constraint firstItem="edx-7S-0Kv" firstAttribute="centerY" secondItem="sDo-Mp-8l5" secondAttribute="centerY" id="PdO-7c-glL"/>
+                            <constraint firstAttribute="trailing" secondItem="Yof-XN-Q4P" secondAttribute="trailing" id="aMb-qE-gVL"/>
+                            <constraint firstItem="Yof-XN-Q4P" firstAttribute="top" secondItem="TGO-Qe-Lv8" secondAttribute="bottom" id="ied-rd-mxU"/>
+                            <constraint firstItem="Yof-XN-Q4P" firstAttribute="leading" secondItem="sDo-Mp-8l5" secondAttribute="leading" id="yM3-SQ-w6o"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="menuButton" destination="P2m-0n-2pc" id="LNY-kz-HCq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FO8-eQ-mY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="3790"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuButton" width="57" height="57"/>
+    </resources>
+</document>
