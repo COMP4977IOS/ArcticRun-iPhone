@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
+		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
+		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
 		5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */; };
 		5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C71C862010009D9779 /* Fitness.storyboard */; };
 		5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C91C862040009D9779 /* Settings.storyboard */; };
@@ -47,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
+		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
+		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5769B9461C87FAE5007356E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5B89F1C51C861FFD009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pedometer.storyboard; sourceTree = "<group>"; };
 		5B89F1C71C862010009D9779 /* Fitness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fitness.storyboard; sourceTree = "<group>"; };
 		5B89F1CA1C862040009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -82,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
+				5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5769B9401C87FA95007356E3 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		7C3EB9FD1C7AA6220093037E = {
 			isa = PBXGroup;
 			children = (
+				5769B9461C87FAE5007356E3 /* HealthKit.framework */,
+				5769B9441C87FADB007356E3 /* CloudKit.framework */,
 				7C3EBA081C7AA6220093037E /* ArcticRunTemplate */,
 				7C3EBA1D1C7AA6220093037E /* ArcticRunTemplateTests */,
 				7C3EBA281C7AA6220093037E /* ArcticRunTemplateUITests */,
@@ -125,6 +144,8 @@
 		7C3EBA081C7AA6220093037E /* ArcticRunTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */,
+				5769B9401C87FA95007356E3 /* Libraries */,
 				7C3EBA3C1C7AA70F0093037E /* ViewControllers */,
 				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
@@ -252,7 +273,15 @@
 				TargetAttributes = {
 					7C3EBA051C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = C2BP5NBW7W;
+						DevelopmentTeam = L9GR6R2227;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					7C3EBA191C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
@@ -333,6 +362,7 @@
 				7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */,
 				7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */,
 				7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */,
+				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,9 +529,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun.ArcticRunTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -513,9 +545,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun.ArcticRunTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
 			};
