@@ -30,6 +30,10 @@
 		7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA451C7AA8750093037E /* SettingsViewController.swift */; };
 		7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA471C7AADE00093037E /* CustomCell.swift */; };
 		7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */; };
+		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
+		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
+		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
+		EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4211A11C88F1DB0025CA53 /* Party.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		7C3EBA451C7AA8750093037E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7C3EBA471C7AADE00093037E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
+		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
+		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
+		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		EB4211A21C88F1DB0025CA53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Party.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
+				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
 				5B89F1CE1C862082009D9779 /* Home.storyboard */,
 				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
 				5B89F1C91C862040009D9779 /* Settings.storyboard */,
@@ -159,6 +168,7 @@
 				7C3EBA101C7AA6220093037E /* Assets.xcassets */,
 				7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */,
 				7C3EBA151C7AA6220093037E /* Info.plist */,
+				EB4211991C88E72D0025CA53 /* PartyCell.swift */,
 				7C3EBA471C7AADE00093037E /* CustomCell.swift */,
 			);
 			path = ArcticRunTemplate;
@@ -201,6 +211,8 @@
 				7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */,
 				7C3EBA451C7AA8750093037E /* SettingsViewController.swift */,
 				7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */,
+				EB42119F1C88E9350025CA53 /* ShopViewController.swift */,
+				EB42119D1C88E8230025CA53 /* PartyController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +338,7 @@
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
+				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				5B89F1D01C862082009D9779 /* Home.storyboard in Resources */,
 			);
@@ -354,6 +367,7 @@
 			files = (
 				7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */,
 				7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */,
+				EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */,
 				7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */,
 				7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */,
 				7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */,
@@ -363,6 +377,8 @@
 				7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */,
 				7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */,
 				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
+				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
+				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +452,14 @@
 				7C3EBA131C7AA6220093037E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EB4211A11C88F1DB0025CA53 /* Party.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB4211A21C88F1DB0025CA53 /* Base */,
+			);
+			name = Party.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
