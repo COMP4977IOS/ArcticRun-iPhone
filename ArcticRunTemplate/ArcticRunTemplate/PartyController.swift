@@ -17,6 +17,10 @@ class PartyController: UIViewController, UITableViewDelegate, UITableViewDataSou
     var health : [String] = ["Status: Healthy","Status: Sick","Status: Hungry","Status: Dead","Status: Sick"]
     var images = [UIImage(named: "eve"),UIImage(named:"pikachu"),UIImage(named:"rsz_001"),UIImage(named:"rsz_702"),UIImage(named:"yoo")]
     
+    var selectedName : String = ""
+    var selectedHealth : String = ""
+    var selectedImage : UIImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +30,7 @@ class PartyController: UIViewController, UITableViewDelegate, UITableViewDataSou
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +48,21 @@ class PartyController: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.status.text = health[indexPath.row]
         cell.photo.image = images[indexPath.row]
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "segue"){
+            if let indexPath = tableView.indexPathForSelectedRow {
+                selectedName = names[indexPath.row]
+                selectedHealth = health[indexPath.row]
+                selectedImage = images[indexPath.row]!
+                
+                let viewController = segue.destinationViewController as! CharacterViewController
+                viewController.nameString = selectedName
+                viewController.healthString = selectedHealth
+                viewController.image = selectedImage
+            }
+        }
     }
     
 
