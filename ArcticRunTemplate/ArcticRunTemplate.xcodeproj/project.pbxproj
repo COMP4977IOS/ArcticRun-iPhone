@@ -30,6 +30,9 @@
 		7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA451C7AA8750093037E /* SettingsViewController.swift */; };
 		7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA471C7AADE00093037E /* CustomCell.swift */; };
 		7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */; };
+		8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E157A0F1C893AC100EA1950 /* colvwCell.swift */; };
+		8E157A121C89497D00EA1950 /* qmitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E157A111C89497D00EA1950 /* qmitem.png */; };
+		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA4A551C8907480027788A /* CharacterViewController.swift */; };
 		C29DEA071C8A438D00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA061C8A438D00B4422F /* MapViewController.swift */; };
 		C29DEA091C8A440900B4422F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DEA081C8A440900B4422F /* Map.storyboard */; };
@@ -89,6 +92,9 @@
 		7C3EBA451C7AA8750093037E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7C3EBA471C7AADE00093037E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
+		8E157A0F1C893AC100EA1950 /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
+		8E157A111C89497D00EA1950 /* qmitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qmitem.png; path = "../../../ArcticRuniPhone-1/arcticrun/arcticrun/qmitem.png"; sourceTree = "<group>"; };
+		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		87BA4A551C8907480027788A /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		C29DEA061C8A438D00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C29DEA081C8A440900B4422F /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -165,8 +171,13 @@
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
+				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
 				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
+<<<<<<< HEAD
 				C29DEA081C8A440900B4422F /* Map.storyboard */,
+=======
+				8E157A111C89497D00EA1950 /* qmitem.png */,
+>>>>>>> e5564428e2167ef620aaa8e58bfd289d56a7f783
 				5B89F1CE1C862082009D9779 /* Home.storyboard */,
 				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
 				5B89F1C91C862040009D9779 /* Settings.storyboard */,
@@ -221,6 +232,7 @@
 				7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */,
 				EB42119F1C88E9350025CA53 /* ShopViewController.swift */,
 				EB42119D1C88E8230025CA53 /* PartyController.swift */,
+				8E157A0F1C893AC100EA1950 /* colvwCell.swift */,
 				87BA4A551C8907480027788A /* CharacterViewController.swift */,
 			);
 			name = ViewControllers;
@@ -294,7 +306,7 @@
 				TargetAttributes = {
 					7C3EBA051C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = L9GR6R2227;
+						DevelopmentTeam = UFW9M88J3R;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -345,6 +357,8 @@
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
+				8E157A121C89497D00EA1950 /* qmitem.png in Resources */,
+				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
 				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
@@ -380,6 +394,7 @@
 				EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */,
 				7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */,
 				7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */,
+				8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */,
 				7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */,
 				87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */,
 				7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */,
@@ -464,6 +479,14 @@
 				7C3EBA131C7AA6220093037E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EC3D6DB1C8A438800D1C62B /* Base */,
+			);
+			name = Shop.storyboard;
 			sourceTree = "<group>";
 		};
 		EB4211A11C88F1DB0025CA53 /* Party.storyboard */ = {
@@ -567,10 +590,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthurp.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -583,10 +608,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthurp.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
 			};
 			name = Release;
