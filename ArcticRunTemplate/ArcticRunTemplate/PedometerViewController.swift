@@ -55,8 +55,8 @@ class PedometerViewController: UIViewController {
     //Counting number of steps taken 
     //Test steps is just incrementing change it to being the number of steps from pedometer
     func updateCounting() {
-        testSteps++
-        self.numberOfStepsText.text = String(testSteps)
+        //testSteps++
+        //self.numberOfStepsText.text = String(testSteps)
         if (testSteps >= self.testNumber) {
             self.completeMission()
         }
