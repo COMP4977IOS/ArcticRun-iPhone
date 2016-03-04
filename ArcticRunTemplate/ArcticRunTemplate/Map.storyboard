@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IvV-bo-Atc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="kGV-RO-zGH">
+            <objects>
+                <viewController id="IvV-bo-Atc" customClass="MapViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OBx-Y5-aX2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rpp-g5-TWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fh2-VR-ECJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dhu-iu-K2P">
+                                <rect key="frame" x="86" y="244" width="429" height="296"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIc-67-aJz">
+                                <rect key="frame" x="283" y="80" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-9i-9cs">
+                                <rect key="frame" x="284" y="138" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIv-Gl-qwi">
+                                <rect key="frame" x="272" y="189" width="56" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dhu-iu-K2P" firstAttribute="centerX" secondItem="Fh2-VR-ECJ" secondAttribute="centerX" id="eg0-sn-V30"/>
+                            <constraint firstItem="qzK-9i-9cs" firstAttribute="centerX" secondItem="Fh2-VR-ECJ" secondAttribute="centerX" id="fcB-CT-XVh"/>
+                            <constraint firstItem="vIc-67-aJz" firstAttribute="centerX" secondItem="Fh2-VR-ECJ" secondAttribute="centerX" id="hBt-fK-W5C"/>
+                            <constraint firstItem="NIv-Gl-qwi" firstAttribute="centerX" secondItem="Fh2-VR-ECJ" secondAttribute="centerX" id="yhp-dW-LAJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="NIv-Gl-qwi" id="3wP-HD-sf4"/>
+                        <outlet property="map" destination="Dhu-iu-K2P" id="gJh-8a-nZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bk5-sX-3Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="410"/>
+        </scene>
+    </scenes>
+</document>
