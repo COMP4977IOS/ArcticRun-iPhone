@@ -33,6 +33,8 @@
 		87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA4A551C8907480027788A /* CharacterViewController.swift */; };
 		8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E157A0F1C893AC100EA1950 /* colvwCell.swift */; };
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
+		C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */; };
+		C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DEA0C1C8A56FC00B4422F /* Map.storyboard */; };
 		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
@@ -92,6 +94,8 @@
 		87BA4A551C8907480027788A /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		8E157A0F1C893AC100EA1950 /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
+		C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C29DEA0C1C8A56FC00B4422F /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
 		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
+				C29DEA0C1C8A56FC00B4422F /* Map.storyboard */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
 				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
 				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
@@ -214,6 +219,7 @@
 			children = (
 				7C3EBA3D1C7AA80B0093037E /* HomeViewController.swift */,
 				7C3EBA3F1C7AA82F0093037E /* FitnessViewController.swift */,
+				C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */,
 				7C3EBA411C7AA8430093037E /* PedometerViewController.swift */,
 				7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */,
 				7C3EBA451C7AA8750093037E /* SettingsViewController.swift */,
@@ -348,6 +354,7 @@
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
+				C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */,
 				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				5B89F1D01C862082009D9779 /* Home.storyboard in Resources */,
@@ -391,6 +398,7 @@
 				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
+				C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
