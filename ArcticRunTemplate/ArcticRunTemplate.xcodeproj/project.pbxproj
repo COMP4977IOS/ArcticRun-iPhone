@@ -34,8 +34,6 @@
 		8E157A121C89497D00EA1950 /* qmitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E157A111C89497D00EA1950 /* qmitem.png */; };
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA4A551C8907480027788A /* CharacterViewController.swift */; };
-		C29DEA071C8A438D00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA061C8A438D00B4422F /* MapViewController.swift */; };
-		C29DEA091C8A440900B4422F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DEA081C8A440900B4422F /* Map.storyboard */; };
 		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
@@ -96,8 +94,6 @@
 		8E157A111C89497D00EA1950 /* qmitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qmitem.png; path = "../../../ArcticRuniPhone-1/arcticrun/arcticrun/qmitem.png"; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		87BA4A551C8907480027788A /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
-		C29DEA061C8A438D00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		C29DEA081C8A440900B4422F /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
 		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -173,11 +169,7 @@
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
 				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
 				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
-<<<<<<< HEAD
-				C29DEA081C8A440900B4422F /* Map.storyboard */,
-=======
 				8E157A111C89497D00EA1950 /* qmitem.png */,
->>>>>>> e5564428e2167ef620aaa8e58bfd289d56a7f783
 				5B89F1CE1C862082009D9779 /* Home.storyboard */,
 				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
 				5B89F1C91C862040009D9779 /* Settings.storyboard */,
@@ -226,7 +218,6 @@
 				7C3EBA3D1C7AA80B0093037E /* HomeViewController.swift */,
 				7C3EBA3F1C7AA82F0093037E /* FitnessViewController.swift */,
 				7C3EBA411C7AA8430093037E /* PedometerViewController.swift */,
-				C29DEA061C8A438D00B4422F /* MapViewController.swift */,
 				7C3EBA431C7AA8590093037E /* DailyGoalsViewController.swift */,
 				7C3EBA451C7AA8750093037E /* SettingsViewController.swift */,
 				7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */,
@@ -362,7 +353,6 @@
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
 				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
-				C29DEA091C8A440900B4422F /* Map.storyboard in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				5B89F1D01C862082009D9779 /* Home.storyboard in Resources */,
 			);
@@ -405,7 +395,6 @@
 				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
-				C29DEA071C8A438D00B4422F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
