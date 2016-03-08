@@ -15,6 +15,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var label: UILabel!
     
+    private var tracking = false
+    
     var manager : CLLocationManager!
     var myLocations : [CLLocation] = []
     
@@ -53,7 +55,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.setRegion(region, animated: true)
         
         // specify source and destination for tracking purposes
-        if(myLocations.count > 1){
+        if(myLocations.count > 1 && tracking){
             // var vs let again !!!
             let src = myLocations.count - 1
             let dest = myLocations.count - 2
@@ -69,21 +71,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        let polyline = MKPolylineRenderer(overlay: overlay)
-        polyline.strokeColor = UIColor.greenColor()
-        return polyline
+        let displayLine = MKPolylineRenderer(overlay: overlay)
+        displayLine.strokeColor = UIColor.greenColor()
+        return displayLine
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    // start tracking the user's movement using a polyline
+    @IBAction func start(sender: UIButton) {
+        // remove previous polyline(s)
+        let overlays = map.overlays
+        map.removeOverlays(overlays)
+        // set begin as current location
+        tracking = true
+        
     }
-    */
+    
+    // stop tracking the user's movement
+    @IBAction func stop(sender: UIButton) {
+        // set end as current location and stop drawing polyline
+        tracking = false
+    }
     
 }
