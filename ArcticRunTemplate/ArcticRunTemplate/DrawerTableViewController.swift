@@ -12,7 +12,7 @@ import Photos
 
 class DrawerTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate  {
 
-    let picker = UIImagePickerController()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,6 @@ class DrawerTableViewController: UITableViewController, UIImagePickerControllerD
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        picker.delegate = self
-        picker.sourceType = .Camera
-        picker.cameraDevice =  UIImagePickerControllerCameraDevice.Front
 
     }
 
@@ -35,10 +32,10 @@ class DrawerTableViewController: UITableViewController, UIImagePickerControllerD
     }
     
     @IBAction func selfieTap(sender: AnyObject) {
-//        let picker = UIImagePickerController()
-//        picker.delegate = self
-//        picker.sourceType = .Camera
-//        picker.cameraDevice =  UIImagePickerControllerCameraDevice.Front
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .Camera
+        picker.cameraDevice =  UIImagePickerControllerCameraDevice.Front
         
         presentViewController(picker, animated: true, completion: nil)
     }
