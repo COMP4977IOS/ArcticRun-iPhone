@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -31,8 +31,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njq-gG-zef">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njq-gG-zef">
                                 <rect key="frame" x="-2" y="64" width="600" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="i9w-ql-nuJ"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="NMH-UA-fp0" id="YCB-Y2-vn5"/>
                                     <outlet property="delegate" destination="NMH-UA-fp0" id="6Ze-mf-rNP"/>
@@ -51,12 +54,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Njq-gG-zef" firstAttribute="trailing" secondItem="anF-rC-3Nj" secondAttribute="trailing" id="8jI-Mr-M28"/>
+                            <constraint firstItem="Njq-gG-zef" firstAttribute="top" secondItem="ia2-Kt-Qm7" secondAttribute="bottom" id="Ge2-dB-lHh"/>
                             <constraint firstItem="anF-rC-3Nj" firstAttribute="width" secondItem="onF-Gs-Kv0" secondAttribute="width" id="T4O-Cb-bJ8"/>
                             <constraint firstItem="Njq-gG-zef" firstAttribute="width" secondItem="onF-Gs-Kv0" secondAttribute="width" id="VzE-dA-Cqj"/>
                             <constraint firstItem="wXe-I4-9gq" firstAttribute="centerX" secondItem="onF-Gs-Kv0" secondAttribute="centerX" id="bfU-e4-sXK"/>
                             <constraint firstItem="Zqf-bJ-TwQ" firstAttribute="top" secondItem="anF-rC-3Nj" secondAttribute="bottom" constant="-3" id="clT-QI-Gix"/>
                             <constraint firstAttribute="trailing" secondItem="ia2-Kt-Qm7" secondAttribute="trailing" id="dh8-Vb-UHe"/>
                             <constraint firstItem="ia2-Kt-Qm7" firstAttribute="leading" secondItem="onF-Gs-Kv0" secondAttribute="leading" id="nJ7-rk-3tH"/>
+                            <constraint firstItem="Njq-gG-zef" firstAttribute="centerX" secondItem="Zqf-bJ-TwQ" secondAttribute="centerX" id="q4J-35-l73"/>
                             <constraint firstItem="ia2-Kt-Qm7" firstAttribute="top" secondItem="onF-Gs-Kv0" secondAttribute="top" constant="20" id="qwb-VP-y3V"/>
                             <constraint firstItem="wXe-I4-9gq" firstAttribute="centerY" secondItem="onF-Gs-Kv0" secondAttribute="centerY" id="thE-dG-A3I"/>
                             <constraint firstItem="anF-rC-3Nj" firstAttribute="top" secondItem="Njq-gG-zef" secondAttribute="bottom" constant="8" id="wiv-x2-yCu"/>
@@ -66,7 +72,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="I46-HJ-Zwa" userLabel="Home"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="menuButton" destination="ycQ-dW-gvO" id="SyD-P9-pUW"/>
+                        <outlet property="menuButton" destination="ycQ-dW-gvO" id="oXD-GU-QqG"/>
                         <outlet property="seasonPicker" destination="Njq-gG-zef" id="wF2-Nr-71F"/>
                         <outlet property="synopsisText" destination="anF-rC-3Nj" id="juk-XO-Hug"/>
                     </connections>
