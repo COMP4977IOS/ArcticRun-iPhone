@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IYo-aH-Xqh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -28,10 +30,16 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-vP-rTz">
                                 <rect key="frame" x="284" y="102" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="IYo-aH-Xqh" eventType="touchUpInside" id="hfi-G0-2Cw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-Uo-AC7">
                                 <rect key="frame" x="284" y="45" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="IYo-aH-Xqh" eventType="touchUpInside" id="SHQ-vX-Xkm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
