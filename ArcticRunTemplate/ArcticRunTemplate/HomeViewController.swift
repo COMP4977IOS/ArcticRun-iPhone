@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var seasonPicker: UIPickerView!
     @IBOutlet weak var synopsisText: UITextView!
+    @IBOutlet weak var PausePlay: UIButton!
     
     var seasonArray:[String]!
     var missionArray:[String]!
@@ -20,6 +22,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "wav")!)
+    var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
+    var ButtonAudioPlayer = AVAudioPlayer()
+    var BackgroundAudioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +37,14 @@ class HomeViewController: UIViewController {
         season = seasonArray[0]
         mission = missionArray[0]
         synopsisText.text = mission + "\t" + season
+        do{
+          try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+        } catch {}
         
+        do{
+          try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
+            BackgroundAudioPlayer.play()
+        } catch{}
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -81,7 +94,31 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func PlayAudio1(sender: AnyObject) {
+        ButtonAudioPlayer.play()
+    }
     
+    @IBAction func Stop(sender: AnyObject) {
+        BackgroundAudioPlayer.stop()
+        BackgroundAudioPlayer.currentTime = 0
+        PausePlay.setTitle("Play", forState: UIControlState.Normal)
+    }
+    
+    @IBAction func Pause(sender: AnyObject) {
+        if(BackgroundAudioPlayer.playing == true){
+            BackgroundAudioPlayer.stop()
+            PausePlay.setTitle("Play", forState: UIControlState.Normal)
+        }else{
+            BackgroundAudioPlayer.play()
+            PausePlay.setTitle("Pause", forState: UIControlState.Normal)
+        }
+    }
+    
+    @IBAction func Restart(sender: AnyObject) {
+        BackgroundAudioPlayer.stop()
+        BackgroundAudioPlayer.currentTime = 0
+        BackgroundAudioPlayer.play()
+    }
 }
 
 
