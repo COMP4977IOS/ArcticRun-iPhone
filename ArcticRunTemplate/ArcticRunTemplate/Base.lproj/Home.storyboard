@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -51,10 +51,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-bq-mlI">
+                                <rect key="frame" x="170" y="437" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="Pause:" destination="NMH-UA-fp0" eventType="touchUpInside" id="1Sh-vo-GGY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDn-FO-QRr">
+                                <rect key="frame" x="90" y="437" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="Stop:" destination="NMH-UA-fp0" eventType="touchUpInside" id="oxe-RE-mIN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-to-iNL">
+                                <rect key="frame" x="92" y="376" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="PlayAudio1:" destination="NMH-UA-fp0" eventType="touchUpInside" id="6Ml-3K-zNb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-wX-2Ha">
+                                <rect key="frame" x="258" y="437" width="50" height="30"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="Restart:" destination="NMH-UA-fp0" eventType="touchUpInside" id="nF4-5P-B59"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Njq-gG-zef" firstAttribute="trailing" secondItem="anF-rC-3Nj" secondAttribute="trailing" id="8jI-Mr-M28"/>
+                            <constraint firstItem="ifg-to-iNL" firstAttribute="centerX" secondItem="onF-Gs-Kv0" secondAttribute="centerX" id="DJ5-KC-XcQ"/>
                             <constraint firstItem="Njq-gG-zef" firstAttribute="top" secondItem="ia2-Kt-Qm7" secondAttribute="bottom" id="Ge2-dB-lHh"/>
                             <constraint firstItem="anF-rC-3Nj" firstAttribute="width" secondItem="onF-Gs-Kv0" secondAttribute="width" id="T4O-Cb-bJ8"/>
                             <constraint firstItem="Njq-gG-zef" firstAttribute="width" secondItem="onF-Gs-Kv0" secondAttribute="width" id="VzE-dA-Cqj"/>
@@ -72,6 +101,7 @@
                     <tabBarItem key="tabBarItem" title="Home" id="I46-HJ-Zwa" userLabel="Home"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="PausePlay" destination="HV3-bq-mlI" id="B2e-IZ-CMV"/>
                         <outlet property="menuButton" destination="ycQ-dW-gvO" id="oXD-GU-QqG"/>
                         <outlet property="seasonPicker" destination="Njq-gG-zef" id="wF2-Nr-71F"/>
                         <outlet property="synopsisText" destination="anF-rC-3Nj" id="juk-XO-Hug"/>

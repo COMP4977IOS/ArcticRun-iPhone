@@ -43,6 +43,9 @@
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
 		EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4211A11C88F1DB0025CA53 /* Party.storyboard */; };
+		EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43BD11C9011F5006EB045 /* AVFoundation.framework */; };
+		EBC43BD71C901473006EB045 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */; };
+		EBC43BD81C901473006EB045 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBC43BD61C901473006EB045 /* ButtonAudio.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,9 @@
 		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		EB4211A21C88F1DB0025CA53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Party.storyboard; sourceTree = "<group>"; };
+		EBC43BD11C9011F5006EB045 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackgroundAudio.mp3; path = ../../../../../Downloads/Audio/BackgroundAudio.mp3; sourceTree = "<group>"; };
+		EBC43BD61C901473006EB045 /* ButtonAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonAudio.wav; path = ../../../../../Downloads/Audio/ButtonAudio.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
 				5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */,
 			);
@@ -148,6 +155,7 @@
 		7C3EB9FD1C7AA6220093037E = {
 			isa = PBXGroup;
 			children = (
+				EBC43BD11C9011F5006EB045 /* AVFoundation.framework */,
 				5769B9461C87FAE5007356E3 /* HealthKit.framework */,
 				5769B9441C87FADB007356E3 /* CloudKit.framework */,
 				7C3EBA081C7AA6220093037E /* ArcticRunTemplate */,
@@ -192,6 +200,7 @@
 				7C3EBA151C7AA6220093037E /* Info.plist */,
 				EB4211991C88E72D0025CA53 /* PartyCell.swift */,
 				7C3EBA471C7AADE00093037E /* CustomCell.swift */,
+				EBC43BD31C90141B006EB045 /* Supporting Files */,
 			);
 			path = ArcticRunTemplate;
 			sourceTree = "<group>";
@@ -242,6 +251,23 @@
 				5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EBC43BD31C90141B006EB045 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EBC43BD41C90143D006EB045 /* Music */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBC43BD41C90143D006EB045 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */,
+				EBC43BD61C901473006EB045 /* ButtonAudio.wav */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +338,7 @@
 				TargetAttributes = {
 					7C3EBA051C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = L9GR6R2227;
+						DevelopmentTeam = 3TN8GSM847;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -362,8 +388,10 @@
 				5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */,
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
+				EBC43BD81C901473006EB045 /* ButtonAudio.wav in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
+				EBC43BD71C901473006EB045 /* BackgroundAudio.mp3 in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
@@ -618,7 +646,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BCIT.arctic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
@@ -636,7 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BCIT.arctic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
