@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IYo-aH-Xqh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="eIj-hp-oAJ">
+            <objects>
+                <viewController id="IYo-aH-Xqh" customClass="MapViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPk-cV-f71"/>
+                        <viewControllerLayoutGuide type="bottom" id="oUF-Xx-iTe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JY8-gJ-I7W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fcw-Xh-9wo">
+                                <rect key="frame" x="111" y="248" width="379" height="279"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAv-Wd-HD5">
+                                <rect key="frame" x="247" y="180" width="106" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-vP-rTz">
+                                <rect key="frame" x="284" y="102" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stop:" destination="IYo-aH-Xqh" eventType="touchUpInside" id="hfi-G0-2Cw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-Uo-AC7">
+                                <rect key="frame" x="284" y="45" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="IYo-aH-Xqh" eventType="touchUpInside" id="SHQ-vX-Xkm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YAv-Wd-HD5" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="1lM-3f-fks"/>
+                            <constraint firstItem="PQ4-Uo-AC7" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="Nsb-W3-IPV"/>
+                            <constraint firstItem="cSa-vP-rTz" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="sqo-KZ-AdP"/>
+                            <constraint firstItem="fcw-Xh-9wo" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="u9O-RN-hUx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="YAv-Wd-HD5" id="9Q4-b7-W2f"/>
+                        <outlet property="map" destination="fcw-Xh-9wo" id="v7S-Su-MWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLH-5B-b2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="682"/>
+        </scene>
+    </scenes>
+</document>
