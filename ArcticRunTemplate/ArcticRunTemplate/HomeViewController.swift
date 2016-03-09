@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "wav")!)
-    var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
+    //var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "mp3")!)
+    //var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
     var ButtonAudioPlayer = AVAudioPlayer()
     var BackgroundAudioPlayer = AVAudioPlayer()
     
@@ -38,12 +38,12 @@ class HomeViewController: UIViewController {
         mission = missionArray[0]
         synopsisText.text = mission + "\t" + season
         do{
-          try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+          //try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
         } catch {}
         
         do{
-          try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
-            BackgroundAudioPlayer.play()
+          //try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
+            //BackgroundAudioPlayer.play()
         } catch{}
         
         if (self.revealViewController() != nil) {

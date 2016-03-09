@@ -19,6 +19,7 @@ class PedometerViewController: UIViewController {
     let pedometer = CMPedometer()
     let altimeter = CMAltimeter()
     let activityManager = CMMotionActivityManager()
+    let cloudKitHelper = CloudKitHelper()
     
     let lengthFormatter = NSLengthFormatter()
     
@@ -26,6 +27,8 @@ class PedometerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cloudKitHelper.saveNote()
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()

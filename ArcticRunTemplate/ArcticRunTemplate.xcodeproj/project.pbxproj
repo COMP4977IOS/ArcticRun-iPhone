@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712EE801C903934002624D6 /* CloudKitHelper.swift */; };
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
 		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
@@ -44,8 +45,6 @@
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
 		EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4211A11C88F1DB0025CA53 /* Party.storyboard */; };
 		EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43BD11C9011F5006EB045 /* AVFoundation.framework */; };
-		EBC43BD71C901473006EB045 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */; };
-		EBC43BD81C901473006EB045 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EBC43BD61C901473006EB045 /* ButtonAudio.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5712EE801C903934002624D6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
 		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -112,8 +112,6 @@
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		EB4211A21C88F1DB0025CA53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Party.storyboard; sourceTree = "<group>"; };
 		EBC43BD11C9011F5006EB045 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackgroundAudio.mp3; path = ../../../../../Downloads/Audio/BackgroundAudio.mp3; sourceTree = "<group>"; };
-		EBC43BD61C901473006EB045 /* ButtonAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonAudio.wav; path = ../../../../../Downloads/Audio/ButtonAudio.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */,
+				5712EE801C903934002624D6 /* CloudKitHelper.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -264,8 +263,6 @@
 		EBC43BD41C90143D006EB045 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				EBC43BD51C901473006EB045 /* BackgroundAudio.mp3 */,
-				EBC43BD61C901473006EB045 /* ButtonAudio.wav */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -338,7 +335,7 @@
 				TargetAttributes = {
 					7C3EBA051C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3TN8GSM847;
+						DevelopmentTeam = L9GR6R2227;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -388,10 +385,8 @@
 				5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */,
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
-				EBC43BD81C901473006EB045 /* ButtonAudio.wav in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
-				EBC43BD71C901473006EB045 /* BackgroundAudio.mp3 in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
@@ -442,6 +437,7 @@
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 				5BF8C2C31C8B941600C1DFFF /* StatsViewController.swift in Sources */,
+				5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */,
 				C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,7 +642,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BCIT.arctic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
@@ -664,7 +660,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BCIT.arctic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
