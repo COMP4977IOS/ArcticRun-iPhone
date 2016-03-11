@@ -53,7 +53,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-bq-mlI">
                                 <rect key="frame" x="170" y="437" width="42" height="30"/>
-                                <state key="normal" title="Pause"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="Pause:" destination="NMH-UA-fp0" eventType="touchUpInside" id="1Sh-vo-GGY"/>
                                 </connections>
@@ -65,13 +65,6 @@
                                     <action selector="Stop:" destination="NMH-UA-fp0" eventType="touchUpInside" id="oxe-RE-mIN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-to-iNL">
-                                <rect key="frame" x="92" y="376" width="30" height="30"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="PlayAudio1:" destination="NMH-UA-fp0" eventType="touchUpInside" id="6Ml-3K-zNb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE9-wX-2Ha">
                                 <rect key="frame" x="258" y="437" width="50" height="30"/>
                                 <state key="normal" title="Restart"/>
@@ -80,11 +73,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG4-QI-ZE4">
-                                <rect key="frame" x="205" y="385" width="72" height="21"/>
+                                <rect key="frame" x="281" y="380" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifg-to-iNL">
+                                <rect key="frame" x="182" y="376" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="PlayAudio1:" destination="NMH-UA-fp0" eventType="touchUpInside" id="6Ml-3K-zNb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
