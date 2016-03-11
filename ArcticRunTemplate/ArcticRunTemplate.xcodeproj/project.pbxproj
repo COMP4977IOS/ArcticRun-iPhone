@@ -30,10 +30,9 @@
 		7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA451C7AA8750093037E /* SettingsViewController.swift */; };
 		7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA471C7AADE00093037E /* CustomCell.swift */; };
 		7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */; };
-		8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E157A0F1C893AC100EA1950 /* colvwCell.swift */; };
-		8E157A121C89497D00EA1950 /* qmitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E157A111C89497D00EA1950 /* qmitem.png */; };
-		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA4A551C8907480027788A /* CharacterViewController.swift */; };
+		8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E157A0F1C893AC100EA1950 /* colvwCell.swift */; };
+		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
@@ -90,10 +89,9 @@
 		7C3EBA451C7AA8750093037E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7C3EBA471C7AADE00093037E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		7C3EBA4B1C7AB5020093037E /* MissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsViewController.swift; sourceTree = "<group>"; };
-		8E157A0F1C893AC100EA1950 /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
-		8E157A111C89497D00EA1950 /* qmitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qmitem.png; path = "../../../ArcticRuniPhone-1/arcticrun/arcticrun/qmitem.png"; sourceTree = "<group>"; };
-		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		87BA4A551C8907480027788A /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		8E157A0F1C893AC100EA1950 /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
+		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
 		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
 				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
 				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
-				8E157A111C89497D00EA1950 /* qmitem.png */,
 				5B89F1CE1C862082009D9779 /* Home.storyboard */,
 				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
 				5B89F1C91C862040009D9779 /* Settings.storyboard */,
@@ -297,7 +294,7 @@
 				TargetAttributes = {
 					7C3EBA051C7AA6220093037E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UFW9M88J3R;
+						DevelopmentTeam = L9GR6R2227;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 1;
@@ -348,7 +345,6 @@
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
-				8E157A121C89497D00EA1950 /* qmitem.png in Resources */,
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
@@ -582,7 +578,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arthurp.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
@@ -600,7 +596,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arthurp.arcticrun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArcticRunTemplate/ArcticRunTemplate-Bridging-Header.h";
