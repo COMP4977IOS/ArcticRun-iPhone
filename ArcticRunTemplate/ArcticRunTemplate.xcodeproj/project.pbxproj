@@ -44,8 +44,8 @@
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
 		EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4211A11C88F1DB0025CA53 /* Party.storyboard */; };
-		EB904D9A1C934D0F00ABD3C1 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB904D981C934D0F00ABD3C1 /* BackgroundAudio.mp3 */; };
-		EB904D9B1C934D0F00ABD3C1 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB904D991C934D0F00ABD3C1 /* ButtonAudio.wav */; };
+		EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9E1C93931B00ABD3C1 /* BackgroundAudio.mp3 */; };
+		EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9F1C93931B00ABD3C1 /* ButtonAudio.wav */; };
 		EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43BD11C9011F5006EB045 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,8 +113,8 @@
 		EB42119D1C88E8230025CA53 /* PartyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyController.swift; sourceTree = "<group>"; };
 		EB42119F1C88E9350025CA53 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		EB4211A21C88F1DB0025CA53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Party.storyboard; sourceTree = "<group>"; };
-		EB904D981C934D0F00ABD3C1 /* BackgroundAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackgroundAudio.mp3; path = ../../../../../Downloads/Audio/BackgroundAudio.mp3; sourceTree = "<group>"; };
-		EB904D991C934D0F00ABD3C1 /* ButtonAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonAudio.wav; path = ../../../../../Downloads/Audio/ButtonAudio.wav; sourceTree = "<group>"; };
+		EB904D9E1C93931B00ABD3C1 /* BackgroundAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackgroundAudio.mp3; path = music/BackgroundAudio.mp3; sourceTree = SOURCE_ROOT; };
+		EB904D9F1C93931B00ABD3C1 /* ButtonAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonAudio.wav; path = music/ButtonAudio.wav; sourceTree = SOURCE_ROOT; };
 		EBC43BD11C9011F5006EB045 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -267,8 +267,8 @@
 		EBC43BD41C90143D006EB045 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				EB904D981C934D0F00ABD3C1 /* BackgroundAudio.mp3 */,
-				EB904D991C934D0F00ABD3C1 /* ButtonAudio.wav */,
+				EB904D9E1C93931B00ABD3C1 /* BackgroundAudio.mp3 */,
+				EB904D9F1C93931B00ABD3C1 /* ButtonAudio.wav */,
 			);
 			name = Music;
 			sourceTree = "<group>";
@@ -391,10 +391,10 @@
 				5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */,
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
-				EB904D9B1C934D0F00ABD3C1 /* ButtonAudio.wav in Resources */,
+				EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
-				EB904D9A1C934D0F00ABD3C1 /* BackgroundAudio.mp3 in Resources */,
+				EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
