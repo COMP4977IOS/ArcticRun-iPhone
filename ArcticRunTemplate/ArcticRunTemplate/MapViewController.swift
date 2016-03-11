@@ -16,12 +16,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var label: UILabel!
     
     private var tracking = false
+
     
+    @IBOutlet weak var menuB: UIBarButtonItem!
     var manager : CLLocationManager!
     var myLocations : [CLLocation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.revealViewController() != nil) {
+            menuB.target = self.revealViewController()
+            menuB.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         // Do any additional setup after loading the view.
         manager = CLLocationManager()
@@ -34,6 +42,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         map.delegate = self
         map.mapType = MKMapType.Satellite
         map.showsUserLocation = true
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
