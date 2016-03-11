@@ -26,8 +26,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    //var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "mp3")!)
-    //var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
+    var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "wav")!)
+    var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
     var ButtonAudioPlayer = AVAudioPlayer()
     var BackgroundAudioPlayer = AVAudioPlayer()
     
@@ -42,12 +42,11 @@ class HomeViewController: UIViewController {
         mission = missionArray[0]
         synopsisText.text = mission + "\t" + season
         do{
-          //try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+            try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
         } catch {}
         
         do{
-          //try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
-            //BackgroundAudioPlayer.play()
+            try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
         } catch{}
         
         if (self.revealViewController() != nil) {
@@ -99,13 +98,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func PlayAudio1(sender: AnyObject) {
-        
-        if !timer.valid {
-            ButtonAudioPlayer.play()
-            let aSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
-        }
+        ButtonAudioPlayer.play()
     }
     
     func updateTime(){
@@ -146,22 +139,37 @@ class HomeViewController: UIViewController {
         BackgroundAudioPlayer.stop()
         timer.invalidate()
         timer = NSTimer()
+        
+        timeLabel.text = "00:00:00"
+        
         BackgroundAudioPlayer.currentTime = 0
         PausePlay.setTitle("Play", forState: UIControlState.Normal)
     }
     
     @IBAction func Pause(sender: AnyObject) {
-        if(BackgroundAudioPlayer.playing == true){
-            BackgroundAudioPlayer.stop()
-            PausePlay.setTitle("Play", forState: UIControlState.Normal)
-        }else{
+        
+        // Start to play background music
+        if(BackgroundAudioPlayer.playing == false){
             BackgroundAudioPlayer.play()
             PausePlay.setTitle("Pause", forState: UIControlState.Normal)
+            
+            if !timer.valid {
+                let aSelector : Selector = "updateTime"
+                timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
+                startTime = NSDate.timeIntervalSinceReferenceDate()
+            }
+        }else{
+            BackgroundAudioPlayer.stop()
+            timer.invalidate()
+            PausePlay.setTitle("Play", forState: UIControlState.Normal)
         }
     }
     
     @IBAction func Restart(sender: AnyObject) {
         BackgroundAudioPlayer.stop()
+        timer.invalidate()
+        timer = NSTimer()
+        timeLabel.text = "00:00:00"
         BackgroundAudioPlayer.currentTime = 0
         BackgroundAudioPlayer.play()
     }
@@ -177,3 +185,6 @@ class HomeViewController: UIViewController {
     // Pass the selected object to the new view controller
     }
     */
+
+
+
