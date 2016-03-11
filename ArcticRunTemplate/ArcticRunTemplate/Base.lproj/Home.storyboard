@@ -79,6 +79,12 @@
                                     <action selector="Restart:" destination="NMH-UA-fp0" eventType="touchUpInside" id="nF4-5P-B59"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OG4-QI-ZE4">
+                                <rect key="frame" x="205" y="385" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,6 +111,7 @@
                         <outlet property="menuButton" destination="ycQ-dW-gvO" id="oXD-GU-QqG"/>
                         <outlet property="seasonPicker" destination="Njq-gG-zef" id="wF2-Nr-71F"/>
                         <outlet property="synopsisText" destination="anF-rC-3Nj" id="juk-XO-Hug"/>
+                        <outlet property="timeLabel" destination="OG4-QI-ZE4" id="jv5-WF-wza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg3-BN-NOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
