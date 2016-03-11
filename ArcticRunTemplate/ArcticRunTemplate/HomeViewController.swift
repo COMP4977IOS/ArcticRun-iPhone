@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var seasonPicker: UIPickerView!
     @IBOutlet weak var synopsisText: UITextView!
+    @IBOutlet weak var PausePlay: UIButton!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    var timer = NSTimer()
+    var startTime = NSTimeInterval()
     
     var seasonArray:[String]!
     var missionArray:[String]!
@@ -20,11 +26,11 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    @IBOutlet weak var timeLabel: UILabel!
-    var timer = NSTimer()
-    @IBOutlet weak var startButton: UIButton!
-    var startTime = NSTimeInterval()
-
+    //var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ButtonAudio", ofType: "mp3")!)
+    //var BackgroundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("BackgroundAudio", ofType: "mp3")!)
+    var ButtonAudioPlayer = AVAudioPlayer()
+    var BackgroundAudioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,7 +41,14 @@ class HomeViewController: UIViewController {
         season = seasonArray[0]
         mission = missionArray[0]
         synopsisText.text = mission + "\t" + season
+        do{
+          //try  ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+        } catch {}
         
+        do{
+          //try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
+            //BackgroundAudioPlayer.play()
+        } catch{}
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -85,23 +98,14 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func startFunction(sender: AnyObject) {
-        if !timer.valid {
-            let aSelector : Selector = "updateTime"
-            if(startButton.currentTitle == "Start" || startButton.currentTitle == "Resume"){
-                timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
-                startTime = NSDate.timeIntervalSinceReferenceDate()
-                startButton.setTitle("Pause",forState: .Normal)
-            }
-        }
+    @IBAction func PlayAudio1(sender: AnyObject) {
         
-    }
-    
-    @IBAction func stop(sender: AnyObject) {
-        timer.invalidate()
-        timer = NSTimer()
-        startButton.setTitle("Start",forState: .Normal)
+        if !timer.valid {
+            ButtonAudioPlayer.play()
+            let aSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate()
+        }
     }
     
     func updateTime(){
@@ -137,7 +141,30 @@ class HomeViewController: UIViewController {
         
         timeLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
     }
-
+    
+    @IBAction func Stop(sender: AnyObject) {
+        BackgroundAudioPlayer.stop()
+        timer.invalidate()
+        timer = NSTimer()
+        BackgroundAudioPlayer.currentTime = 0
+        PausePlay.setTitle("Play", forState: UIControlState.Normal)
+    }
+    
+    @IBAction func Pause(sender: AnyObject) {
+        if(BackgroundAudioPlayer.playing == true){
+            BackgroundAudioPlayer.stop()
+            PausePlay.setTitle("Play", forState: UIControlState.Normal)
+        }else{
+            BackgroundAudioPlayer.play()
+            PausePlay.setTitle("Pause", forState: UIControlState.Normal)
+        }
+    }
+    
+    @IBAction func Restart(sender: AnyObject) {
+        BackgroundAudioPlayer.stop()
+        BackgroundAudioPlayer.currentTime = 0
+        BackgroundAudioPlayer.play()
+    }
 }
 
 

@@ -7,85 +7,92 @@
 import UIKit
 import CoreMotion
 class PedometerViewController: UIViewController {
-    
-    let pedoMeter = CMPedometer()
-    var timer = NSTimer()
-    var rightNow:NSDate?
-    var testNumber:Int = 25;
-    var testSteps:Int = 0;
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
-    @IBOutlet weak var stepsTextForDay: UILabel!
-    @IBOutlet weak var missionStateLabel: UILabel!
+    @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var floorsLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var altitudeLabel: UILabel!
+    @IBOutlet weak var activityImageView: UIImageView!
     
-    @IBOutlet weak var numberOfStepsText: UILabel!
-    @IBOutlet weak var outOfText: UILabel!
+    let dataProcessingQueue = NSOperationQueue()
+    let pedometer = CMPedometer()
+    let altimeter = CMAltimeter()
+    let activityManager = CMMotionActivityManager()
+    let cloudKitHelper = CloudKitHelper()
     
-    @IBOutlet weak var distanceTravelledTodayText: UILabel!
+    let lengthFormatter = NSLengthFormatter()
+    
+    var altChange: Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        outOfText.text = String(testNumber)
-        // Do any additional setup after loading the view, typically from a nib.
+        cloudKitHelper.saveNote()
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        
-        //Call HealthKitHelper to get Steps and Distance for today
-        //Need now to work on storing this data onto cloudkit
-        HealthKitHelper().recentSteps() { steps, error in
-           self.stepsTextForDay.text = String(steps)
-        }
-        
-        HealthKitHelper().recentDistance() { distance, error in
-            self.distanceTravelledTodayText.text = String(distance)
-        }
-        
-    }
-    
-    @IBAction func start(sender : AnyObject) {
-        rightNow = NSDate()
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.75, target: self, selector: Selector("updateCounting"), userInfo: nil, repeats: true)
-    }
-    
-    //Counting number of steps taken 
-    //Test steps is just incrementing change it to being the number of steps from pedometer
-    func updateCounting() {
-        testSteps++
-        self.numberOfStepsText.text = String(testSteps)
-        if (testSteps >= self.testNumber) {
-            self.completeMission()
-        }
-        
-        if(CMPedometer.isStepCountingAvailable()){
-            self.pedoMeter.queryPedometerDataFromDate(rightNow!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
-                print(data)
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if(error == nil){
-                        if (data!.numberOfSteps as Int >= self.testNumber) {
-                            self.completeMission()
-                        }
-                        self.numberOfStepsText.text = "\(data!.numberOfSteps)"
+            
+            // Do any additional setup after loading the view, typically from a nib.
+            lengthFormatter.numberFormatter.usesSignificantDigits = false
+            lengthFormatter.numberFormatter.maximumSignificantDigits = 2
+            lengthFormatter.unitStyle = .Short
+            
+            
+            // Prepare altimeter
+            altimeter.startRelativeAltitudeUpdatesToQueue(dataProcessingQueue) {
+                (data, error) in
+                if error != nil {
+                    print("There was an error obtaining altimeter data: \(error)")
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.altChange += (data!.relativeAltitude as? Double)!
+                        self.altitudeLabel.text = "\(self.lengthFormatter.stringFromMeters(self.altChange))"
                     }
-                })
-                
+                }
+            }
+            
+            // Prepare pedometer
+            pedometer.startPedometerUpdatesFromDate(NSDate()) {
+                (data, error) in
+                if error != nil {
+                    print("There was an error obtaining pedometer data: \(error)")
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.floorsLabel.text = "\(data!.floorsAscended)"
+                        self.stepsLabel.text = "\(data!.numberOfSteps)"
+                        self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data!.distance as! Double))"
+                    }
+                }
+            }
+            
+            // Prepare activity updates
+            activityManager.startActivityUpdatesToQueue(dataProcessingQueue) {
+                data in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if data!.running {
+                        self.activityImageView.image = UIImage(named: "run")
+                    } else if data!.cycling {
+                        self.activityImageView.image = UIImage(named: "cycle")
+                    } else if data!.walking {
+                        self.activityImageView.image = UIImage(named: "walk")
+                    } else {
+                        self.activityImageView.image = nil
+                    }
+                }
             }
         }
-    }
-    
-    //When the mission is complete do something, here you can add that it finished in database
-    func completeMission() {
-        missionStateLabel.text = "Mission Complete!"
-        timer.invalidate()
-    }
-    
-    //Halts run and turns of timer that runs pedometer
-    @IBAction func stopRun() {
-        timer.invalidate()
+        
+//        HealthKitHelper().recentSteps() { steps, error in
+//           self.stepsTextForDay.text = String(steps)
+//        }
+//        
+//        HealthKitHelper().recentDistance() { distance, error in
+//            self.distanceTravelledTodayText.text = String(distance)
+//        }
+        
     }
 
     

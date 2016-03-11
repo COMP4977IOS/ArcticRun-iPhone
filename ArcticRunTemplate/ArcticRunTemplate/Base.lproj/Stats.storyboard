@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QS3-tC-bbc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Stats View Controller-->
+        <scene sceneID="Ig7-S0-sig">
+            <objects>
+                <viewController id="QS3-tC-bbc" customClass="StatsViewController" customModule="ArcticRunTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kid-fM-3tD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ep8-yn-ISq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oGy-tX-U1y" userLabel="View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoH-eS-Kbg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Stats" id="bBy-28-4gU">
+                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="I30-8B-Gzm"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Calories Burned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-b2-8jW">
+                                <rect key="frame" x="32" y="127" width="161" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kli-8O-a5z">
+                                <rect key="frame" x="216" y="136" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance Traveled:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFu-CJ-KoS">
+                                <rect key="frame" x="32" y="231" width="142" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-jH-UJl">
+                                <rect key="frame" x="216" y="231" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OHt-jH-UJl" firstAttribute="top" secondItem="kli-8O-a5z" secondAttribute="bottom" constant="74" id="J3F-A9-Ai8"/>
+                            <constraint firstItem="kli-8O-a5z" firstAttribute="leading" secondItem="1JD-b2-8jW" secondAttribute="trailing" constant="23" id="JXi-nH-E3E"/>
+                            <constraint firstItem="1JD-b2-8jW" firstAttribute="top" secondItem="yoH-eS-Kbg" secondAttribute="bottom" constant="63" id="JcI-J2-tql"/>
+                            <constraint firstItem="OHt-jH-UJl" firstAttribute="leading" secondItem="kli-8O-a5z" secondAttribute="leading" id="TAP-wI-TzP"/>
+                            <constraint firstItem="lFu-CJ-KoS" firstAttribute="baseline" secondItem="OHt-jH-UJl" secondAttribute="baseline" id="TlM-BC-gNA"/>
+                            <constraint firstItem="yoH-eS-Kbg" firstAttribute="leading" secondItem="oGy-tX-U1y" secondAttribute="leading" id="by6-b8-PmP"/>
+                            <constraint firstItem="yoH-eS-Kbg" firstAttribute="top" secondItem="kid-fM-3tD" secondAttribute="bottom" id="gbt-Nv-1dG"/>
+                            <constraint firstItem="lFu-CJ-KoS" firstAttribute="leading" secondItem="1JD-b2-8jW" secondAttribute="leading" id="jG9-TF-Drf"/>
+                            <constraint firstItem="kli-8O-a5z" firstAttribute="leading" secondItem="oGy-tX-U1y" secondAttribute="leading" constant="216" id="kng-fp-d3l"/>
+                            <constraint firstAttribute="trailing" secondItem="yoH-eS-Kbg" secondAttribute="trailing" id="or1-KE-w8a"/>
+                            <constraint firstItem="1JD-b2-8jW" firstAttribute="centerY" secondItem="kli-8O-a5z" secondAttribute="centerY" id="tc2-z6-zUC"/>
+                            <constraint firstItem="kli-8O-a5z" firstAttribute="top" secondItem="yoH-eS-Kbg" secondAttribute="bottom" constant="72" id="umK-Nn-u6O"/>
+                            <constraint firstItem="OHt-jH-UJl" firstAttribute="leading" secondItem="lFu-CJ-KoS" secondAttribute="trailing" constant="59" id="xs4-f9-zz9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="caloriesBurnedValue" destination="kli-8O-a5z" id="V4b-h1-ZYi"/>
+                        <outlet property="distanceValue" destination="OHt-jH-UJl" id="7Sz-yC-7mI"/>
+                        <outlet property="menuButton" destination="I30-8B-Gzm" id="Lzh-c4-FfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ap-QU-168" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="2500"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuButton" width="57" height="57"/>
+    </resources>
+</document>
