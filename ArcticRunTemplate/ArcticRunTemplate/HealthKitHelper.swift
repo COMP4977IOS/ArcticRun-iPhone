@@ -31,10 +31,11 @@ class HealthKitHelper {
             //Right now its just steps and distance travelled
             let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
             let distance = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
+            let caloriesBurned = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierActiveEnergyBurned)
             
             
             // We have to request each data type explicitly
-            let readTypes = NSSet(array: [stepsCount!, distance!])
+            let readTypes = NSSet(array: [stepsCount!, distance!, caloriesBurned!])
             
             
             // Now we can request authorization for step count data
@@ -70,7 +71,7 @@ class HealthKitHelper {
             {
                 for result in results as! [HKQuantitySample]
                 {
-                    steps = result.quantity.doubleValueForUnit(HKUnit.countUnit())
+                    steps += result.quantity.doubleValueForUnit(HKUnit.countUnit())
                 }
             }
             
@@ -101,12 +102,43 @@ class HealthKitHelper {
             {
                 for result in results as! [HKQuantitySample]
                 {
-                    distance = result.quantity.doubleValueForUnit(HKUnit.countUnit())
+                    distance += result.quantity.doubleValueForUnit(HKUnit.countUnit())
                 }
             }
             
             
             completion(distance, error)
+        }
+        
+        storage.executeQuery(query)
+    }
+    
+    func recentCaloriesBurned(completion: (Double, NSError?) -> () )
+    {
+        // The type of data we are requesting (this is redundant and could probably be an enumeration
+        let type = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierActiveEnergyBurned)
+        
+        let date = NSDate()
+        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let newDate = cal.startOfDayForDate(date)
+        
+        // From Midnight of today to right now
+        let predicate = HKQuery.predicateForSamplesWithStartDate(newDate, endDate: NSDate(), options: .None)
+        
+        // The actual HealthKit Query which will fetch all of the steps and sub them up for us.
+        let query = HKSampleQuery(sampleType: type!, predicate: predicate, limit: 0, sortDescriptors: nil) { query, results, error in
+            var caloriesBurned: Double = 0
+            
+            if results?.count > 0
+            {
+                for result in results as! [HKQuantitySample]
+                {
+                    caloriesBurned += result.quantity.doubleValueForUnit(HKUnit.countUnit())
+                }
+            }
+            
+            
+            completion(caloriesBurned, error)
         }
         
         storage.executeQuery(query)
