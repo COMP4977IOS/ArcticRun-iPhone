@@ -60,7 +60,7 @@ class DrawerTableViewController: UITableViewController, UIImagePickerControllerD
         alert.message = "Your picture was saved to Camera Roll"
         alert.delegate = self
         alert.addButtonWithTitle("Ok")
-        alert.show()
+        alert.show()	
     }
 
 
