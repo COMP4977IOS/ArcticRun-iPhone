@@ -235,37 +235,36 @@
                                             <segue destination="xrj-iB-UM5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Dnp-qE-HCo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y5u-tm-Nrt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KmR-nB-Bht">
                                         <rect key="frame" x="0.0" y="352" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y5u-tm-Nrt" id="v7O-t4-K74">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KmR-nB-Bht" id="vsv-7n-Ggc">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOM-eT-fce">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maf-7q-SXQ">
                                                     <rect key="frame" x="55" y="7" width="584" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aj-Cn-Qbw">
-                                                    <rect key="frame" x="8" y="0.0" width="592" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="Selfie">
-                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="selfieTap:" destination="Wvw-YS-Qag" eventType="touchUpInside" id="z0q-8q-0PP"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLn-jw-QZ9">
+                                                    <rect key="frame" x="8" y="10" width="54" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="WOM-eT-fce" firstAttribute="top" secondItem="v7O-t4-K74" secondAttribute="topMargin" id="5qM-CJ-0sb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="WOM-eT-fce" secondAttribute="trailing" id="9Kd-qY-Ipc"/>
-                                                <constraint firstItem="WOM-eT-fce" firstAttribute="leading" secondItem="v7O-t4-K74" secondAttribute="leadingMargin" id="m5E-qO-PEH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="WOM-eT-fce" secondAttribute="bottom" id="x30-R4-zDK"/>
+                                                <constraint firstItem="maf-7q-SXQ" firstAttribute="leading" secondItem="vsv-7n-Ggc" secondAttribute="leadingMargin" id="824-Ue-Vkh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="maf-7q-SXQ" secondAttribute="bottom" id="PPP-mX-uUQ"/>
+                                                <constraint firstItem="maf-7q-SXQ" firstAttribute="top" secondItem="vsv-7n-Ggc" secondAttribute="topMargin" id="w8E-1z-LHn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="maf-7q-SXQ" secondAttribute="trailing" id="yAv-MA-PFD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xem-LR-dIM" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Yua-wA-Za8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -379,6 +378,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6p-hx-kZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1165" y="2616"/>
+        </scene>
+        <!--Photos-->
+        <scene sceneID="cLU-h2-fjg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Photos" id="xem-LR-dIM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRJ-Br-N2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146.5" y="3019"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
