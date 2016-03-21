@@ -12,8 +12,6 @@ import Photos
 
 class DrawerTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate  {
 
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,39 +28,8 @@ class DrawerTableViewController: UITableViewController, UIImagePickerControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+        
     
-    @IBAction func selfieTap(sender: AnyObject) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .Camera
-        picker.cameraDevice =  UIImagePickerControllerCameraDevice.Front
-        
-        presentViewController(picker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        print(imageToSave)
-        
-        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
-        
-        self.savedImageAlert()
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
-    
-    func savedImageAlert()
-    {
-        let alert:UIAlertView = UIAlertView()
-        alert.title = "Saved!"
-        alert.message = "Your picture was saved to Camera Roll"
-        alert.delegate = self
-        alert.addButtonWithTitle("Ok")
-        alert.show()
-    }
-
 
     // MARK: - Table view data source
 /*
