@@ -38,11 +38,13 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        let screenWidth = screenSize.width
-//        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
-//        layout.minimumInteritemSpacing = 0
-//        layout.minimumLineSpacing = 0
+        print("dafdfa")
+        Workout.getAllWorkouts { (workouts: [Workout]) -> Void in
+            for var i = 0; i < workouts.count; i++ {
+                print(workouts[i].getCaloriesBurned())
+                print(workouts[i].getDistance())
+            }
+        }
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -51,6 +53,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+
     @IBAction func useCurrency1(sender: AnyObject) {
         if useCur1 == false {
             useCur1 = true
