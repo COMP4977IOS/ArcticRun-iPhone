@@ -92,13 +92,23 @@ public class Crew {
         self.record?.setObject(user, forKey: "user")
     }
     
+//    func save() -> Void{
+//        Crew.publicDB.saveRecord(self.record!) { (record: CKRecord?, error:NSError?) -> Void in
+//            if error == nil {
+//                print("record saved")
+//            }
+//        }
+//    }
     func save() -> Void{
         Crew.publicDB.saveRecord(self.record!) { (record: CKRecord?, error:NSError?) -> Void in
             if error == nil {
                 print("record saved")
+            } else{
+                print(error)
             }
         }
     }
+    
     
     static func getCrew(userRecord: CKRecord, onComplete:([Crew]) -> Void) -> Void{
         let predicate:NSPredicate = NSPredicate(format: "user == %@", userRecord)   //get all crews under the referenced user

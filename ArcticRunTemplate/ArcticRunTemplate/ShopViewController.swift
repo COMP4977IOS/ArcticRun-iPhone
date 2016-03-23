@@ -19,32 +19,37 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var currency1Label: UILabel!
     @IBOutlet weak var currency2Label: UILabel!
     var useCur1 = true
+    var current = 0
     
     var tableData: [String] = ["500", "1000", "2000", "3000", "4000", "5000", "10000", "12500",
-        "15000", "17500", "20000", "25000", "30000", "35000", "40000", "45000", "50000", "60000", "70000", "80000", "90000", "100000"]
-    var tableImages: [String] = ["qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png",
-        "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png",
-        "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", "qmitem.png", ]
+        "15000", "17500", "20000", "25000", "30000", "35000", "40000", "50000"]
+
+    var images = [UIImage(named: "Beetroot_Soup"), UIImage(named: "Bread"), UIImage(named: "Fish"),
+                    UIImage(named: "Mushroom_Stew"), UIImage(named: "Cooked_Chicken"), UIImage(named: "Cooked_Fish"),
+                    UIImage(named: "Cooked_Porkchop"), UIImage(named: "health_potion"), UIImage(named: "Hat"),
+                    UIImage(named: "Coat"), UIImage(named: "iron_axe"), UIImage(named: "Iron_Pickaxe"),
+                    UIImage(named: "Leather_Boots"), UIImage(named: "Leather_helmet"), UIImage(named: "Leather_Pants"),
+                    UIImage(named: "Leather_chestplate")]
     
     let screenSize = UIScreen.mainScreen().bounds
     
     
     override func viewDidLoad() {
-
-        currency1Label.text = "5000"
-        currency2Label.text = "15000"
+        
+        currency1Label.text = "15000"
         currency1Label.textColor = UIColor.redColor()
         currency2Label.textColor = UIColor.blueColor()
         
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getCaloriePoints()!
+            }
+            self.currency2Label.text = String(self.current)
+        }
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("dafdfa")
-        Workout.getAllWorkouts { (workouts: [Workout]) -> Void in
-            for var i = 0; i < workouts.count; i++ {
-                print(workouts[i].getCaloriesBurned())
-                print(workouts[i].getDistance())
-            }
-        }
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -53,6 +58,21 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    func updatePoints(price: Int) -> String {
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getCaloriePoints()!
+            }
+        }
+        let result = current - price
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                crews[i].setCaloriePoints(result)
+                crews[i].save()
+            }
+        }
+        return String(result)
+    }
 
     @IBAction func useCurrency1(sender: AnyObject) {
         if useCur1 == false {
@@ -71,15 +91,15 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tableData.count
+        return images.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: colvwCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! colvwCell
 
         cell.lblCell.text = tableData[indexPath.row]
-        let image = UIImage(named: tableImages[indexPath.row])
-        cell.imgCell.image = image
+        //let image = UIImage(named: tableImages[indexPath.row])
+        cell.imgCell.image = images[indexPath.row]
         cell.frame.size.height = 120
         cell.frame.size.width = 120
         return cell
@@ -131,10 +151,10 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             } else {
                 let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
                     .ActionSheet)
-                let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency2Label.text = String(total! - price!) } )
-                let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency2Label.text = String(total! - price!) } )
-                let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency2Label.text = String(total! - price!) } )
-                let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency2Label.text = String(total! - price!) } )
+                let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
                 let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
                 alertController.addAction(party1)
                 alertController.addAction(party2)
