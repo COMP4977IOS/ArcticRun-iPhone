@@ -42,6 +42,8 @@
 		87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA4A551C8907480027788A /* CharacterViewController.swift */; };
 		8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E157A0F1C893AC100EA1950 /* colvwCell.swift */; };
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
+		C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */; };
+		C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20377FC1CA23AE800EE057C /* GameCenter.storyboard */; };
 		C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */; };
 		C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DEA0C1C8A56FC00B4422F /* Map.storyboard */; };
 		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
@@ -115,6 +117,8 @@
 		87BA4A551C8907480027788A /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		8E157A0F1C893AC100EA1950 /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
+		C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
+		C20377FC1CA23AE800EE057C /* GameCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameCenter.storyboard; sourceTree = "<group>"; };
 		C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C29DEA0C1C8A56FC00B4422F /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
+				C20377FC1CA23AE800EE057C /* GameCenter.storyboard */,
 				C29DEA0C1C8A56FC00B4422F /* Map.storyboard */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
 				5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */,
@@ -265,6 +270,7 @@
 				5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */,
 				5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */,
 				5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */,
+				C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
+				C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
 				C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */,
 				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
@@ -459,6 +466,7 @@
 				7C3EBA4C1C7AB5020093037E /* MissionsViewController.swift in Sources */,
 				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
+				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 				5BF8C2C31C8B941600C1DFFF /* StatsViewController.swift in Sources */,
 				5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */,
