@@ -11,15 +11,19 @@
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
 		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
+		5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */; };
+		5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */; };
+		5B2E79601C9A17710072ED7F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */; };
 		5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */; };
 		5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C71C862010009D9779 /* Fitness.storyboard */; };
 		5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C91C862040009D9779 /* Settings.storyboard */; };
 		5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */; };
 		5B89F1D01C862082009D9779 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CE1C862082009D9779 /* Home.storyboard */; };
 		5BE4EE8B1C8EA3D6009451C7 /* DrawerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */; };
+		5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEC5CE61C99280A002D8D6C /* Photos.framework */; };
+		5BEC5CEA1C9931AD002D8D6C /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */; };
 		5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */; };
 		5BF8C2C31C8B941600C1DFFF /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8C2C21C8B941600C1DFFF /* StatsViewController.swift */; };
-		5BF8C2C61C8BB07900C1DFFF /* selfie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF8C2C41C8BB07900C1DFFF /* selfie.storyboard */; };
 		7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA091C7AA6220093037E /* AppDelegate.swift */; };
 		7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA0B1C7AA6220093037E /* ViewController.swift */; };
 		7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EBA0D1C7AA6220093037E /* Main.storyboard */; };
@@ -47,6 +51,8 @@
 		8E9829BD1C9F7F33001B98EC /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9829B51C9F7F33001B98EC /* Workout.swift */; };
 		8E9829C11C9F7F56001B98EC /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9829C01C9F7F56001B98EC /* Crew.swift */; };
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
+		C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */; };
+		C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20377FC1CA23AE800EE057C /* GameCenter.storyboard */; };
 		C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */; };
 		C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DEA0C1C8A56FC00B4422F /* Map.storyboard */; };
 		EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4211991C88E72D0025CA53 /* PartyCell.swift */; };
@@ -81,15 +87,19 @@
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
 		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5769B9461C87FAE5007356E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnail.swift; sourceTree = "<group>"; };
+		5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
 		5B89F1C51C861FFD009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pedometer.storyboard; sourceTree = "<group>"; };
 		5B89F1C71C862010009D9779 /* Fitness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fitness.storyboard; sourceTree = "<group>"; };
 		5B89F1CA1C862040009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyGoals.storyboard; sourceTree = "<group>"; };
 		5B89F1CF1C862082009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerTableViewController.swift; sourceTree = "<group>"; };
+		5BEC5CE61C99280A002D8D6C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		5BEC5CE91C9931AD002D8D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
 		5BF8C2C01C8B925200C1DFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		5BF8C2C21C8B941600C1DFFF /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		5BF8C2C51C8BB07900C1DFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/selfie.storyboard; sourceTree = "<group>"; };
 		7C3EBA061C7AA6220093037E /* ArcticRunTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcticRunTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EBA091C7AA6220093037E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3EBA0B1C7AA6220093037E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +135,8 @@
 		8E9829B51C9F7F33001B98EC /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		8E9829C01C9F7F56001B98EC /* Crew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
+		C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
+		C20377FC1CA23AE800EE057C /* GameCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameCenter.storyboard; sourceTree = "<group>"; };
 		C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C29DEA0C1C8A56FC00B4422F /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		EB4211991C88E72D0025CA53 /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartyCell.swift; path = ../PartyCell.swift; sourceTree = "<group>"; };
@@ -141,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */,
 				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
 				5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */,
@@ -176,6 +189,7 @@
 		7C3EB9FD1C7AA6220093037E = {
 			isa = PBXGroup;
 			children = (
+				5BEC5CE61C99280A002D8D6C /* Photos.framework */,
 				EBC43BD11C9011F5006EB045 /* AVFoundation.framework */,
 				5769B9461C87FAE5007356E3 /* HealthKit.framework */,
 				5769B9441C87FADB007356E3 /* CloudKit.framework */,
@@ -206,9 +220,10 @@
 				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
+				C20377FC1CA23AE800EE057C /* GameCenter.storyboard */,
 				C29DEA0C1C8A56FC00B4422F /* Map.storyboard */,
 				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
-				5BF8C2C41C8BB07900C1DFFF /* selfie.storyboard */,
+				5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */,
 				5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */,
 				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
 				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
@@ -271,6 +286,10 @@
 				87BA4A551C8907480027788A /* CharacterViewController.swift */,
 				5BF8C2C21C8B941600C1DFFF /* StatsViewController.swift */,
 				5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */,
+				5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */,
+				5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */,
+				5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */,
+				C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -436,14 +455,15 @@
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
+				5BEC5CEA1C9931AD002D8D6C /* Photos.storyboard in Resources */,
 				8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */,
 				EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
+				C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
 				C29DEA0D1C8A56FC00B4422F /* Map.storyboard in Resources */,
 				EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */,
-				5BF8C2C61C8BB07900C1DFFF /* selfie.storyboard in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				5B89F1D01C862082009D9779 /* Home.storyboard in Resources */,
 			);
@@ -472,10 +492,13 @@
 			files = (
 				7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */,
 				8E9829C11C9F7F56001B98EC /* Crew.swift in Sources */,
+				5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */,
+				5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */,
 				7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */,
 				EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */,
 				7C3EBA401C7AA82F0093037E /* FitnessViewController.swift in Sources */,
 				7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */,
+				5B2E79601C9A17710072ED7F /* ViewPhoto.swift in Sources */,
 				8E157A101C893AC100EA1950 /* colvwCell.swift in Sources */,
 				8E9829B71C9F7F33001B98EC /* Item.swift in Sources */,
 				8E9829B81C9F7F33001B98EC /* Member.swift in Sources */,
@@ -494,6 +517,7 @@
 				8E9829BC1C9F7F33001B98EC /* User.swift in Sources */,
 				8E9829B91C9F7F33001B98EC /* Resource.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
+				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 				8E9829BD1C9F7F33001B98EC /* Workout.swift in Sources */,
 				5BF8C2C31C8B941600C1DFFF /* StatsViewController.swift in Sources */,
@@ -558,20 +582,20 @@
 			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
+		5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BEC5CE91C9931AD002D8D6C /* Base */,
+			);
+			name = Photos.storyboard;
+			sourceTree = "<group>";
+		};
 		5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5BF8C2C01C8B925200C1DFFF /* Base */,
 			);
 			name = Stats.storyboard;
-			sourceTree = "<group>";
-		};
-		5BF8C2C41C8BB07900C1DFFF /* selfie.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BF8C2C51C8BB07900C1DFFF /* Base */,
-			);
-			name = selfie.storyboard;
 			sourceTree = "<group>";
 		};
 		7C3EBA0D1C7AA6220093037E /* Main.storyboard */ = {
