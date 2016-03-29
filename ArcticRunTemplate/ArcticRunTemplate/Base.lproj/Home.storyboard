@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,24 +27,24 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PM7-5y-5Z2">
-                                <rect key="frame" x="101" y="267" width="399" height="65"/>
+                                <rect key="frame" x="101" y="242" width="399" height="115"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-jM-xZf">
-                                        <rect key="frame" x="49" y="-40" width="300" height="150"/>
+                                        <rect key="frame" x="49" y="-2.5" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="BXN-iw-eJL"/>
-                                            <constraint firstAttribute="height" constant="150" id="buU-NN-kbM"/>
+                                            <constraint firstAttribute="height" constant="125" id="buU-NN-kbM"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="FitnessPic"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitness Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qij-4C-8Ig">
-                                        <rect key="frame" x="100" y="73" width="198" height="37"/>
+                                        <rect key="frame" x="100" y="85.5" width="198" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="PKO-kA-98y"/>
                                             <constraint firstAttribute="width" constant="198" id="f2L-2E-NeS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
@@ -58,24 +58,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-4G-QWt">
-                                <rect key="frame" x="101" y="334" width="399" height="191"/>
+                                <rect key="frame" x="101" y="359" width="399" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Crew" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epm-eP-ozY">
-                                        <rect key="frame" x="100" y="121" width="198" height="37"/>
+                                        <rect key="frame" x="100" y="96" width="198" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="1OV-B6-Tuk"/>
                                             <constraint firstAttribute="width" constant="198" id="Opl-cb-CKJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmi-Wz-OcF">
-                                        <rect key="frame" x="49" y="8" width="300" height="150"/>
+                                        <rect key="frame" x="49" y="8" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="aR7-mx-n0u"/>
-                                            <constraint firstAttribute="height" constant="150" id="dAa-N7-RUE"/>
+                                            <constraint firstAttribute="height" constant="125" id="dAa-N7-RUE"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="CrewPic"/>
                                     </button>
@@ -89,24 +89,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAz-lF-X7I">
-                                <rect key="frame" x="101" y="114" width="399" height="151"/>
+                                <rect key="frame" x="101" y="114" width="399" height="126"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Your Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGp-E9-abI">
-                                        <rect key="frame" x="100" y="114" width="198" height="37"/>
+                                        <rect key="frame" x="100" y="89" width="198" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="198" id="ef4-in-owk"/>
                                             <constraint firstAttribute="height" constant="37" id="emF-U9-kYN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-K7-bor">
-                                        <rect key="frame" x="49" y="1" width="300" height="150"/>
+                                        <rect key="frame" x="49" y="1" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="9l7-tR-oKm"/>
-                                            <constraint firstAttribute="height" constant="150" id="YXQ-la-fJO"/>
+                                            <constraint firstAttribute="height" constant="125" id="YXQ-la-fJO"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="StartPic"/>
                                     </button>
@@ -149,6 +149,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="I46-HJ-Zwa" userLabel="Home"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="crewButton" destination="tmi-Wz-OcF" id="f5u-dp-a1T"/>
                         <outlet property="fitnessButton" destination="IXV-jM-xZf" id="MWA-Fn-gSS"/>

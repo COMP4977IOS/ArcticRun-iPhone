@@ -24,11 +24,11 @@ class PedometerViewController: UIViewController {
     let lengthFormatter = NSLengthFormatter()
     
     var altChange: Double = 0
-    
+    var started:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cloudKitHelper.saveNote()
+        //cloudKitHelper.saveNote()
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -55,18 +55,22 @@ class PedometerViewController: UIViewController {
             }
             
             // Prepare pedometer
-            pedometer.startPedometerUpdatesFromDate(NSDate()) {
-                (data, error) in
-                if error != nil {
-                    print("There was an error obtaining pedometer data: \(error)")
-                } else {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.floorsLabel.text = "\(data!.floorsAscended)"
-                        self.stepsLabel.text = "\(data!.numberOfSteps)"
-                        self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data!.distance as! Double))"
+            if (started == false) {
+                pedometer.startPedometerUpdatesFromDate(NSDate()) {
+                    (data, error) in
+                    if error != nil {
+                        print("There was an error obtaining pedometer data: \(error)")
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.floorsLabel.text = "\(data!.floorsAscended)"
+                            self.stepsLabel.text = "\(data!.numberOfSteps)"
+                            self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data!.distance as! Double))"
+                            self.started = true
+                        }
                     }
                 }
             }
+            
             
             // Prepare activity updates
             activityManager.startActivityUpdatesToQueue(dataProcessingQueue) {

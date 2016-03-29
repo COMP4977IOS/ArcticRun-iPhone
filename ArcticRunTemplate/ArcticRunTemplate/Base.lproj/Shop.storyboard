@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="68W-hz-DqH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="68W-hz-DqH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Szn-KW-4gc">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Szn-KW-4gc">
                                 <rect key="frame" x="0.0" y="146" width="600" height="800"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="CDR-5A-bon">
@@ -212,6 +212,11 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6Kr-5t-bqp"/>
+                                <exclude reference="Gg7-C6-VbL"/>
+                                <exclude reference="m0x-2C-eGE"/>
+                                <exclude reference="oMZ-E4-K3v"/>
+                                <exclude reference="LPo-Vz-0Cv"/>
+                                <exclude reference="n4e-Zi-6FE"/>
                                 <exclude reference="EAv-dt-uUH"/>
                                 <exclude reference="EAo-IY-YdO"/>
                                 <exclude reference="JJK-d6-rIo"/>
@@ -219,11 +224,6 @@
                                 <exclude reference="ejK-wC-0hY"/>
                                 <exclude reference="ffJ-S3-Rda"/>
                                 <exclude reference="kU4-BD-z2D"/>
-                                <exclude reference="LPo-Vz-0Cv"/>
-                                <exclude reference="n4e-Zi-6FE"/>
-                                <exclude reference="Gg7-C6-VbL"/>
-                                <exclude reference="m0x-2C-eGE"/>
-                                <exclude reference="oMZ-E4-K3v"/>
                                 <exclude reference="9FX-6p-bKz"/>
                                 <exclude reference="m5d-6i-GIe"/>
                             </mask>
@@ -239,6 +239,11 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="6Kr-5t-bqp"/>
+                                <include reference="Gg7-C6-VbL"/>
+                                <include reference="m0x-2C-eGE"/>
+                                <include reference="oMZ-E4-K3v"/>
+                                <include reference="LPo-Vz-0Cv"/>
+                                <include reference="n4e-Zi-6FE"/>
                                 <include reference="EAv-dt-uUH"/>
                                 <include reference="EAo-IY-YdO"/>
                                 <include reference="JJK-d6-rIo"/>
@@ -246,11 +251,6 @@
                                 <include reference="ejK-wC-0hY"/>
                                 <include reference="ffJ-S3-Rda"/>
                                 <include reference="kU4-BD-z2D"/>
-                                <include reference="LPo-Vz-0Cv"/>
-                                <include reference="n4e-Zi-6FE"/>
-                                <include reference="Gg7-C6-VbL"/>
-                                <include reference="m0x-2C-eGE"/>
-                                <include reference="oMZ-E4-K3v"/>
                                 <include reference="9FX-6p-bKz"/>
                                 <include reference="m5d-6i-GIe"/>
                             </mask>
