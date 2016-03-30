@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -141,23 +141,19 @@
                                     <rect key="frame" x="64" y="78" width="273" height="22"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXQ-0h-r2b">
+                                <rect key="frame" x="206" y="433" width="119" height="30"/>
+                                <state key="normal" title="Back To Home"/>
+                                <connections>
+                                    <segue destination="ng0-zA-L4S" kind="presentation" id="nyH-XY-lGo"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-ep-9Qw">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="80" y="142" width="240" height="128"/>
                                 </variation>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgK-Cq-QxX">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Character" id="wjy-im-cvU">
-                                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="R75-1e-p6w"/>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hearts" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-ew-czA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -226,10 +222,13 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="qXQ-0h-r2b" secondAttribute="bottom" constant="50" id="HPV-Ob-ICp"/>
+                            <constraint firstItem="qXQ-0h-r2b" firstAttribute="centerX" secondItem="OUX-zW-5CS" secondAttribute="centerX" id="jHp-eE-HIy"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="3Ce-ep-9Qw"/>
-                                <exclude reference="OgK-Cq-QxX"/>
                                 <exclude reference="nt9-ew-czA"/>
                                 <exclude reference="Ydf-iq-kYf"/>
                                 <exclude reference="ph1-rb-hvb"/>
@@ -245,7 +244,6 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="3Ce-ep-9Qw"/>
-                                <include reference="OgK-Cq-QxX"/>
                                 <include reference="nt9-ew-czA"/>
                                 <include reference="Ydf-iq-kYf"/>
                                 <include reference="ph1-rb-hvb"/>
@@ -262,13 +260,20 @@
                     <connections>
                         <outlet property="health" destination="Qj8-5o-YuE" id="pva-Kd-4aG"/>
                         <outlet property="imageView" destination="3Ce-ep-9Qw" id="qfo-Qc-EIg"/>
-                        <outlet property="menuButton" destination="R75-1e-p6w" id="tnc-Yz-WEM"/>
                         <outlet property="name" destination="x52-FJ-iff" id="Ucz-jp-62n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNx-4K-p4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2688" y="1496"/>
+        </scene>
+        <!--mainhome-->
+        <scene sceneID="A23-VL-aW3">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainhome" storyboardName="Main" referencedIdentifier="mainhome" id="ng0-zA-L4S" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5U-8O-yvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497.5" y="1838"/>
         </scene>
     </scenes>
     <resources>
