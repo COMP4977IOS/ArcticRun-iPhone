@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097FC6711CAC8CF6003DEE77 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FC6701CAC8CF6003DEE77 /* GameLogic.swift */; };
 		5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712EE801C903934002624D6 /* CloudKitHelper.swift */; };
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		097FC6701CAC8CF6003DEE77 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		5712EE801C903934002624D6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */,
 				5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */,
 				C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */,
+				097FC6701CAC8CF6003DEE77 /* GameLogic.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				8E9829B61C9F7F33001B98EC /* Diary.swift in Sources */,
 				8E9829BC1C9F7F33001B98EC /* User.swift in Sources */,
 				8E9829B91C9F7F33001B98EC /* Resource.swift in Sources */,
+				097FC6711CAC8CF6003DEE77 /* GameLogic.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
