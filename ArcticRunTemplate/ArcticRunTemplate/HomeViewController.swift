@@ -38,6 +38,10 @@ class HomeViewController: UIViewController {
     var audioFiles : [String] = ["chap1_segment1","chap1_segment2","chap1_segment3","chap1_segment4",
                                  "chap2_segment1","chap2_segment2","chap3_segment3"]
     
+    let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
+    
+    let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
+    var ButtonAudioPlayer = AVAudioPlayer()
     
     
     override func viewDidLoad() {
@@ -69,12 +73,10 @@ class HomeViewController: UIViewController {
 //        do{
 //            try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
 //        } catch{}
-        
-        let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
-        let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
+
         do{
-            let AudioPlayer = try AVAudioPlayer(contentsOfURL: prefaceURL)
-            AudioPlayer.play()
+            try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: prefaceURL)
+            ButtonAudioPlayer.play()
             print(prefaceURL)
         } catch {
             print("ERROR")
