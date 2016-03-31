@@ -283,8 +283,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-kD-EHn">
-                                <rect key="frame" x="20" y="65" width="38" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJq-kD-EHn">
+                                <rect key="frame" x="20" y="65" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -322,6 +322,16 @@
                                     <segue destination="7kt-8l-ciS" kind="custom" identifier="return" customClass="SWRevealViewControllerSeguePushController" id="tXC-PN-Tn0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG5-zw-aY1">
+                                <rect key="frame" x="275" y="475" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="GE9-JE-su1"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Pause"/>
+                                <connections>
+                                    <action selector="pause:" destination="88p-BH-9Lq" eventType="touchUpInside" id="Dho-Zn-Smz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -331,8 +341,10 @@
                             <constraint firstItem="25N-vn-aFc" firstAttribute="trailing" secondItem="mep-d3-BzF" secondAttribute="trailing" id="Idc-dN-RPw"/>
                             <constraint firstItem="sNI-Dj-G34" firstAttribute="top" secondItem="xTM-b3-BXy" secondAttribute="bottom" constant="63" id="Jic-A3-GLB"/>
                             <constraint firstItem="cV6-iG-FTL" firstAttribute="top" secondItem="25N-vn-aFc" secondAttribute="bottom" constant="75" id="NEY-95-DMO"/>
+                            <constraint firstItem="HG5-zw-aY1" firstAttribute="centerX" secondItem="sNI-Dj-G34" secondAttribute="centerX" id="Pex-Ga-9c8"/>
                             <constraint firstItem="OMd-0j-Qg4" firstAttribute="leading" secondItem="rJq-kD-EHn" secondAttribute="leading" id="W7T-t3-IJk"/>
                             <constraint firstItem="rJq-kD-EHn" firstAttribute="top" secondItem="4aP-fU-jZJ" secondAttribute="bottom" constant="45" id="XTI-CN-Oeu"/>
+                            <constraint firstItem="cV6-iG-FTL" firstAttribute="top" secondItem="HG5-zw-aY1" secondAttribute="bottom" constant="75" id="YVb-TU-Q2I"/>
                             <constraint firstItem="xTM-b3-BXy" firstAttribute="top" secondItem="4aP-fU-jZJ" secondAttribute="bottom" id="fuo-CB-ygJ"/>
                             <constraint firstItem="mep-d3-BzF" firstAttribute="top" secondItem="4aP-fU-jZJ" secondAttribute="bottom" constant="45" id="kTH-SA-JKM"/>
                             <constraint firstItem="sNI-Dj-G34" firstAttribute="centerX" secondItem="xTM-b3-BXy" secondAttribute="centerX" id="myg-UV-uar"/>
@@ -343,6 +355,7 @@
                     <connections>
                         <outlet property="playBtn" destination="OMd-0j-Qg4" id="V0X-G1-Ad2"/>
                         <outlet property="stopBtn" destination="25N-vn-aFc" id="jEE-By-500"/>
+                        <outlet property="timerLabel" destination="rJq-kD-EHn" id="g0V-7U-9co"/>
                         <outlet property="titleLabel" destination="xTM-b3-BXy" id="4Qn-xj-CoF"/>
                     </connections>
                 </viewController>
@@ -372,6 +385,7 @@
     <resources>
         <image name="CrewPic" width="615" height="346"/>
         <image name="FitnessPic" width="750" height="501"/>
+        <image name="Pause" width="50" height="50"/>
         <image name="Play" width="50" height="50"/>
         <image name="StartPic" width="1386" height="1386"/>
         <image name="Stop" width="50" height="50"/>
