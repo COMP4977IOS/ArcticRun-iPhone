@@ -34,6 +34,12 @@ class HomeViewController: UIViewController {
 //    var ButtonAudioPlayer = AVAudioPlayer()
 //    var BackgroundAudioPlayer = AVAudioPlayer()
     
+    
+    var audioFiles : [String] = ["chap1_segment1","chap1_segment2","chap1_segment3","chap1_segment4",
+                                 "chap2_segment1","chap2_segment2","chap3_segment3"]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +69,16 @@ class HomeViewController: UIViewController {
 //        do{
 //            try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
 //        } catch{}
+        
+        let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
+        let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
+        do{
+            let AudioPlayer = try AVAudioPlayer(contentsOfURL: prefaceURL)
+            AudioPlayer.play()
+            print(prefaceURL)
+        } catch {
+            print("ERROR")
+        }
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -188,6 +204,18 @@ class HomeViewController: UIViewController {
 //        BackgroundAudioPlayer.currentTime = 0
 //        BackgroundAudioPlayer.play()
 //    }
+    @IBAction func startRun(sender: AnyObject) {
+        print("\n\nStarting Run")
+        let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
+        let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
+        do{
+            let AudioPlayer = try AVAudioPlayer(contentsOfURL: prefaceURL)
+            AudioPlayer.play()
+            print(prefaceURL)
+        } catch {
+            print("ERROR")
+        }
+    }
 }
 
 
