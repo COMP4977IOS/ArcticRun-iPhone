@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var fitnessButton: UIButton!
@@ -37,11 +37,12 @@ class HomeViewController: UIViewController {
     
     var audioFiles : [String] = ["chap1_segment1","chap1_segment2","chap1_segment3","chap1_segment4",
                                  "chap2_segment1","chap2_segment2","chap3_segment3"]
+    var audioCounter : Int = 0
     
-    let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
-    
-    let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
     var ButtonAudioPlayer = AVAudioPlayer()
+    var introPlayed : Bool = false
+    var prefacePlayed : Bool = false
+    
     
     
     override func viewDidLoad() {
@@ -73,14 +74,6 @@ class HomeViewController: UIViewController {
 //        do{
 //            try  BackgroundAudioPlayer = AVAudioPlayer(contentsOfURL: BackgroundURL)
 //        } catch{}
-
-        do{
-            try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: prefaceURL)
-            ButtonAudioPlayer.play()
-            print(prefaceURL)
-        } catch {
-            print("ERROR")
-        }
         
         if (self.revealViewController() != nil) {
             menuButton.target = self.revealViewController()
@@ -208,13 +201,40 @@ class HomeViewController: UIViewController {
 //    }
     @IBAction func startRun(sender: AnyObject) {
         print("\n\nStarting Run")
-        let prefaceURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
-        let introURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("introduction", ofType: "mp3")!)
-        do{
-            let AudioPlayer = try AVAudioPlayer(contentsOfURL: prefaceURL)
-            AudioPlayer.play()
-            print(prefaceURL)
-        } catch {
+        whichVideoPlay();
+    }
+    
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        print("AUDIO FINISHED")
+        whichVideoPlay()
+    }
+    
+    func whichVideoPlay(){
+        if(!prefacePlayed){
+            prefacePlayed = true
+            playSpecificVideo("preface")
+        } else if(!introPlayed){
+            introPlayed = true
+            playSpecificVideo("introduction")
+        } else {
+            // Chapter Files
+            playSpecificVideo(audioFiles[audioCounter])
+            audioCounter++
+        }
+    }
+    
+    func playSpecificVideo(fileName : String){
+        do {
+            print(fileName)
+            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: "mp3")!)
+            try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
+            if(!prefacePlayed || !introPlayed){
+                ButtonAudioPlayer.delegate = self
+            }
+            ButtonAudioPlayer.play()
+            print(fileURL)
+        } catch{
             print("ERROR")
         }
     }
