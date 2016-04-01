@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreMotion
 
 class PlayScreenViewController : UIViewController {
     
@@ -17,6 +18,8 @@ class PlayScreenViewController : UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     var startTimer: Bool!
     var strMinutes : String!
@@ -25,13 +28,16 @@ class PlayScreenViewController : UIViewController {
     let imagePause = UIImage(named:"Pause") as UIImage?
     let imagePlay = UIImage(named: "Play") as UIImage?
     let imageStop = UIImage(named: "Stop") as UIImage?
+    let dataProcessingQueue = NSOperationQueue()
+    let pedometer = CMPedometer()
+    let lengthFormatter = NSLengthFormatter()
     
     var startTime = NSTimeInterval()
     var referTime = NSTimeInterval()
     var timer = NSTimer()
     
-    
     var running = false
+    var started:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +57,13 @@ class PlayScreenViewController : UIViewController {
         
         timer.invalidate()
         running = false
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
         
     }
+    
     @IBAction func playAndPause(sender: AnyObject) {
         
         let aSelector : Selector = "updateCounter"
@@ -61,6 +72,20 @@ class PlayScreenViewController : UIViewController {
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
             running = true
+            if (started == false) {
+                pedometer.startPedometerUpdatesFromDate(NSDate()) {
+                    (data, error) in
+                    if error != nil {
+                        print("There was an error obtaining pedometer data: \(error)")
+                    } else {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.stepsLabel.text = "\(data!.numberOfSteps)"
+                            self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data!.distance as! Double))"
+                            self.started = true
+                        }
+                    }
+                }
+            }
         }else {
            
         }
