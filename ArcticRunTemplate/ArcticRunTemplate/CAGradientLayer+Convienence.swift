@@ -12,8 +12,8 @@ extension CAGradientLayer {
     
     func blueblendColor() ->CAGradientLayer {
         
-        let topColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
-        let bottomColor = UIColor(red: 80/255, green: 150/255, blue: 200/255, alpha: 1)
+        let topColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let bottomColor = UIColor(red: 191/255, green: 239/255, blue: 255/255, alpha: 1)
         
         let gradientColors : [CGColor] = [topColor.CGColor, bottomColor.CGColor]
         //let gradientLocations : [Float] = [0.5, 1]

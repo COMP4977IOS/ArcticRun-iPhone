@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NMH-UA-fp0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PM7-5y-5Z2">
                                 <rect key="frame" x="101" y="242" width="399" height="115"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-jM-xZf">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-jM-xZf">
                                         <rect key="frame" x="49" y="-3" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="BXN-iw-eJL"/>
@@ -49,7 +49,7 @@
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="IXV-jM-xZf" firstAttribute="centerY" secondItem="PM7-5y-5Z2" secondAttribute="centerY" constant="2.5" id="RNm-u7-btA"/>
                                     <constraint firstItem="Qij-4C-8Ig" firstAttribute="centerX" secondItem="IXV-jM-xZf" secondAttribute="centerX" id="lFu-Cp-5i8"/>
@@ -71,7 +71,7 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <button opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmi-Wz-OcF">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmi-Wz-OcF">
                                         <rect key="frame" x="49" y="8" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="aR7-mx-n0u"/>
@@ -80,7 +80,7 @@
                                         <state key="normal" backgroundImage="CrewPic"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="epm-eP-ozY" firstAttribute="centerX" secondItem="tmi-Wz-OcF" secondAttribute="centerX" id="7LY-t8-jlA"/>
                                     <constraint firstItem="epm-eP-ozY" firstAttribute="bottom" secondItem="tmi-Wz-OcF" secondAttribute="bottom" id="dDO-Af-tgv"/>
@@ -102,7 +102,7 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-K7-bor">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUp-K7-bor">
                                         <rect key="frame" x="49" y="1" width="300" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="9l7-tR-oKm"/>
@@ -114,7 +114,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="iUp-K7-bor" secondAttribute="bottom" id="9YL-LU-7cC"/>
                                     <constraint firstItem="iUp-K7-bor" firstAttribute="centerX" secondItem="UAz-lF-X7I" secondAttribute="centerX" id="9oa-8a-ZDh"/>
@@ -150,7 +150,7 @@
                             <constraint firstItem="PM7-5y-5Z2" firstAttribute="leading" secondItem="UAz-lF-X7I" secondAttribute="leading" id="wcr-LN-EXJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="I46-HJ-Zwa" userLabel="Home"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeTabIcon" id="I46-HJ-Zwa" userLabel="Home"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
@@ -175,9 +175,29 @@
                     <view key="view" contentMode="scaleToFill" id="pcZ-kO-qLm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-qg-4MJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="World Map" id="Kca-FU-nJP">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Vtx-JB-Rhd">
+                                            <connections>
+                                                <segue destination="uUX-Kh-i0n" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="0Kb-fU-4XV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SIo-qg-4MJ" firstAttribute="top" secondItem="YFt-sw-AgW" secondAttribute="bottom" id="A0D-jz-XbI"/>
+                            <constraint firstAttribute="trailing" secondItem="SIo-qg-4MJ" secondAttribute="trailing" id="NIL-J2-0dI"/>
+                            <constraint firstItem="SIo-qg-4MJ" firstAttribute="leading" secondItem="pcZ-kO-qLm" secondAttribute="leading" id="zpQ-9t-hY0"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="SIo-qg-4MJ" id="gSD-0L-zfH"/>
                         <segue destination="oaa-En-AYz" kind="custom" identifier="missionStart" customClass="SWRevealViewControllerSeguePushController" id="gbt-mf-LOQ"/>
                     </connections>
                 </viewController>
@@ -217,7 +237,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6vj-IV-9sX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vj-IV-9sX">
                                 <rect key="frame" x="20" y="28" width="560" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="209" id="1Ma-aT-c9w"/>
@@ -474,10 +494,19 @@
             </objects>
             <point key="canvasLocation" x="3404" y="834"/>
         </scene>
+        <!--mainhome-->
+        <scene sceneID="8wX-oS-RFQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainhome" storyboardName="Main" referencedIdentifier="mainhome" id="uUX-Kh-i0n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tas-Qz-gTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2929" y="-698"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CrewPic" width="615" height="346"/>
         <image name="FitnessPic" width="750" height="501"/>
+        <image name="HomeTabIcon" width="128" height="128"/>
         <image name="Pause" width="50" height="50"/>
         <image name="Play" width="50" height="50"/>
         <image name="StartPic" width="1386" height="1386"/>
@@ -486,6 +515,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tXC-PN-Tn0"/>
-        <segue reference="dcH-0q-DSg"/>
+        <segue reference="orf-wn-ibW"/>
     </inferredMetricsTieBreakers>
 </document>
