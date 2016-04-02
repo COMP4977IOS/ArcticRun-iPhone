@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadBG()
         startButton.layer.cornerRadius = 5
         startButton.layer.borderWidth = 1
         startButton.layer.borderColor = UIColor.blackColor().CGColor
@@ -71,6 +71,14 @@ class HomeViewController: UIViewController {
         }
     }
  
+    func loadBG() {
+        
+        // Gradient Background color
+        let background = CAGradientLayer().blueblendColor()
+        background.frame = self.view.bounds
+        self.view.layer.insertSublayer(background, atIndex: 0)
+        
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView)->Int{
         return 2

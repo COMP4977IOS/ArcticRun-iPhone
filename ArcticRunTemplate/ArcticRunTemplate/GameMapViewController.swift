@@ -14,7 +14,9 @@ class GameMapViewController: UIViewController {
     let numberOfButtons = 10
     var missionTitle: String!
     
-    override func viewDidLoad() {
+    @IBOutlet weak var navBar: UINavigationBar!
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
         
         // ---------- SETUP ----------
@@ -79,8 +81,12 @@ class GameMapViewController: UIViewController {
         button6.backgroundColor = UIColor.redColor()
         button6.addTarget(self, action: "pressed6:", forControlEvents: .TouchUpInside)
         self.scrollView.addSubview(button6)
+            
+        self.view.bringSubviewToFront(navBar)
+
     }
-    
+ 
+
     // ---------- FUNCTIONS FOR BUTTONS ----------
     
     // first location (scott hut)
@@ -136,7 +142,6 @@ class GameMapViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
