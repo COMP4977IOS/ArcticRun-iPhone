@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yr-1q-Pmq">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yr-1q-Pmq">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Map" id="uhO-CV-Chf">
@@ -41,7 +41,7 @@
                                     <action selector="stop:" destination="IYo-aH-Xqh" eventType="touchUpInside" id="hfi-G0-2Cw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-Uo-AC7">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-Uo-AC7">
                                 <rect key="frame" x="284" y="73" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -52,9 +52,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YAv-Wd-HD5" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="1lM-3f-fks"/>
+                            <constraint firstItem="6Yr-1q-Pmq" firstAttribute="leading" secondItem="JY8-gJ-I7W" secondAttribute="leading" id="Eej-00-OlO"/>
                             <constraint firstItem="PQ4-Uo-AC7" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="Nsb-W3-IPV"/>
+                            <constraint firstItem="PQ4-Uo-AC7" firstAttribute="top" secondItem="6Yr-1q-Pmq" secondAttribute="bottom" constant="9" id="e0D-OU-kJz"/>
+                            <constraint firstItem="6Yr-1q-Pmq" firstAttribute="top" secondItem="fPk-cV-f71" secondAttribute="bottom" id="fZm-7x-lkS"/>
                             <constraint firstItem="cSa-vP-rTz" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="sqo-KZ-AdP"/>
                             <constraint firstItem="fcw-Xh-9wo" firstAttribute="centerX" secondItem="JY8-gJ-I7W" secondAttribute="centerX" id="u9O-RN-hUx"/>
+                            <constraint firstItem="6Yr-1q-Pmq" firstAttribute="centerX" secondItem="fcw-Xh-9wo" secondAttribute="centerX" id="vhx-B8-uIy"/>
                         </constraints>
                     </view>
                     <connections>
