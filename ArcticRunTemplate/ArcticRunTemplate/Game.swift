@@ -42,7 +42,7 @@ public class Game {
             }
             
             // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(Game.finish), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "finish", userInfo: nil, repeats: false)
         } else {
             let pauseTimeInt = segmentData!["length"] as! Int
             let pauseTime = NSTimeInterval(pauseTimeInt)
@@ -54,7 +54,7 @@ public class Game {
             }
             
             // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: #selector(Game.finish), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
         }
     }
     
