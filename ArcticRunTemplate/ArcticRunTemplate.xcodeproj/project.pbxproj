@@ -19,11 +19,12 @@
 		5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C71C862010009D9779 /* Fitness.storyboard */; };
 		5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C91C862040009D9779 /* Settings.storyboard */; };
 		5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */; };
-		5BB8DAB71CB0F87500AC7BCE /* DetailStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8DAB61CB0F87500AC7BCE /* DetailStatsViewController.swift */; };
-		5BB8DAB91CB1144900AC7BCE /* CalorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8DAB81CB1144900AC7BCE /* CalorieCell.swift */; };
+		5BAFACCF1CB22CAE00A67C34 /* DetailsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */; };
+		5BAFACD11CB22D0800A67C34 /* CalorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */; };
 		5BE4EE8B1C8EA3D6009451C7 /* DrawerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */; };
 		5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEC5CE61C99280A002D8D6C /* Photos.framework */; };
 		5BEC5CEA1C9931AD002D8D6C /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */; };
+		5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */; };
 		5BF8C2C31C8B941600C1DFFF /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8C2C21C8B941600C1DFFF /* StatsViewController.swift */; };
 		7C3EBA0A1C7AA6220093037E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA091C7AA6220093037E /* AppDelegate.swift */; };
 		7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EBA0B1C7AA6220093037E /* ViewController.swift */; };
@@ -84,7 +85,6 @@
 		EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9E1C93931B00ABD3C1 /* BackgroundAudio.mp3 */; };
 		EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9F1C93931B00ABD3C1 /* ButtonAudio.wav */; };
 		EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43BD11C9011F5006EB045 /* AVFoundation.framework */; };
-		F29F541E8E7B1E7D20F6D89D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3477E18149DA7E9A9E3EB221 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +105,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		097FC6701CAC8CF6003DEE77 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
-		2E824A6BDD822C765FDD2F9C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		3477E18149DA7E9A9E3EB221 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigManager.swift; sourceTree = "<group>"; };
 		5712EE801C903934002624D6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
@@ -121,11 +118,12 @@
 		5B89F1C71C862010009D9779 /* Fitness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fitness.storyboard; sourceTree = "<group>"; };
 		5B89F1CA1C862040009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyGoals.storyboard; sourceTree = "<group>"; };
-		5BB8DAB61CB0F87500AC7BCE /* DetailStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailStatsViewController.swift; sourceTree = "<group>"; };
-		5BB8DAB81CB1144900AC7BCE /* CalorieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieCell.swift; sourceTree = "<group>"; };
+		5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsStatsViewController.swift; sourceTree = "<group>"; };
+		5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieCell.swift; sourceTree = "<group>"; };
 		5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerTableViewController.swift; sourceTree = "<group>"; };
 		5BEC5CE61C99280A002D8D6C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		5BEC5CE91C9931AD002D8D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
+		5BF8C2C01C8B925200C1DFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Stats.storyboard; sourceTree = "<group>"; };
 		5BF8C2C21C8B941600C1DFFF /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		7C3EBA061C7AA6220093037E /* ArcticRunTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcticRunTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EBA091C7AA6220093037E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		8E9829B51C9F7F33001B98EC /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		8E9829C01C9F7F56001B98EC /* Crew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
-		AFB3505A102CC3123FE0C29B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9203A4E81CB03FAA006CE8E3 /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
 		9203A4EA1CB041D1006CE8E3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
@@ -206,7 +203,6 @@
 				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
 				5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */,
-				F29F541E8E7B1E7D20F6D89D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +223,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		522C1ACE17F21F6A2CC4AA80 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3477E18149DA7E9A9E3EB221 /* Pods.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5769B9401C87FA95007356E3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,8 +243,6 @@
 				7C3EBA1D1C7AA6220093037E /* ArcticRunTemplateTests */,
 				7C3EBA281C7AA6220093037E /* ArcticRunTemplateUITests */,
 				7C3EBA071C7AA6220093037E /* Products */,
-				E3132F64C79255E80A829DF0 /* Pods */,
-				522C1ACE17F21F6A2CC4AA80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,17 +269,6 @@
 				9203A4E71CB03F6E006CE8E3 /* LevelConfig */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
-				C20377FC1CA23AE800EE057C /* GameCenter.storyboard */,
-				C29DEA0C1C8A56FC00B4422F /* Map.storyboard */,
-				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
-				7CDACBF51CACDF76003914D5 /* Home.storyboard */,
-				5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */,
-				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
-				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
-				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
-				5B89F1C91C862040009D9779 /* Settings.storyboard */,
-				5B89F1C71C862010009D9779 /* Fitness.storyboard */,
-				5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */,
 				7C3EBA101C7AA6220093037E /* Assets.xcassets */,
 				7C3EBA151C7AA6220093037E /* Info.plist */,
 				EB4211991C88E72D0025CA53 /* PartyCell.swift */,
@@ -355,9 +330,8 @@
 				5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */,
 				5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */,
 				C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */,
-				097FC6701CAC8CF6003DEE77 /* GameLogic.swift */,
-				5BB8DAB61CB0F87500AC7BCE /* DetailStatsViewController.swift */,
-				5BB8DAB81CB1144900AC7BCE /* CalorieCell.swift */,
+				5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */,
+				5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -386,13 +360,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		E3132F64C79255E80A829DF0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E824A6BDD822C765FDD2F9C /* Pods.debug.xcconfig */,
-				AFB3505A102CC3123FE0C29B /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 		9203A4E71CB03F6E006CE8E3 /* LevelConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,12 +427,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C3EBA2E1C7AA6220093037E /* Build configuration list for PBXNativeTarget "ArcticRunTemplate" */;
 			buildPhases = (
-				1995F274BA4ECB10E51DBB8D /* Check Pods Manifest.lock */,
 				7C3EBA021C7AA6220093037E /* Sources */,
 				7C3EBA031C7AA6220093037E /* Frameworks */,
 				7C3EBA041C7AA6220093037E /* Resources */,
-				18435E9EE34E349B465A9F49 /* Embed Pods Frameworks */,
-				C0953F103F243AA4CF3330C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -588,6 +552,7 @@
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				87E705291CACC48C0098CFC0 /* BackgroundAudio.mp3 in Resources */,
 				87E7052B1CACC48C0098CFC0 /* chap1_segment1.mp3 in Resources */,
+				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
 				C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */,
 				87E705331CACC48C0098CFC0 /* Chapter 2 in Resources */,
 				7C3EBA111C7AA6220093037E /* Assets.xcassets in Resources */,
@@ -620,54 +585,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		18435E9EE34E349B465A9F49 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1995F274BA4ECB10E51DBB8D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C0953F103F243AA4CF3330C8 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7C3EBA021C7AA6220093037E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -676,7 +593,6 @@
 				7C3EBA421C7AA8430093037E /* PedometerViewController.swift in Sources */,
 				8E9829C11C9F7F56001B98EC /* Crew.swift in Sources */,
 				5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */,
-				5BB8DAB91CB1144900AC7BCE /* CalorieCell.swift in Sources */,
 				5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */,
 				7C3EBA0C1C7AA6220093037E /* ViewController.swift in Sources */,
 				EB42119A1C88E72D0025CA53 /* PartyCell.swift in Sources */,
@@ -696,9 +612,11 @@
 				87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */,
 				7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */,
 				7C3EBA3E1C7AA80B0093037E /* HomeViewController.swift in Sources */,
+				5BAFACCF1CB22CAE00A67C34 /* DetailsStatsViewController.swift in Sources */,
 				7C3EBA441C7AA8590093037E /* DailyGoalsViewController.swift in Sources */,
 				7C3EBA461C7AA8750093037E /* SettingsViewController.swift in Sources */,
 				5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */,
+				5BAFACD11CB22D0800A67C34 /* CalorieCell.swift in Sources */,
 				8E9829BA1C9F7F33001B98EC /* Selfie.swift in Sources */,
 				8E9829B61C9F7F33001B98EC /* Diary.swift in Sources */,
 				8E9829BC1C9F7F33001B98EC /* User.swift in Sources */,
@@ -706,7 +624,6 @@
 				097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
-				5BB8DAB71CB0F87500AC7BCE /* DetailStatsViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 				7CDACBF01CACBC4C003914D5 /* CAGradientLayer+Convienence.swift in Sources */,
 				8E9829BD1C9F7F33001B98EC /* Workout.swift in Sources */,
@@ -771,6 +688,14 @@
 				5BEC5CE91C9931AD002D8D6C /* Base */,
 			);
 			name = Photos.storyboard;
+			sourceTree = "<group>";
+		};
+		5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BF8C2C01C8B925200C1DFFF /* Base */,
+			);
+			name = Stats.storyboard;
 			sourceTree = "<group>";
 		};
 		7C3EBA0D1C7AA6220093037E /* Main.storyboard */ = {
@@ -893,7 +818,6 @@
 		};
 		7C3EBA2F1C7AA6220093037E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E824A6BDD822C765FDD2F9C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -912,7 +836,6 @@
 		};
 		7C3EBA301C7AA6220093037E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFB3505A102CC3123FE0C29B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
