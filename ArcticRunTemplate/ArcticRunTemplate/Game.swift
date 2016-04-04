@@ -10,12 +10,58 @@ import Foundation
 
 public class Game {
     
-    init(level:Int) {
-        let manager = GameConfigManager()
-        if let levelDict = manager.loadLevel(level) {
-            print(manager.getLevelSegment(1))
-        } else {
+    private let manager = GameConfigManager()
+    private var curLevel = 0
+    private var curSegment = 0
+    private var levelData:NSDictionary = NSDictionary()
+    
+    init() {
+        playLevel(1)
+    }
+    
+    public func playLevel(level:Int) {
+        levelData = manager.loadLevel(level)!
+        if levelData == .None {
             print("Unable to get Plist")
+            return
+        } else {
+            curLevel = level
+            curSegment = 1
+            playSegment()
+        }
+    }
+    
+    private func playSegment() {
+        let segmentData = manager.getLevelSegment(curSegment)
+        if (segmentData!["type"] as! String == "audio") {
+            
+            if UIApplication.sharedApplication().applicationState == .Active {
+                print("AUDIO FOREGROUND")
+            } else {
+                print("AUDIO BACKGROUND")
+            }
+            
+            // temporary, to simulate time going by
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(Game.finish), userInfo: nil, repeats: false)
+        } else {
+            let pauseTimeInt = segmentData!["length"] as! Int
+            let pauseTime = NSTimeInterval(pauseTimeInt)
+            
+            if UIApplication.sharedApplication().applicationState == .Active {
+                print("PAUSE FOREGROUND")
+            } else {
+                print("PAUSE BACKGROUND")
+            }
+            
+            // temporary, to simulate time going by
+            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: #selector(Game.finish), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc public func finish() {
+        if (curSegment < levelData.count) {
+            curSegment += 1
+            playSegment()
         }
     }
     
