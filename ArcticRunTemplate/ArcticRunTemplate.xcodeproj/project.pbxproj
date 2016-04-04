@@ -21,6 +21,7 @@
 		5B89F1CD1C86205B009D9779 /* DailyGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */; };
 		5BAFACCF1CB22CAE00A67C34 /* DetailsStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */; };
 		5BAFACD11CB22D0800A67C34 /* CalorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */; };
+		5BAFACD51CB232C500A67C34 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAFACD41CB232C500A67C34 /* SwiftCharts.framework */; };
 		5BE4EE8B1C8EA3D6009451C7 /* DrawerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */; };
 		5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEC5CE61C99280A002D8D6C /* Photos.framework */; };
 		5BEC5CEA1C9931AD002D8D6C /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */; };
@@ -120,6 +121,7 @@
 		5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DailyGoals.storyboard; sourceTree = "<group>"; };
 		5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsStatsViewController.swift; sourceTree = "<group>"; };
 		5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieCell.swift; sourceTree = "<group>"; };
+		5BAFACD41CB232C500A67C34 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = "Pods/../build/Debug-iphoneos/SwiftCharts.framework"; sourceTree = "<group>"; };
 		5BE4EE8A1C8EA3D6009451C7 /* DrawerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerTableViewController.swift; sourceTree = "<group>"; };
 		5BEC5CE61C99280A002D8D6C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		5BEC5CE91C9931AD002D8D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAFACD51CB232C500A67C34 /* SwiftCharts.framework in Frameworks */,
 				5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */,
 				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		7C3EB9FD1C7AA6220093037E = {
 			isa = PBXGroup;
 			children = (
+				5BAFACD41CB232C500A67C34 /* SwiftCharts.framework */,
 				5BEC5CE61C99280A002D8D6C /* Photos.framework */,
 				EBC43BD11C9011F5006EB045 /* AVFoundation.framework */,
 				5769B9461C87FAE5007356E3 /* HealthKit.framework */,
@@ -824,6 +828,10 @@
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
@@ -842,6 +850,10 @@
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
