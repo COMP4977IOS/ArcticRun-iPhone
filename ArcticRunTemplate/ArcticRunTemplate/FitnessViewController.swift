@@ -26,6 +26,7 @@ class FitnessViewController: UIViewController {
     var db:CKDatabase!
     
     private var caloriesArray : [String] = []
+    private var distanceArray : [String] = []
     private var statsDate : [String] = []
     private var chart: Chart? // arc
     
@@ -78,7 +79,7 @@ class FitnessViewController: UIViewController {
                     
                     
                     let st:Double = data.valueForKey("caloriesBurned") as! Double
-                    
+                    let dist:Double = data.valueForKey("distance") as! Double
                     
                     if let stDate = data.valueForKey("startDate") {
                         
@@ -99,7 +100,8 @@ class FitnessViewController: UIViewController {
                     
                     
    
-                    self.caloriesArray.append(String(format:"%.0f",st))
+                    self.caloriesArray.append(String(format:"%.0f",st) + " Cal")
+                    self.distanceArray.append(String(format:"%.2f", dist) + " km")
                     //self.statsDate.append(stDate)
                 }
                  //print(self.caloriesArray)
@@ -146,6 +148,10 @@ class FitnessViewController: UIViewController {
         if(segue.identifier == "CaloriesDetail"){
             let viewController = segue.destinationViewController as! DetailStatsViewController
             viewController.statsArray = self.caloriesArray
+            viewController.dateArray = self.statsDate
+        }else if(segue.identifier == "distanceDetail"){
+            let viewController = segue.destinationViewController as! DetailStatsViewController
+            viewController.statsArray = self.distanceArray
             viewController.dateArray = self.statsDate
         }
     }
