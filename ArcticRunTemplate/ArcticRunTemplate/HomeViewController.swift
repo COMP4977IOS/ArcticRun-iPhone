@@ -59,6 +59,10 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
         crewButton.layer.cornerRadius = 5
         crewButton.layer.borderWidth = 1
         crewButton.layer.borderColor = UIColor.blackColor().CGColor
+        
+        // TODO: Remove, this is just for testing purposes
+        Game()
+        
         // Do any additional setup after loading the view, typically from a nib.
 //        
 //        seasonArray = ["season 1","season 2","season 3","season 4"]

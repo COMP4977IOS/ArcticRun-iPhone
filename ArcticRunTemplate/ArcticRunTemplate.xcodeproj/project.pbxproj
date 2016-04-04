@@ -494,6 +494,9 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = L9GR6R2227;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
