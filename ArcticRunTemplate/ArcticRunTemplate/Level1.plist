@@ -4,21 +4,24 @@
 <dict>
 	<key>segment1</key>
 	<dict>
-		<key>id</key>
-		<integer>1</integer>
+		<key>type</key>
+		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment1</string>
-		<key>followingPause</key>
-		<integer>10</integer>
 	</dict>
 	<key>segment2</key>
 	<dict>
-		<key>id</key>
-		<integer>2</integer>
+		<key>type</key>
+		<string>pause</string>
+		<key>length</key>
+		<integer>10</integer>
+	</dict>
+	<key>segment3</key>
+	<dict>
+		<key>type</key>
+		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment2</string>
-		<key>followingPause</key>
-		<integer>5</integer>
 	</dict>
 </dict>
 </plist>
