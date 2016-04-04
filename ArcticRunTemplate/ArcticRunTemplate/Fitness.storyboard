@@ -499,7 +499,7 @@
                                     <constraint firstAttribute="height" constant="566" id="nC1-S4-FVZ"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="Acr-KK-e4k" userLabel="calorieCell" customClass="CalorieCell" customModule="ArcticRunTemplate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calorieCell" rowHeight="74" id="Acr-KK-e4k" userLabel="calorieCell" customClass="CalorieCell" customModule="ArcticRunTemplate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Acr-KK-e4k" id="0T2-UO-Mdl">
@@ -534,11 +534,14 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="calorieCell" destination="bSW-cR-yp1" id="YIp-5B-DVl"/>
-                                            <outlet property="calorieValue" destination="0T2-UO-Mdl" id="CEl-2l-US1"/>
                                             <outlet property="date" destination="3jT-Hx-ZGx" id="ArM-yu-CQ8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0aX-2d-z7d" id="xvD-YO-gLk"/>
+                                    <outlet property="delegate" destination="0aX-2d-z7d" id="fZg-I5-2kF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

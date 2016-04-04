@@ -26,7 +26,7 @@ class FitnessViewController: UIViewController {
     var db:CKDatabase!
     
     private var caloriesArray : [String] = []
-    
+    private var statsDate : [String] = []
     private var chart: Chart? // arc
     
     override func viewDidLoad() {
@@ -69,14 +69,38 @@ class FitnessViewController: UIViewController {
                 
             }else{
                 print("======== PRINTING RECORDS ===========")
-               // print(records)
+                print(records)
+
                 let calories:Double = records?.first?.objectForKey("caloriesBurned") as! Double
                 let distance:Double = records?.first?.objectForKey("distance") as! Double
                 
                 for data in records! {
-                    //print(data.valueForKey("caloriesBurned")  )
+                    
+                    
                     let st:Double = data.valueForKey("caloriesBurned") as! Double
+                    
+                    
+                    if let stDate = data.valueForKey("startDate") {
+                        
+                        print(stDate)
+                        
+                        let dateFormatter = NSDateFormatter()//3
+                        
+                        let theDateFormat = NSDateFormatterStyle.ShortStyle //5
+                        //let theTimeFormat = NSDateFormatterStyle.ShortStyle//6
+                        
+                        dateFormatter.dateStyle = theDateFormat//8
+                        //dateFormatter.timeStyle = theTimeFormat//9
+                        
+                        let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
+                    
+                        self.statsDate.append(date)
+                    }
+                    
+                    
+   
                     self.caloriesArray.append(String(format:"%.0f",st))
+                    //self.statsDate.append(stDate)
                 }
                  //print(self.caloriesArray)
                 dispatch_async (dispatch_get_main_queue ()) {
@@ -121,7 +145,8 @@ class FitnessViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "CaloriesDetail"){
             let viewController = segue.destinationViewController as! DetailStatsViewController
-            viewController.caloriesArray = self.caloriesArray
+            viewController.statsArray = self.caloriesArray
+            viewController.dateArray = self.statsDate
         }
     }
 
