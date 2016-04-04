@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		097FC6711CAC8CF6003DEE77 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FC6701CAC8CF6003DEE77 /* GameLogic.swift */; };
+		097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */; };
 		5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712EE801C903934002624D6 /* CloudKitHelper.swift */; };
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
@@ -71,6 +71,8 @@
 		8E9829BD1C9F7F33001B98EC /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9829B51C9F7F33001B98EC /* Workout.swift */; };
 		8E9829C11C9F7F56001B98EC /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9829C01C9F7F56001B98EC /* Crew.swift */; };
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
+		9203A4E91CB03FAA006CE8E3 /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9203A4E81CB03FAA006CE8E3 /* Level1.plist */; };
+		9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203A4EA1CB041D1006CE8E3 /* Game.swift */; };
 		C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */; };
 		C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20377FC1CA23AE800EE057C /* GameCenter.storyboard */; };
 		C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */; };
@@ -106,6 +108,7 @@
 		097FC6701CAC8CF6003DEE77 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		2E824A6BDD822C765FDD2F9C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3477E18149DA7E9A9E3EB221 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigManager.swift; sourceTree = "<group>"; };
 		5712EE801C903934002624D6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 		8E9829C01C9F7F56001B98EC /* Crew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		AFB3505A102CC3123FE0C29B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9203A4E81CB03FAA006CE8E3 /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
+		9203A4EA1CB041D1006CE8E3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
 		C20377FC1CA23AE800EE057C /* GameCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameCenter.storyboard; sourceTree = "<group>"; };
 		C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -268,12 +273,14 @@
 		7C3EBA081C7AA6220093037E /* ArcticRunTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */,
 				7CDACBE91CACBAB3003914D5 /* gamemap.png */,
 				8EB6C3361C9F7E5200C8EADD /* DataFramework */,
-				5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */,
 				5769B9401C87FA95007356E3 /* Libraries */,
-				7C3EBA3C1C7AA70F0093037E /* ViewControllers */,
 				7C3EBA371C7AA6E70093037E /* SWRevealViewController */,
+				7C3EBA3C1C7AA70F0093037E /* ViewControllers */,
+				9203A4EC1CB0425E006CE8E3 /* UI */,
+				9203A4E71CB03F6E006CE8E3 /* LevelConfig */,
 				7C3EBA091C7AA6220093037E /* AppDelegate.swift */,
 				7C3EBA0B1C7AA6220093037E /* ViewController.swift */,
 				C20377FC1CA23AE800EE057C /* GameCenter.storyboard */,
@@ -288,10 +295,11 @@
 				5B89F1C71C862010009D9779 /* Fitness.storyboard */,
 				5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */,
 				7C3EBA101C7AA6220093037E /* Assets.xcassets */,
-				7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */,
 				7C3EBA151C7AA6220093037E /* Info.plist */,
 				EB4211991C88E72D0025CA53 /* PartyCell.swift */,
 				7C3EBA471C7AADE00093037E /* CustomCell.swift */,
+				9203A4EA1CB041D1006CE8E3 /* Game.swift */,
+				097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */,
 				EBC43BD31C90141B006EB045 /* Supporting Files */,
 			);
 			path = ArcticRunTemplate;
@@ -385,6 +393,32 @@
 				AFB3505A102CC3123FE0C29B /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+		9203A4E71CB03F6E006CE8E3 /* LevelConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9203A4E81CB03FAA006CE8E3 /* Level1.plist */,
+			);
+			name = LevelConfig;
+			sourceTree = "<group>";
+		};
+		9203A4EC1CB0425E006CE8E3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7C3EBA121C7AA6220093037E /* LaunchScreen.storyboard */,
+				C20377FC1CA23AE800EE057C /* GameCenter.storyboard */,
+				C29DEA0C1C8A56FC00B4422F /* Map.storyboard */,
+				7C3EBA0D1C7AA6220093037E /* Main.storyboard */,
+				7CDACBF51CACDF76003914D5 /* Home.storyboard */,
+				5BEC5CE81C9931AD002D8D6C /* Photos.storyboard */,
+				5BF8C2BF1C8B925200C1DFFF /* Stats.storyboard */,
+				8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */,
+				EB4211A11C88F1DB0025CA53 /* Party.storyboard */,
+				5B89F1CC1C86205B009D9779 /* DailyGoals.storyboard */,
+				5B89F1C91C862040009D9779 /* Settings.storyboard */,
+				5B89F1C71C862010009D9779 /* Fitness.storyboard */,
+				5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		EBC43BD31C90141B006EB045 /* Supporting Files */ = {
@@ -565,6 +599,7 @@
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				87E705351CACC48C0098CFC0 /* preface.mp3 in Resources */,
 				87E7052E1CACC48C0098CFC0 /* chap1_segment4.mp3 in Resources */,
+				9203A4E91CB03FAA006CE8E3 /* Level1.plist in Resources */,
 				87E7052F1CACC48C0098CFC0 /* chap2_segment1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +690,7 @@
 				8E9829B71C9F7F33001B98EC /* Item.swift in Sources */,
 				8E9829B81C9F7F33001B98EC /* Member.swift in Sources */,
 				5BE4EE8B1C8EA3D6009451C7 /* DrawerTableViewController.swift in Sources */,
+				9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */,
 				8E9829BB1C9F7F33001B98EC /* Stat.swift in Sources */,
 				7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */,
 				87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */,
@@ -667,7 +703,7 @@
 				8E9829B61C9F7F33001B98EC /* Diary.swift in Sources */,
 				8E9829BC1C9F7F33001B98EC /* User.swift in Sources */,
 				8E9829B91C9F7F33001B98EC /* Resource.swift in Sources */,
-				097FC6711CAC8CF6003DEE77 /* GameLogic.swift in Sources */,
+				097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
 				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
 				5BB8DAB71CB0F87500AC7BCE /* DetailStatsViewController.swift in Sources */,
