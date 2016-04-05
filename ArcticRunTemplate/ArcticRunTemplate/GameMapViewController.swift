@@ -86,39 +86,6 @@ class GameMapViewController: UIViewController {
         self.scrollView.addSubview(button6)
             
         self.view.bringSubviewToFront(navBar)
-            
-            
-            print("\n\n PLAYING AUDIO")
-            /*
-            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
-            do{
-                let audioPlayer : AVAudioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
-                audioPlayer.play()
-            } catch{
-                print("ERROR PLAYING")
-            }
-            */
-            
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-                print("AVAudioSession Category Playback OK")
-                do {
-                    try AVAudioSession.sharedInstance().setActive(true)
-                    print("AVAudioSession is Active")
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
-            whichVideoPlay()
-            
-            
-            
-                    
-
     }
     
     

@@ -39,6 +39,9 @@ class PlayScreenViewController : UIViewController {
     var running = false
     var started:Bool = false
     
+    var game:Game!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBG()
@@ -48,24 +51,11 @@ class PlayScreenViewController : UIViewController {
         
         titleLabel.text = "Passed Label Data"
         
-        
+        playPause()
+        game = Game()
     }
     
-    
-    
-    @IBAction func pause(sender: AnyObject) {
-        
-        timer.invalidate()
-        running = false
-        if(started) {
-            pedometer.stopPedometerUpdates()
-            self.started = false
-        }
-        
-    }
-    
-    @IBAction func playAndPause(sender: AnyObject) {
-        
+    private func playPause() {
         let aSelector : Selector = "updateCounter"
         
         if !running {
@@ -87,8 +77,22 @@ class PlayScreenViewController : UIViewController {
                 }
             }
         }else {
-           
+            
         }
+    }
+    
+    @IBAction func pause(sender: AnyObject) {
+        timer.invalidate()
+        running = false
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
+        game.pauseLevel()
+    }
+    
+    @IBAction func playAndPause(sender: AnyObject) {
+        playPause()
     }
     
     @IBAction func stopGame(sender: AnyObject) {
@@ -100,16 +104,13 @@ class PlayScreenViewController : UIViewController {
     }
     
     func loadBG() {
-        
         // Gradient Background color
         let background = CAGradientLayer().blueblendColor()
         background.frame = self.view.bounds
         self.view.layer.insertSublayer(background, atIndex: 0)
-        
     }
     
     func updateCounter() {
-        
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         var elapsedTime: NSTimeInterval = currentTime - startTime
         
@@ -123,14 +124,14 @@ class PlayScreenViewController : UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         
         timerLabel.text = "\(strMinutes):\(strSeconds)"
-        
     }
     
     @IBAction func dismiss(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
         timer.invalidate()
         timerLabel.text = "\(00):\(00)"
         running = false
+        game.stopLevel()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
