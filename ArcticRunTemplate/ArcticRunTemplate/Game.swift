@@ -58,6 +58,25 @@ public class Game {
         }
     }
     
+    // Function used to create time delay between audio segments
+    // Takes in an int - This int should come from a database query of all active party members health divided by total active party members. This number should range from 0-100.
+    private func generateTimeDelay(partyHealth:Int) ->Int {
+        // Three minute delay between segments - Subject to change
+        var baseDelay = 180.0
+        // Depending on the health of the party, increase the time delay between segments
+        if(partyHealth < 25) {
+            baseDelay = baseDelay * 2.2
+        } else if (partyHealth < 50) {
+            baseDelay = baseDelay * 1.7
+        } else if (partyHealth < 75) {
+            baseDelay = baseDelay * 1.5
+        } else {
+            baseDelay = baseDelay * 1.25
+        }
+        
+        return  Int(baseDelay)
+    }
+    
     @objc public func finish() {
         if (curSegment < levelData.count) {
             curSegment += 1
