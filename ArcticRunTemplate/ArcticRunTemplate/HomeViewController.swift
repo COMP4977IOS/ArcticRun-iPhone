@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-
+        
     }
  
     func loadBG() {
@@ -267,6 +267,7 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             return false
         }
     }
+
 }
 
 

@@ -56,6 +56,7 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
         if (!isPaused) {
             audioPlayer.pause()
             isPaused = true
+            print("pausing audio")
         }
     }
     
@@ -63,6 +64,10 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
         if (isPlaying) {
             audioPlayer.stop()
         }
+    }
+    
+    func getTimestamp() -> NSTimeInterval {
+        return audioPlayer.currentTime
     }
     
     public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
