@@ -83,6 +83,8 @@
 		EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119D1C88E8230025CA53 /* PartyController.swift */; };
 		EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42119F1C88E9350025CA53 /* ShopViewController.swift */; };
 		EB4211A31C88F1DB0025CA53 /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4211A11C88F1DB0025CA53 /* Party.storyboard */; };
+		EB523F191CB32922001E3790 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEC5CE61C99280A002D8D6C /* Photos.framework */; };
+		EB523F1A1CB32922001E3790 /* Photos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEC5CE61C99280A002D8D6C /* Photos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9E1C93931B00ABD3C1 /* BackgroundAudio.mp3 */; };
 		EB904DA11C93931B00ABD3C1 /* ButtonAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB904D9F1C93931B00ABD3C1 /* ButtonAudio.wav */; };
 		EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC43BD11C9011F5006EB045 /* AVFoundation.framework */; };
@@ -104,6 +106,20 @@
 			remoteInfo = ArcticRunTemplate;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB523F1B1CB32923001E3790 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EB523F1A1CB32922001E3790 /* Photos.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigManager.swift; sourceTree = "<group>"; };
@@ -206,6 +222,7 @@
 				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
 				5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */,
+				EB523F191CB32922001E3790 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +451,7 @@
 				7C3EBA021C7AA6220093037E /* Sources */,
 				7C3EBA031C7AA6220093037E /* Frameworks */,
 				7C3EBA041C7AA6220093037E /* Resources */,
+				EB523F1B1CB32923001E3790 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
