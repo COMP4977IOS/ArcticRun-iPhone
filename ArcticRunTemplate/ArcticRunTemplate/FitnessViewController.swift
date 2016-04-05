@@ -168,6 +168,8 @@ class FitnessViewController: UIViewController {
                         
                         print(stDate)
                         
+                        print("\(NSDate()) date today")
+                        
                         let dateFormatter = NSDateFormatter()//3
                         
                         let theDateFormat = NSDateFormatterStyle.ShortStyle //5
@@ -225,6 +227,10 @@ class FitnessViewController: UIViewController {
         
         self.view.addSubview(chart.view)
         self.chart = chart
+    }
+    
+    func getChartValues(){
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
