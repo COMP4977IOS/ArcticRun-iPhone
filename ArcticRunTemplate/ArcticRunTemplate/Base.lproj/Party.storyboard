@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -100,7 +100,7 @@
                             <constraint firstItem="1qf-Y6-dEn" firstAttribute="leading" secondItem="3Xf-ja-PLk" secondAttribute="leading" id="goh-1b-neb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Party" id="xVL-fB-Nmc"/>
+                    <tabBarItem key="tabBarItem" title="Party" image="PartyTabIcon" id="xVL-fB-Nmc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuButton" destination="sye-8Y-iSC" id="sc4-xP-VWK"/>
@@ -145,7 +145,7 @@
                                 <rect key="frame" x="206" y="433" width="119" height="30"/>
                                 <state key="normal" title="Back To Home"/>
                                 <connections>
-                                    <segue destination="ng0-zA-L4S" kind="presentation" id="nyH-XY-lGo"/>
+                                    <segue destination="ng0-zA-L4S" kind="show" id="HuK-so-mj3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-Gy-nyh">
@@ -295,6 +295,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PartyTabIcon" width="200" height="200"/>
         <image name="hearts" width="128" height="128"/>
         <image name="loading" width="2000" height="510"/>
         <image name="menuButton" width="57" height="57"/>

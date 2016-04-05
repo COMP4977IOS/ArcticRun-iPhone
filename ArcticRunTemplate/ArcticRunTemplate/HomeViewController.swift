@@ -47,6 +47,11 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(isICloudContainerAvailable() == true){
+            print("loggedin")
+        }else{
+            print("not logged in")
+        }
         loadBG()
         startButton.layer.cornerRadius = 5
         startButton.layer.borderWidth = 1
@@ -61,7 +66,6 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
         crewButton.layer.borderColor = UIColor.blackColor().CGColor
         
         // TODO: Remove, this is just for testing purposes
-        Game()
         
         // Do any additional setup after loading the view, typically from a nib.
 //        
@@ -84,6 +88,7 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+
     }
  
     func loadBG() {
@@ -251,6 +256,15 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             print(fileURL)
         } catch{
             print("ERROR")
+        }
+    }
+    
+    func isICloudContainerAvailable()->Bool {
+        if let currentToken = NSFileManager.defaultManager().ubiquityIdentityToken {
+            return true
+        }
+        else {
+            return false
         }
     }
 }

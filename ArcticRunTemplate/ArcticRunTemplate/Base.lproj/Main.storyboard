@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -113,33 +113,8 @@
                                             <segue destination="fME-pP-Xew" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KN0-1v-0S8"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="b0y-F6-eUy">
-                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b0y-F6-eUy" id="GQ7-7E-2VE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yM-WE-rU5">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="0yM-WE-rU5" firstAttribute="leading" secondItem="GQ7-7E-2VE" secondAttribute="leadingMargin" id="02g-NR-rdZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0yM-WE-rU5" secondAttribute="trailing" id="d7e-er-sSR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0yM-WE-rU5" secondAttribute="bottom" id="uki-5Z-sqB"/>
-                                                <constraint firstItem="0yM-WE-rU5" firstAttribute="top" secondItem="GQ7-7E-2VE" secondAttribute="topMargin" id="xz0-cT-Ia8"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="3ht-e0-5B2" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="pe7-xx-a5f"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ksT-XX-4Qb">
-                                        <rect key="frame" x="0.0" y="176" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ksT-XX-4Qb" id="7Pa-vI-RfR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -164,7 +139,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wTU-ol-lfs">
-                                        <rect key="frame" x="0.0" y="220" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wTU-ol-lfs" id="KF7-e8-84u">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -189,7 +164,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nXY-xF-yJ8">
-                                        <rect key="frame" x="0.0" y="264" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nXY-xF-yJ8" id="9If-3i-93G">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -214,7 +189,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KmR-nB-Bht">
-                                        <rect key="frame" x="0.0" y="308" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KmR-nB-Bht" id="vsv-7n-Ggc">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -297,7 +272,7 @@
         <scene sceneID="T8F-2O-oQc">
             <objects>
                 <viewControllerPlaceholder storyboardName="Fitness" id="e8B-9L-zOM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="FitnessTabIcon" id="Z4J-ru-A9f"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Item" image="ShopTabIcon" id="Z4J-ru-A9f"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujI-6N-F7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -310,14 +285,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ez-xr-dQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1573" y="4522"/>
-        </scene>
-        <!--DailyGoals-->
-        <scene sceneID="nWY-7r-4jl">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DailyGoals" id="3ht-e0-5B2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nh1-bo-5XT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1573" y="3790"/>
         </scene>
         <!--Home-->
         <scene sceneID="gsV-0P-LTm">
@@ -333,7 +300,7 @@
         <scene sceneID="bhl-0E-CC3">
             <objects>
                 <viewControllerPlaceholder storyboardName="Party" id="SpN-b9-loJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="PartyTabIcon" id="spF-a6-9u3"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="HomeTabIcon" id="spF-a6-9u3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGh-jm-kDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -343,7 +310,7 @@
         <scene sceneID="HXx-QJ-InR">
             <objects>
                 <viewControllerPlaceholder storyboardName="Shop" id="1J3-gS-V7K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="ShopTabIcon" id="Uxa-5B-e2I"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="HomeTabIcon" id="Uxa-5B-e2I"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTh-KC-fwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -359,14 +326,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FitnessTabIcon" width="369" height="352"/>
         <image name="HomeTabIcon" width="128" height="128"/>
-        <image name="PartyTabIcon" width="400" height="400"/>
         <image name="ShopTabIcon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nKc-GI-8Rh"/>
         <segue reference="Zxz-re-3Yx"/>
+        <segue reference="nKc-GI-8Rh"/>
         <segue reference="qth-BZ-AzO"/>
     </inferredMetricsTieBreakers>
 </document>
