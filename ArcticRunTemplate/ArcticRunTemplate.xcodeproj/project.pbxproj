@@ -285,7 +285,6 @@
 		7C3EBA081C7AA6220093037E /* ArcticRunTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				8756D2121CB330D90058B722 /* Objects */,
 				5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */,
 				7CDACBE91CACBAB3003914D5 /* gamemap.png */,
 				8EB6C3361C9F7E5200C8EADD /* DataFramework */,
@@ -302,6 +301,7 @@
 				7C3EBA471C7AADE00093037E /* CustomCell.swift */,
 				9203A4EA1CB041D1006CE8E3 /* Game.swift */,
 				097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */,
+				8756D2131CB330E60058B722 /* CustomAudioPlayer.swift */,
 				EBC43BD31C90141B006EB045 /* Supporting Files */,
 			);
 			path = ArcticRunTemplate;
@@ -363,14 +363,6 @@
 				5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8756D2121CB330D90058B722 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				8756D2131CB330E60058B722 /* CustomAudioPlayer.swift */,
-			);
-			name = Objects;
 			sourceTree = "<group>";
 		};
 		8EB6C3361C9F7E5200C8EADD /* DataFramework */ = {

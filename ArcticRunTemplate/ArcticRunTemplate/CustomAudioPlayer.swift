@@ -8,43 +8,71 @@
 
 import AVFoundation
 
-class CustomAudioPlayer : AVAudioPlayer, AVAudioPlayerDelegate{
+public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
     
-    override init(contentsOfURL url: NSURL) throws {
-        do{
-            try super.init(contentsOfURL: url)
-        } catch{
-            print("ERROR")
+    static let sharedInstance = CustomAudioPlayer()
+    
+    var audioPlayer:AVAudioPlayer = AVAudioPlayer()
+    var isPlaying:Bool = false
+    var isPaused:Bool = false
+    
+    private override init() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
-    
-    override init(contentsOfURL url: NSURL, fileTypeHint utiString: String?) throws {
-        do{
-            try super.init(contentsOfURL: url, fileTypeHint: utiString)
-        } catch{
-            print("ERROR")
-        }
-    }
-    /*
-    func startAudio(fileName : String){
-        let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: "mp3")!)
-        do{
-            try AudioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
-            print(fileURL)
-            AudioPlayer.play()
-        } catch{
-            print("ERROR")
-        }
-    }
-    */
-    override func play() -> Bool {
-        print("TRYING TO PLAY CUSTOM")
-        print(url)
-        super.play()
-        return true
-    }
-    
 
+    func playAudio(fileName : String){
+        let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: "mp3")!)
+        
+        if (isPlaying) {
+            audioPlayer.stop()
+        }
+        if (isPaused) {
+            audioPlayer.play()
+            isPaused = false
+        }
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
+            
+            audioPlayer.play()
+            isPlaying = true
+        } catch{
+            print("ERROR")
+        }
+    }
     
+    func pauseAudio() {
+        if (!isPaused) {
+            audioPlayer.pause()
+            isPaused = true
+            print("pausing audio")
+        }
+    }
     
+    func stopAudio() {
+        if (isPlaying) {
+            audioPlayer.stop()
+        }
+    }
+    
+    func getTimestamp() -> NSTimeInterval {
+        return audioPlayer.currentTime
+    }
+    
+    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        isPlaying = false
+        isPaused = false
+        print("FINISHED")
+    }
 }

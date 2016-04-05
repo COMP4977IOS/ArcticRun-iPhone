@@ -38,8 +38,10 @@ class PlayScreenViewController : UIViewController {
     
     var running = false
     var started:Bool = false
+    var paused : Bool = false
     
-    var timeStamp : String = ""
+    var game:Game!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,24 +52,11 @@ class PlayScreenViewController : UIViewController {
         
         titleLabel.text = "Passed Label Data"
         
+        //playPause()
         
     }
     
-    
-    
-    @IBAction func pause(sender: AnyObject) {
-        print(timeStamp)
-        timer.invalidate()
-        running = false
-        if(started) {
-            pedometer.stopPedometerUpdates()
-            self.started = false
-        }
-        
-    }
-    
-    @IBAction func playAndPause(sender: AnyObject) {
-        
+    private func playPause() {
         let aSelector : Selector = "updateCounter"
         /*
         if(timeStamp != ""){
@@ -94,6 +83,40 @@ class PlayScreenViewController : UIViewController {
                 }
             }
         }
+        
+    }
+    
+    @IBAction func pause(sender: AnyObject) {
+        /*
+        timer.invalidate()
+        running = false
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
+        game.pauseLevel()
+        getTimeStamp()
+        */
+        paused = true
+        running = false
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
+        game.pauseLevel()
+        
+    }
+    
+    @IBAction func playAndPause(sender: AnyObject) {
+        //playPause()
+        if(!paused){
+            print("Starting a new game")
+            game = Game()
+        } else {
+            print("using previous game")
+        }
+        paused = true
+        playPause()
     }
     
     @IBAction func stopGame(sender: AnyObject) {
@@ -105,16 +128,14 @@ class PlayScreenViewController : UIViewController {
     }
     
     func loadBG() {
-        
         // Gradient Background color
         let background = CAGradientLayer().blueblendColor()
         background.frame = self.view.bounds
         self.view.layer.insertSublayer(background, atIndex: 0)
-        
     }
     
     func updateCounter() {
-        
+        /*
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         var elapsedTime: NSTimeInterval = currentTime - startTime
         
@@ -128,15 +149,37 @@ class PlayScreenViewController : UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         
         timerLabel.text = "\(strMinutes):\(strSeconds)"
+         */
+        let timeStamp = CustomAudioPlayer.sharedInstance.getTimestamp()
+        
+        /*
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        */
+        
+        
+        let interval = Int(timeStamp)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        timerLabel.text = "\(strMinutes):\(strSeconds)"
         
     }
     
     @IBAction func dismiss(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
         timer.invalidate()
         timerLabel.text = "\(00):\(00)"
         running = false
+        game.stopLevel()
+        dismissViewControllerAnimated(true, completion: nil)
     }
+    /*
     
     func getTimeStamp() -> String{
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
@@ -155,5 +198,6 @@ class PlayScreenViewController : UIViewController {
         
         return timeStamp
     }
+     */
     
 }

@@ -34,7 +34,7 @@ class GameMapViewController: UIViewController {
             
             scrollView.addSubview(imageView)
             view.addSubview(scrollView)
-            
+
             // ---------- BUTTONS ----------
             
             // first button (scott hut)
@@ -89,21 +89,9 @@ class GameMapViewController: UIViewController {
             
             
             print("\n\n PLAYING AUDIO")
-            /*
-            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
-            do{
-                let audioPlayer : AVAudioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
-                audioPlayer.play()
-            } catch{
-                print("ERROR PLAYING")
-            }
-            */
-            
-            whichVideoPlay()
+        self.view.bringSubviewToFront(navBar)
     }
     
-    
- 
 
     // ---------- FUNCTIONS FOR BUTTONS ----------
     
@@ -170,24 +158,6 @@ class GameMapViewController: UIViewController {
             
             svc.toPass = missionTitle
             
-        }
-    }
-    
-    func whichVideoPlay(){
-        playSpecificAudio("introduction")
-    }
-    
-    var audioPlayer : AVAudioPlayer!
-    
-    func playSpecificAudio(fileName : String){
-        do {
-            print(fileName)
-            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: "mp3")!)
-            try audioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
-            audioPlayer.play()
-            print(fileURL)
-        } catch{
-            print("ERROR")
         }
     }
     
