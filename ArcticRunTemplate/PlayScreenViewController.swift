@@ -39,6 +39,8 @@ class PlayScreenViewController : UIViewController {
     var running = false
     var started:Bool = false
     
+    var timeStamp : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBG()
@@ -54,7 +56,7 @@ class PlayScreenViewController : UIViewController {
     
     
     @IBAction func pause(sender: AnyObject) {
-        
+        print(timeStamp)
         timer.invalidate()
         running = false
         if(started) {
@@ -67,7 +69,12 @@ class PlayScreenViewController : UIViewController {
     @IBAction func playAndPause(sender: AnyObject) {
         
         let aSelector : Selector = "updateCounter"
-        
+        /*
+        if(timeStamp != ""){
+            print(timeStamp)
+            
+        }
+        */
         if !running {
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -86,8 +93,6 @@ class PlayScreenViewController : UIViewController {
                     }
                 }
             }
-        }else {
-           
         }
     }
     
@@ -131,6 +136,24 @@ class PlayScreenViewController : UIViewController {
         timer.invalidate()
         timerLabel.text = "\(00):\(00)"
         running = false
+    }
+    
+    func getTimeStamp() -> String{
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        timeStamp = strMinutes + ":" + strSeconds
+        
+        return timeStamp
     }
     
 }
