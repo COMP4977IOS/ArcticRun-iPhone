@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lAe-Qn-T8r" id="WgM-Ty-sQ8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ja-x8-zYk">
@@ -100,7 +100,7 @@
                             <constraint firstItem="1qf-Y6-dEn" firstAttribute="leading" secondItem="3Xf-ja-PLk" secondAttribute="leading" id="goh-1b-neb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Party" id="xVL-fB-Nmc"/>
+                    <tabBarItem key="tabBarItem" title="Party" image="PartyTabIcon" id="xVL-fB-Nmc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuButton" destination="sye-8Y-iSC" id="sc4-xP-VWK"/>
@@ -295,6 +295,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PartyTabIcon" width="200" height="200"/>
         <image name="hearts" width="128" height="128"/>
         <image name="loading" width="2000" height="510"/>
         <image name="menuButton" width="57" height="57"/>
