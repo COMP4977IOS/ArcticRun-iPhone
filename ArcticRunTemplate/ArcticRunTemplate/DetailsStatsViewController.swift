@@ -47,8 +47,8 @@ class DetailStatsViewController: UIViewController , UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("calorieCell", forIndexPath: indexPath) as! CalorieCell
-        cell.calorieCell.text = statsArray[indexPath.row]
         cell.date.text = dateArray[indexPath.row]
+        cell.calorieCell.text = statsArray[indexPath.row]
         return cell
         
     }

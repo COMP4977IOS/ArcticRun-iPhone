@@ -15,6 +15,8 @@
 		5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */; };
 		5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */; };
 		5B2E79601C9A17710072ED7F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */; };
+		5B883E171CB32F2C004C635D /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B883E161CB32F2C004C635D /* RecordsViewController.swift */; };
+		5B883E191CB38176004C635D /* recordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B883E181CB38176004C635D /* recordsCell.swift */; };
 		5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C41C861FFD009D9779 /* Pedometer.storyboard */; };
 		5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C71C862010009D9779 /* Fitness.storyboard */; };
 		5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89F1C91C862040009D9779 /* Settings.storyboard */; };
@@ -75,7 +77,6 @@
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		9203A4E91CB03FAA006CE8E3 /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9203A4E81CB03FAA006CE8E3 /* Level1.plist */; };
 		9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203A4EA1CB041D1006CE8E3 /* Game.swift */; };
-		9CF1C82E1CB325DF00F008B8 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */; };
 		C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */; };
 		C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20377FC1CA23AE800EE057C /* GameCenter.storyboard */; };
 		C29DEA0B1C8A56DF00B4422F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */; };
@@ -116,6 +117,8 @@
 		5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnail.swift; sourceTree = "<group>"; };
 		5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
+		5B883E161CB32F2C004C635D /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		5B883E181CB38176004C635D /* recordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recordsCell.swift; sourceTree = "<group>"; };
 		5B89F1C51C861FFD009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pedometer.storyboard; sourceTree = "<group>"; };
 		5B89F1C71C862010009D9779 /* Fitness.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fitness.storyboard; sourceTree = "<group>"; };
 		5B89F1CA1C862040009D9779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		9203A4E81CB03FAA006CE8E3 /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
 		9203A4EA1CB041D1006CE8E3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = "Pods/../build/Debug-iphoneos/SwiftCharts.framework"; sourceTree = "<group>"; };
 		C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterViewController.swift; sourceTree = "<group>"; };
 		C20377FC1CA23AE800EE057C /* GameCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameCenter.storyboard; sourceTree = "<group>"; };
 		C29DEA0A1C8A56DF00B4422F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAFACD51CB232C500A67C34 /* SwiftCharts.framework in Frameworks */,
-				9CF1C82E1CB325DF00F008B8 /* SwiftCharts.framework in Frameworks */,
 				5BEC5CE71C99280A002D8D6C /* Photos.framework in Frameworks */,
 				EBC43BD21C9011F5006EB045 /* AVFoundation.framework in Frameworks */,
 				5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */,
@@ -242,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				5BAFACD41CB232C500A67C34 /* SwiftCharts.framework */,
-				9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */,
 				5BEC5CE61C99280A002D8D6C /* Photos.framework */,
 				EBC43BD11C9011F5006EB045 /* AVFoundation.framework */,
 				5769B9461C87FAE5007356E3 /* HealthKit.framework */,
@@ -340,6 +340,8 @@
 				C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */,
 				5BAFACCE1CB22CAE00A67C34 /* DetailsStatsViewController.swift */,
 				5BAFACD01CB22D0800A67C34 /* CalorieCell.swift */,
+				5B883E161CB32F2C004C635D /* RecordsViewController.swift */,
+				5B883E181CB38176004C635D /* recordsCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -630,7 +632,9 @@
 				5BAFACD11CB22D0800A67C34 /* CalorieCell.swift in Sources */,
 				8E9829BA1C9F7F33001B98EC /* Selfie.swift in Sources */,
 				8E9829B61C9F7F33001B98EC /* Diary.swift in Sources */,
+				5B883E171CB32F2C004C635D /* RecordsViewController.swift in Sources */,
 				8E9829BC1C9F7F33001B98EC /* User.swift in Sources */,
+				5B883E191CB38176004C635D /* recordsCell.swift in Sources */,
 				8E9829B91C9F7F33001B98EC /* Resource.swift in Sources */,
 				097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,

@@ -28,6 +28,10 @@ class FitnessViewController: UIViewController {
     private var caloriesArray : [String] = []
     private var distanceArray : [String] = []
     private var statsDate : [String] = []
+    private var weightDates : [String] = []
+    private var weightValues : [String] = []
+    private var waterDates : [String] = []
+    private var waterValues : [String] = []
     private var chart: Chart? // arc
     
     override func viewDidLoad() {
@@ -53,16 +57,95 @@ class FitnessViewController: UIViewController {
         stepImage.image = UIImage(named: "steps")
         
         self.showChart()
-        
-        
-        
     }
     
     
     func loadCloudData(){
         let predicate:NSPredicate = NSPredicate(value: true)
-        let query:CKQuery = CKQuery(recordType: "Workout", predicate: predicate)
+        
+        //QUERY WATER
+        let queryWater:CKQuery = CKQuery(recordType: "Water", predicate: predicate)
+        db.performQuery(queryWater, inZoneWithID: nil) { (records:[CKRecord]?, error:NSError?) -> Void in
+            if error != nil || records == nil{
+                return  //found errors
+                //print(error)
+                
+            }else{
+                print("======== PRINTING WEIGHT ===========")
+                print(records)
+                
+                for data in records! {
+                    
+                    let st:Int = data.valueForKey("water") as! Int
+                    
+                    if let stDate = data.valueForKey("date") {
+                        
+                        print(stDate)
+                        
+                        let dateFormatter = NSDateFormatter()//3
+                        
+                        let theDateFormat = NSDateFormatterStyle.ShortStyle //5
+                        //let theTimeFormat = NSDateFormatterStyle.ShortStyle//6
+                        
+                        dateFormatter.dateStyle = theDateFormat//8
+                        //dateFormatter.timeStyle = theTimeFormat//9
+                        
+                        let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
+                        
+                        self.waterDates.append(date)
+                    }
+                    
+                    self.waterValues.append("\(st) glasses")
+                    
+                }
+            }
+        }
+
+        
+        
+        
+        //QUERY WEIGHT
+        let queryWeight:CKQuery = CKQuery(recordType: "Weight", predicate: predicate)
+        db.performQuery(queryWeight, inZoneWithID: nil) { (records:[CKRecord]?, error:NSError?) -> Void in
+            if error != nil || records == nil{
+                return  //found errors
+                //print(error)
+                
+            }else{
+                print("======== PRINTING WEIGHT ===========")
+                print(records)
+            
+                for data in records! {
+                    
+                    let st:Double = data.valueForKey("weight") as! Double
+         
+                    if let stDate = data.valueForKey("date") {
+                        
+                        print(stDate)
+                        
+                        let dateFormatter = NSDateFormatter()//3
+                        
+                        let theDateFormat = NSDateFormatterStyle.ShortStyle //5
+                        //let theTimeFormat = NSDateFormatterStyle.ShortStyle//6
+                        
+                        dateFormatter.dateStyle = theDateFormat//8
+                        //dateFormatter.timeStyle = theTimeFormat//9
+                        
+                        let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
+                        
+                        self.weightDates.append(date)
+                    }
+                    
+                    self.weightValues.append(String(format:"%.0f",st) + " kg")
+       
+                }
+            }
+        }
+
+        
+        
         //create records variable with query.
+        let query:CKQuery = CKQuery(recordType: "Workout", predicate: predicate)
         db.performQuery(query, inZoneWithID: nil) { (records:[CKRecord]?, error:NSError?) -> Void in
             if error != nil || records == nil{
                 return  //found errors
@@ -153,6 +236,16 @@ class FitnessViewController: UIViewController {
             let viewController = segue.destinationViewController as! DetailStatsViewController
             viewController.statsArray = self.distanceArray
             viewController.dateArray = self.statsDate
+        }else if(segue.identifier == "recordWeight"){
+            let viewController = segue.destinationViewController as! RecordsViewController
+            viewController.recordType = "weight"
+            viewController.recordValues = self.weightValues
+            viewController.recordDates = self.weightDates
+        }else if(segue.identifier == "recordWater"){
+            let viewController = segue.destinationViewController as! RecordsViewController
+            viewController.recordType = "water"
+            viewController.recordValues = self.waterValues
+            viewController.recordDates = self.waterDates
         }
     }
 
