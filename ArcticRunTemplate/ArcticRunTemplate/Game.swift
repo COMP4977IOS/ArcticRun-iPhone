@@ -14,6 +14,7 @@ public class Game {
     private var curLevel = 0
     private var curSegment = 0
     private var levelData:NSDictionary = NSDictionary()
+    private var audioPlayer = CustomAudioPlayer.sharedInstance
     
     init() {
         playLevel(1)
@@ -31,6 +32,14 @@ public class Game {
         }
     }
     
+    public func pauseLevel() {
+        audioPlayer.pauseAudio()
+    }
+    
+    public func stopLevel() {
+        audioPlayer.stopAudio()
+    }
+    
     private func playSegment() {
         let segmentData = manager.getLevelSegment(curSegment)
         if (segmentData!["type"] as! String == "audio") {
@@ -41,9 +50,11 @@ public class Game {
                 print("AUDIO BACKGROUND")
             }
             
-            // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "finish", userInfo: nil, repeats: false)
+            let fileName:String = segmentData!["filename"] as! String
+            audioPlayer.playAudio(fileName)
+
         } else {
+            
             let pauseTimeInt = segmentData!["length"] as! Int
             let pauseTime = NSTimeInterval(pauseTimeInt)
             
@@ -55,6 +66,7 @@ public class Game {
             
             // temporary, to simulate time going by
             NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            
         }
     }
     
