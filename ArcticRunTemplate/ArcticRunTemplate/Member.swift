@@ -18,7 +18,7 @@ public class Member {
         self.record = memberRecord
     }
     
-    init(crew: CKReference, diaries:[CKReference], firstName: String, items:[CKReference], lastName: String, stats:[CKReference], status: String){
+    init(crew: CKReference, diaries:[CKReference], firstName: String, items:[CKReference], lastName: String, stats:[CKReference], status: String, health: Int){
         self.record = CKRecord(recordType: "Member")
         
         self.record!.setObject(crew, forKey: "crew")
@@ -28,6 +28,7 @@ public class Member {
         self.record!.setObject(lastName, forKey: "lastName")
         self.record!.setObject(stats, forKey: "stat")
         self.record!.setObject(status, forKey: "status")
+        self.record!.setObject(health, forKey: "health")
     }
     
     func getCrew() -> CKReference? {
@@ -49,8 +50,17 @@ public class Member {
     func getFirstName() -> String? {
         return self.record?.objectForKey("firstName") as? String
     }
+    
     func setFirstName(firstName:String) -> Void{
         self.record?.setObject(firstName, forKey: "firstName")
+    }
+    
+    func getHealth() -> Int? {
+        return self.record?.objectForKey("health") as? Int
+    }
+    
+    func setHealth(health:Int) -> Void{
+        self.record?.setObject(health, forKey: "health")
     }
     
     func getItems() -> [CKReference]? {
