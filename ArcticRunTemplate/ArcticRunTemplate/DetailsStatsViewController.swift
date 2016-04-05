@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class DetailStatsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
@@ -17,37 +18,37 @@ class DetailStatsViewController: UIViewController , UITableViewDelegate, UITable
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    var caloriesArray : [String] = []
+    var statsArray : [String] = []
+    var dateArray  : [String] = []
     
     var i : Int = 0
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        i = caloriesArray.count
-        
+
+        i = statsArray.count
+        print(dateArray)
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print(caloriesArray)
-    }
-    
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(i)
+        print(dateArray.count)
         return i   }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("detailCell", forIndexPath: indexPath) as! CalorieCell
-        cell.calorieCell.text = "test"
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("calorieCell", forIndexPath: indexPath) as! CalorieCell
+        cell.date.text = dateArray[indexPath.row]
+        cell.calorieCell.text = statsArray[indexPath.row]
         return cell
         
     }
