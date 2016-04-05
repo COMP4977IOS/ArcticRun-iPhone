@@ -211,6 +211,9 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
 //        BackgroundAudioPlayer.currentTime = 0
 //        BackgroundAudioPlayer.play()
 //    }
+    
+    
+    
     @IBAction func startRun(sender: AnyObject) {
         print("\n\nStarting Run")
         whichVideoPlay();

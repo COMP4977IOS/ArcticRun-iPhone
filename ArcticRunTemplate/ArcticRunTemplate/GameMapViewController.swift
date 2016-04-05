@@ -6,6 +6,9 @@
 //  Copyright © 2016 Matt Wiseman. All rights reserved.
 //
 
+import AVKit
+import AVFoundation
+
 class GameMapViewController: UIViewController {
     
     @IBOutlet weak var scrollVieew: UIScrollView!
@@ -83,8 +86,42 @@ class GameMapViewController: UIViewController {
         self.scrollView.addSubview(button6)
             
         self.view.bringSubviewToFront(navBar)
+            
+            
+            print("\n\n PLAYING AUDIO")
+            /*
+            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("preface", ofType: "mp3")!)
+            do{
+                let audioPlayer : AVAudioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
+                audioPlayer.play()
+            } catch{
+                print("ERROR PLAYING")
+            }
+            */
+            
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                print("AVAudioSession Category Playback OK")
+                do {
+                    try AVAudioSession.sharedInstance().setActive(true)
+                    print("AVAudioSession is Active")
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            whichVideoPlay()
+            
+            
+            
+                    
 
     }
+    
+    
  
 
     // ---------- FUNCTIONS FOR BUTTONS ----------
@@ -152,6 +189,24 @@ class GameMapViewController: UIViewController {
             
             svc.toPass = missionTitle
             
+        }
+    }
+    
+    func whichVideoPlay(){
+        playSpecificVideo("introduction")
+    }
+    
+    var audioPlayer : AVAudioPlayer!
+    
+    func playSpecificVideo(fileName : String){
+        do {
+            print(fileName)
+            let fileURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: "mp3")!)
+            try audioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
+            audioPlayer.play()
+            print(fileURL)
+        } catch{
+            print("ERROR")
         }
     }
     
