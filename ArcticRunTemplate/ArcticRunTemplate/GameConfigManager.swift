@@ -46,5 +46,15 @@ public class GameConfigManager {
             return .None
         }
     }
+    
+    // Returns the title, image name, and description for a specific level
+    func getLevelInfo() -> NSDictionary? {
+        if (self.currentLevel != nil) {
+            let levelInfo = (self.currentLevel?.objectForKey("information")) as! NSDictionary
+            return levelInfo
+        } else {
+            return .None
+        }
+    }
 
 }

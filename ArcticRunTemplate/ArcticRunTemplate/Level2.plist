@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>information</key>
+	<dict>
+		<key>title</key>
+		<string>The Ship</string>
+		<key>description</key>
+		<string>After discovering Scott Hut in good condtion, travel back to the ship and inform the expedtion of your findings.</string>
+		<key>image</key>
+		<string>OldWoodenShip</string>
+	</dict>
 	<key>segment1</key>
 	<dict>
 		<key>type</key>
