@@ -40,6 +40,7 @@ class FitnessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getPastDates()
         caloriesBurnedValue.text = "..."
         distanceValue.text = "..."
         dailyStepsCounter.text = "..."
@@ -62,6 +63,8 @@ class FitnessViewController: UIViewController {
         
         //self.showChart()
         activityIndicator.startAnimating()
+        
+        
     }
     
     
@@ -207,7 +210,7 @@ class FitnessViewController: UIViewController {
                     self.caloriesBurnedValue.text = String(format:"%.0f", calories)
                     self.distanceValue.text = String(format:"%.0f", distance)
                     
-                    self.dailyStepsCounter.text = "\(self.stepsToday)/5000"
+                    self.dailyStepsCounter.text = "\(self.stepsToday)/5000 steps"
                     self.showChart()
                 }
             }
@@ -223,18 +226,18 @@ class FitnessViewController: UIViewController {
             valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
         )
         let chart = BarsChart(
-            frame: CGRectMake(self.chartView.frame.origin.x, self.chartView.frame.origin.y + 100, self.chartView.frame.size.width, self.chartView.frame.size.height),
+            frame: CGRectMake(self.chartView.frame.origin.x, self.chartView.frame.origin.y + 90, self.chartView.frame.size.width, self.chartView.frame.size.height),
             chartConfig: chartConfig,
-            xTitle: "",
+            xTitle: "steps taken in the past 7 days",
             yTitle: "",
             bars: [
-                ("M", 2),
-                ("T", 4.5),
-                ("W", 3),
-                ("T", 5.4),
-                ("F", 6.8),
-                ("S", 0.5),
-                ("S", 1.5)
+                ("1", 2),
+                ("2", 4.5),
+                ("3", 3),
+                ("4", 5.4),
+                ("5", 6.8),
+                ("6", 0.5),
+                ("7", 1.5)
             ],
             color: UIColor.redColor(),
             barWidth: 20
@@ -245,8 +248,31 @@ class FitnessViewController: UIViewController {
         self.chart = chart
     }
     
-    func getChartValues(){
+    func getPastDates() -> [String:Int]{
+    
+   
         
+        var dates = [String:Int]()
+        var dates2 = [NSDate:Int]()
+        
+        
+        for i in 2 ... 8 {
+            // move back in time by one day:
+            let backDate = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -i, toDate: NSDate(), options: [])!
+            
+            dates2[backDate] = 0
+            
+            let dateFormatter = NSDateFormatter()
+            let theDateFormat = NSDateFormatterStyle.ShortStyle
+            dateFormatter.dateStyle = theDateFormat
+            let date = dateFormatter.stringFromDate(backDate)
+            dates[date] =  0
+            
+        }
+        print("======== CHART VALUES ===========")
+        print(dates2)
+        
+        return dates
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -273,7 +299,12 @@ class FitnessViewController: UIViewController {
 
 
 }
-    
+
+//let yourDict = ["One": "X", "Two": "B", "Three": "Z", "Four": "A"]
+//let sortedKeys = yourDict.keys.sort({ (firstKey, secondKey) -> Bool in
+//    return yourDict[firstKey] < yourDict[secondKey]
+//})
+
 
 //    func addtoCloudKit(){
 //        let currentDateTime = NSDate()
