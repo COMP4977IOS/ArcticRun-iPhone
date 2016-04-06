@@ -100,8 +100,6 @@ class PlayScreenViewController : UIViewController {
             game.playLevel(chapterNum)
         } else {
             print("\n\nusing previous game")
-            game = Game(viewController: self)
-            game.playLevel(chapterNum)
             let time = game.getTimeStamp()
             print(time)
             game.startTimeStamp(time)
@@ -207,7 +205,6 @@ class PlayScreenViewController : UIViewController {
         percentageLabel.text = String(round(missionPercentage)) + "%"
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-        print(missionPercentage)
         timerLabel.text = "\(strMinutes):\(strSeconds)"
         if (missionProgress != maxTime) {
             let newAngleValue = 360 * (missionProgress/maxTime)
