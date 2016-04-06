@@ -47,10 +47,11 @@ class PlayScreenViewController : UIViewController {
         loadBG()
         
         // TODO: Pass data from MissionViewController to label, not working like it is from GameMap
-        //titleLabel.text = passData
+        titleLabel.text = passData
         
-        titleLabel.text = "Passed Label Data"
+        //titleLabel.text = "Passed Label Data"
         
+        print("View Loading")
         playPause()
         
     }
@@ -67,8 +68,11 @@ class PlayScreenViewController : UIViewController {
         if(!CustomAudioPlayer.sharedInstance.isPaused){
             print("Starting a new game")
             game = Game(viewController: self)
+        } else if(game == nil){
+            game = Game(viewController: self)
         } else {
             print("\n\nusing previous game")
+            game = Game(viewController: self)
             let time = game.getTimeStamp()
             print(time)
             game.startTimeStamp(time)

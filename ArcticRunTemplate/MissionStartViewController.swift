@@ -78,8 +78,8 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*
         func beginMission(sender: AnyObject) {
-            
             if(segue.identifier == "showAction") {
                 
                 // TODO: this portion is what assists in passing the label data,
@@ -87,6 +87,8 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
                 // "text" data is passed from GameMap to MissionScreenController
                 let navVC2 = segue.destinationViewController as! UINavigationController
                 let svc2 = navVC2.topViewController as! PlayScreenViewController
+                print("LOADING PLAYSCREEN")
+                print(missionText)
                 
                 svc2.passData = missionText.text
                 
@@ -94,6 +96,17 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
                 toViewController.transitioningDelegate = self
                 
             }
+        }
+        */
+        if(segue.identifier == "showAction") {
+            
+            // TODO: this portion is what assists in passing the label data,
+            // it is not working for some reason albeit being the same as how
+            // "text" data is passed from GameMap to MissionScreenController
+            if let viewController2 = segue.destinationViewController as? PlayScreenViewController {
+                viewController2.passData = missionText.text
+            }
+            
         }
     }
     

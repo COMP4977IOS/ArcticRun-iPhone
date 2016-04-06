@@ -152,7 +152,6 @@ class GameMapViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier == "missionStart") {
-            
             let navVC = segue.destinationViewController as! UINavigationController
             let svc = navVC.topViewController as! MissionStartViewController
             
