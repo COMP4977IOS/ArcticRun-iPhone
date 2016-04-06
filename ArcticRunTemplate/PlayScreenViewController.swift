@@ -52,11 +52,27 @@ class PlayScreenViewController : UIViewController {
         titleLabel.text = "Passed Label Data"
         
         playPause()
-        game = Game()
+        
     }
     
     private func playPause() {
         let aSelector : Selector = "updateCounter"
+        /*
+        if(timeStamp != ""){
+            print(timeStamp)
+            
+        }
+        */
+        
+        if(!CustomAudioPlayer.sharedInstance.isPaused){
+            print("Starting a new game")
+            game = Game()
+        } else {
+            print("\n\nusing previous game")
+            let time = game.getTimeStamp()
+            print(time)
+            game.startTimeStamp(time)
+        }
         
         if !running {
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
@@ -76,12 +92,12 @@ class PlayScreenViewController : UIViewController {
                     }
                 }
             }
-        }else {
-            
         }
+        
     }
     
     @IBAction func pause(sender: AnyObject) {
+        /*
         timer.invalidate()
         running = false
         if(started) {
@@ -89,6 +105,16 @@ class PlayScreenViewController : UIViewController {
             self.started = false
         }
         game.pauseLevel()
+        getTimeStamp()
+        */
+        running = false
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
+        print("trying to pause")
+        game.pauseLevel()
+        
     }
     
     @IBAction func playAndPause(sender: AnyObject) {
@@ -111,6 +137,7 @@ class PlayScreenViewController : UIViewController {
     }
     
     func updateCounter() {
+        /*
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         var elapsedTime: NSTimeInterval = currentTime - startTime
         
@@ -124,6 +151,27 @@ class PlayScreenViewController : UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         
         timerLabel.text = "\(strMinutes):\(strSeconds)"
+         */
+        let timeStamp = CustomAudioPlayer.sharedInstance.getTimestamp()
+        
+        /*
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        */
+        
+        
+        let interval = Int(timeStamp)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        timerLabel.text = "\(strMinutes):\(strSeconds)"
+        
     }
     
     @IBAction func dismiss(sender: AnyObject) {
@@ -133,5 +181,25 @@ class PlayScreenViewController : UIViewController {
         game.stopLevel()
         dismissViewControllerAnimated(true, completion: nil)
     }
+    /*
+    
+    func getTimeStamp() -> String{
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        timeStamp = strMinutes + ":" + strSeconds
+        
+        return timeStamp
+    }
+     */
     
 }
