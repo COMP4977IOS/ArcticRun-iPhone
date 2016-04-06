@@ -17,8 +17,10 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var curSegment = 0
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
+    private var viewController:UIViewController
     
-    public override init() {
+    public init(viewController:UIViewController) {
+        self.viewController = viewController
         super.init()
         playLevel(1)
     }
@@ -77,14 +79,13 @@ public class Game : NSObject, AVAudioPlayerDelegate {
 
         } else {
             
-            let pauseTimeInt = segmentData!["length"] as! Int
-            let pauseTime = NSTimeInterval(pauseTimeInt)
-            
             if UIApplication.sharedApplication().applicationState == .Active {
                 print("PAUSE FOREGROUND")
             } else {
                 print("PAUSE BACKGROUND")
             }
+            let pauseTimeInt = segmentData!["length"] as! Int
+            let pauseTime = NSTimeInterval(pauseTimeInt)
             
             // temporary, to simulate time going by
             NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
@@ -134,6 +135,8 @@ public class Game : NSObject, AVAudioPlayerDelegate {
         if (curSegment < levelData.count) {
             curSegment += 1
             playSegment()
+        } else {
+            viewController.dismissViewControllerAnimated(true, completion: {});
         }
     }
     
