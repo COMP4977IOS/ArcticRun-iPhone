@@ -22,7 +22,6 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     public init(viewController:UIViewController) {
         self.viewController = viewController
         super.init()
-        playLevel(1)
     }
     
     // Plays a certain level. It uses the corresponding plist file for configuration.

@@ -7,7 +7,7 @@
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
-		<string>chap1_segment1</string>
+		<string>chap2_segment1</string>
 	</dict>
 	<key>segment2</key>
 	<dict>
@@ -21,7 +21,7 @@
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
-		<string>chap1_segment2</string>
+		<string>chap2_segment2</string>
 	</dict>
 	<key>segment4</key>
 	<dict>
@@ -35,21 +35,7 @@
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
-		<string>chap1_segment3</string>
-	</dict>
-	<key>segment6</key>
-	<dict>
-		<key>type</key>
-		<string>pause</string>
-		<key>length</key>
-		<integer>10</integer>
-	</dict>
-	<key>segment7</key>
-	<dict>
-		<key>type</key>
-		<string>audio</string>
-		<key>filename</key>
-		<string>chap1_segment4</string>
+		<string>chap2_segment3</string>
 	</dict>
 </dict>
 </plist>

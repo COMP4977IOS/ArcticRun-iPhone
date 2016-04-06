@@ -12,6 +12,7 @@ import UIKit
 class MissionStartViewController : UIViewController, UIViewControllerTransitioningDelegate {
     
     var toPass : String!
+    var chapterNum : Int?
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var missionPic: UIImageView!
@@ -56,12 +57,14 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
             
             missionPic.image = UIImage(named: "Reconnaissance")
             missionSynop.text = "Yourself, Joyce, and Richards have been tasked to travel to Scott Hut and assess its potential as a base of operations. After being confined to the ship for weeks, this will be a welcome change."
+            chapterNum = 1
             
             
         }else if(toPass == "The Ship") {
             
             missionPic.image = UIImage(named: "OldWoodenShip")
             missionSynop.text = "After discovering Scott Hut in good condtion, travel back to the ship and inform the expedtion of your findings."
+            chapterNum = 2
             
         }else{}
         
@@ -105,6 +108,7 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
             // "text" data is passed from GameMap to MissionScreenController
             if let viewController2 = segue.destinationViewController as? PlayScreenViewController {
                 viewController2.passData = missionText.text
+                viewController2.chapterNum = chapterNum
             }
             
         }
