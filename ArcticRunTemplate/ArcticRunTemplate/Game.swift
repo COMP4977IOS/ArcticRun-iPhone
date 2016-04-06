@@ -120,13 +120,49 @@ public class Game : NSObject, AVAudioPlayerDelegate {
         var totalActiveMembers = 0
         var totalHealth = 0
         Member.getAllMembers { (members: [Member]) -> Void in
-            for totalActiveMembers = 0; totalActiveMembers < members.count; totalActiveMembers++ {
-                if(members[totalActiveMembers].getStatus() == "Active") {
-                    totalHealth += members[totalActiveMembers].getHealth()!
+            for var i = 0; i < members.count; i++ {
+                if(members[i].getStatus() == "Active") {
+                    totalHealth += members[i].getHealth()!
+                    totalActiveMembers++
                 }
             }
         }
         return totalHealth / totalActiveMembers
+    }
+    
+    // Change the health of a party member
+    // Pass in the party member's last name, the amount to change their health by, and the direction to change it
+    public func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
+        
+        Member.getAllMembers { (members: [Member]) -> Void in
+            for var i = 0; i < members.count; i++ {
+                if (members[i].getLastName() == partyMemberLastName) {
+                    var tempHealth = members[i].getHealth()
+                    if(healthMovement == "Up") {
+                        tempHealth = tempHealth! + healthChange
+                        if(tempHealth > 100) {
+                            tempHealth = 100
+                        }
+                        members[i].setHealth(tempHealth!)
+                    } else if (healthMovement == "Down"){
+                        tempHealth = tempHealth! - healthChange
+                        if(tempHealth < 0) {
+                            tempHealth = 0
+                        }
+                        members[i].setHealth(tempHealth!)
+                    }
+                }
+            }
+        }
+    }
+    
+    // Text to speech. *Not tested*
+    public func textToSpeech(input: String) {
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: "")
+        myUtterance = AVSpeechUtterance(string: input)
+        myUtterance.rate = 0.3
+        synth.speakUtterance(myUtterance)
     }
     
     // Called when the current level segment is finished
@@ -138,5 +174,6 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             viewController.dismissViewControllerAnimated(true, completion: {});
         }
     }
+    
     
 }
