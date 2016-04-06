@@ -66,7 +66,7 @@ class PlayScreenViewController : UIViewController {
         
         if(!CustomAudioPlayer.sharedInstance.isPaused){
             print("Starting a new game")
-            game = Game()
+            game = Game(viewController: self)
         } else {
             print("\n\nusing previous game")
             let time = game.getTimeStamp()
