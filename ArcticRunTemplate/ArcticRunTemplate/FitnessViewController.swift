@@ -21,6 +21,8 @@ class FitnessViewController: UIViewController {
     @IBOutlet weak var stepImage: UIImageView!
     @IBOutlet weak var caloriesBurnedValue: UILabel!
     @IBOutlet weak var distanceValue: UILabel!
+    @IBOutlet weak var dailyStepsCounter: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     var db:CKDatabase!
@@ -32,6 +34,7 @@ class FitnessViewController: UIViewController {
     private var weightValues : [String] = []
     private var waterDates : [String] = []
     private var waterValues : [String] = []
+    private var stepsToday: Int = 0
     private var chart: Chart? // arc
     
     override func viewDidLoad() {
@@ -39,6 +42,7 @@ class FitnessViewController: UIViewController {
         
         caloriesBurnedValue.text = "..."
         distanceValue.text = "..."
+        dailyStepsCounter.text = "..."
        
         db = CKContainer(identifier: "iCloud.com.terratap.arcticrun").publicCloudDatabase
         self.loadCloudData()
@@ -56,7 +60,8 @@ class FitnessViewController: UIViewController {
         waterImage.image = UIImage(named: "water")
         stepImage.image = UIImage(named: "steps")
         
-        self.showChart()
+        //self.showChart()
+        activityIndicator.startAnimating()
     }
     
     
@@ -163,6 +168,7 @@ class FitnessViewController: UIViewController {
                     
                     let st:Double = data.valueForKey("caloriesBurned") as! Double
                     let dist:Double = data.valueForKey("distance") as! Double
+                    let steps:Int = data.valueForKey("steps") as! Int
                     
                     if let stDate = data.valueForKey("startDate") {
                         
@@ -181,6 +187,11 @@ class FitnessViewController: UIViewController {
                         let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
                     
                         self.statsDate.append(date)
+                        
+                        
+                        if date == dateFormatter.stringFromDate(NSDate()){
+                            self.stepsToday += steps
+                        }
                     }
                     
                     
@@ -189,12 +200,15 @@ class FitnessViewController: UIViewController {
                     self.distanceArray.append(String(format:"%.2f", dist) + " km")
                     //self.statsDate.append(stDate)
                 }
+                
+                print("\(self.stepsToday) steps today")
                  //print(self.caloriesArray)
                 dispatch_async (dispatch_get_main_queue ()) {
                     self.caloriesBurnedValue.text = String(format:"%.0f", calories)
                     self.distanceValue.text = String(format:"%.0f", distance)
                     
-                    
+                    self.dailyStepsCounter.text = "\(self.stepsToday)/5000"
+                    self.showChart()
                 }
             }
             
@@ -203,6 +217,8 @@ class FitnessViewController: UIViewController {
     }
     
     func showChart() {
+        activityIndicator.stopAnimating()
+        self.activityIndicator.hidden = true
         let chartConfig = BarsChartConfig(
             valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
         )

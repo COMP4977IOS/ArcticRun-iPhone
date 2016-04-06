@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rd3-ny-h2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rd3-ny-h2z">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -172,6 +172,12 @@
                                                                     </stackView>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6d-o2-IRS">
                                                                         <rect key="frame" x="0.0" y="50" width="343" height="176"/>
+                                                                        <subviews>
+                                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-ye-f9J">
+                                                                                <rect key="frame" x="161" y="78" width="20" height="20"/>
+                                                                                <color key="color" red="1" green="0.14958835226326972" blue="0.19468470371093727" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </activityIndicatorView>
+                                                                        </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </view>
                                                                 </subviews>
@@ -461,8 +467,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Cdn-ye-f9J" id="iyJ-j9-71w"/>
                         <outlet property="caloriesBurnedValue" destination="N4H-de-WnS" id="QsR-ze-QEf"/>
                         <outlet property="chartView" destination="b6d-o2-IRS" id="pa9-wA-KLd"/>
+                        <outlet property="dailyStepsCounter" destination="dK5-3R-fgy" id="pLg-70-wno"/>
                         <outlet property="distanceValue" destination="DwS-pn-eXX" id="et6-Ud-U3Z"/>
                         <outlet property="menuButton" destination="Z6l-ci-iND" id="DBG-WX-Ovt"/>
                         <outlet property="stepImage" destination="8LR-02-xNe" id="5qQ-sd-O6H"/>
@@ -547,13 +555,13 @@
                                                 <rect key="frame" x="0.0" y="28" width="391" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MEt-G0-TIN" id="GDc-Je-rUc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="391" height="45"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="391" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZj-iq-XWV">
                                                             <rect key="frame" x="18" y="12" width="85" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75 kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT9-Q5-cEk">
@@ -562,7 +570,7 @@
                                                                 <constraint firstAttribute="width" constant="114" id="8nm-ZV-xtK"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -663,7 +671,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Acr-KK-e4k" id="0T2-UO-Mdl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-Hx-ZGx">
@@ -751,7 +759,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FitnessTabIcon" width="75" height="75"/>
+        <image name="FitnessTabIcon" width="200" height="200"/>
         <image name="menuButton" width="57" height="57"/>
     </resources>
     <inferredMetricsTieBreakers>
