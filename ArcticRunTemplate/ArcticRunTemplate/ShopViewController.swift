@@ -35,8 +35,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     override func viewDidLoad() {
-        
-        currency1Label.text = "15000"
+    
         currency1Label.textColor = UIColor.redColor()
         currency2Label.textColor = UIColor.blueColor()
         
@@ -46,6 +45,13 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.current = crews[i].getCaloriePoints()!
             }
             self.currency2Label.text = String(self.current)
+        }
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getStepPoints()!
+            }
+            self.currency1Label.text = String(self.current)
         }
         
         super.viewDidLoad()
@@ -59,6 +65,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func updatePoints(price: Int) -> String {
+        
         Crew.getAllCrews { (crews: [Crew]) -> Void in
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getCaloriePoints()!
@@ -74,6 +81,23 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         return String(result)
     }
 
+    func updateStepPoints(price: Int) -> String {
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getStepPoints()!
+            }
+        }
+        let result = current - price
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                crews[i].setStepPoints(result)
+                crews[i].save()
+            }
+        }
+        return String(result)
+    }
+    
     @IBAction func useCurrency1(sender: AnyObject) {
         if useCur1 == false {
             useCur1 = true
@@ -127,10 +151,10 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
                 } else {
                     let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
                         .ActionSheet)
-                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
+                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
+                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
+                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
+                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
                     let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
                     alertController.addAction(party1)
                     alertController.addAction(party2)

@@ -20,18 +20,15 @@ public class Workout {
         self.record = workoutRecord
     }
 
-    init(caloriesBurned:Int, distance:Double, endDate:NSDate, fastestSpeed:Double, endLocation:CLLocation, startDate:NSDate, startLocation:CLLocation, steps: Int, user: CKReference) {
+    init(caloriesBurned:Int, distance:Double, endDate:NSDate, fastestSpeed:Double, startDate:NSDate, steps: Int) {
         self.record = CKRecord(recordType: "Workout")
         
         self.record!.setObject(caloriesBurned, forKey: "caloriesBurned")
         self.record!.setObject(distance, forKey: "distance")
         self.record!.setObject(endDate, forKey: "endDate")
-        self.record!.setObject(endLocation, forKey: "endLocation")
         self.record!.setObject(fastestSpeed, forKey: "fastestSpeed")
         self.record!.setObject(startDate, forKey: "startDate")
-        self.record!.setObject(startLocation, forKey: "startLocation")
         self.record!.setObject(steps, forKey: "steps")
-        self.record!.setObject(user, forKey: "user")
     }
     
     func getCaloriesBurned() -> Double? {

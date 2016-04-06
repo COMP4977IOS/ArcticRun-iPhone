@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,9 +27,6 @@
                                 <color key="shadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ixt-jG-7Ty">
-                                <rect key="frame" x="290" y="355" width="20" height="20"/>
-                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchSreen" translatesAutoresizingMaskIntoConstraints="NO" id="EGV-aM-e3p">
                                 <rect key="frame" x="180" y="121" width="240" height="128"/>
                             </imageView>
@@ -77,9 +74,7 @@
                             </constraint>
                             <constraint firstItem="rlF-0T-LUU" firstAttribute="top" secondItem="Ojf-KH-hft" secondAttribute="bottom" constant="100" id="Hxw-N3-kOU"/>
                             <constraint firstItem="Ojf-KH-hft" firstAttribute="centerX" secondItem="9kc-mk-TKj" secondAttribute="centerX" id="NcM-06-2lJ"/>
-                            <constraint firstItem="ixt-jG-7Ty" firstAttribute="top" secondItem="wcO-I9-vm6" secondAttribute="bottom" constant="48" id="POw-1z-7v3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2LK-BE-qBn" secondAttribute="trailing" constant="50" id="SFV-B7-g26"/>
-                            <constraint firstItem="ixt-jG-7Ty" firstAttribute="centerX" secondItem="9kc-mk-TKj" secondAttribute="centerX" id="V5n-Je-uHO"/>
                             <constraint firstItem="2LK-BE-qBn" firstAttribute="top" secondItem="QnW-E8-e8Q" secondAttribute="bottom" constant="100" id="YH8-XM-gIq"/>
                             <constraint firstItem="nP8-Aj-lxX" firstAttribute="top" secondItem="QnW-E8-e8Q" secondAttribute="bottom" constant="50" id="ZEq-JD-ngq"/>
                             <constraint firstItem="WGz-aP-LX3" firstAttribute="top" secondItem="rlF-0T-LUU" secondAttribute="bottom" constant="100" id="aXS-jV-0hK"/>
