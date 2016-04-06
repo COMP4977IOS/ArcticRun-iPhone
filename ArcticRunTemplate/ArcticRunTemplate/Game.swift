@@ -83,8 +83,12 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             } else {
                 print("PAUSE BACKGROUND")
             }
-            let pauseTimeInt = segmentData!["length"] as! Int
-            let pauseTime = NSTimeInterval(pauseTimeInt)
+            let initialTimeInt = segmentData!["length"] as! Int
+            let partyHealth = getMembersHealth()
+            let calcTimeInt = generateTimeDelay(Float(initialTimeInt), partyHealth: partyHealth)
+            let pauseTime = NSTimeInterval(calcTimeInt)
+            
+            print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
             
             // temporary, to simulate time going by
             NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
@@ -98,31 +102,32 @@ public class Game : NSObject, AVAudioPlayerDelegate {
 
     // Function used to create time delay between audio segments
     // Takes in an int - This int should come from a database query of all active party members health divided by total active party members. This number should range from 0-100.
-    private func generateTimeDelay(partyHealth:Int) -> Int {
+    private func generateTimeDelay(baseDelay:Float, partyHealth:Int) -> Int {
         // Three minute delay between segments - Subject to change
-        var baseDelay = 180.0
+        var additionalDelay:Float
         // Depending on the health of the party, increase the time delay between segments
         if(partyHealth < 25) {
-            baseDelay = baseDelay * 2.2
+            additionalDelay = baseDelay * 2.2
         } else if (partyHealth < 50) {
-            baseDelay = baseDelay * 1.7
+            additionalDelay = baseDelay * 1.7
         } else if (partyHealth < 75) {
-            baseDelay = baseDelay * 1.5
+            additionalDelay = baseDelay * 1.5
         } else {
-            baseDelay = baseDelay * 1.25
+            additionalDelay = baseDelay * 1.25
         }
         
-        return  Int(baseDelay)
+        return  Int(additionalDelay)
     }
     
     // Query the database for all active members, add up their health, then divide by total active members and return the average
     private func getMembersHealth() -> Int {
-        var totalActiveMembers = 0
-        var totalHealth = 0
+        var totalActiveMembers = 1
+        var totalHealth = 1
         Member.getAllMembers { (members: [Member]) -> Void in
-            for totalActiveMembers = 0; totalActiveMembers < members.count; totalActiveMembers++ {
-                if(members[totalActiveMembers].getStatus() == "Active") {
-                    totalHealth += members[totalActiveMembers].getHealth()!
+            for var i = 0; i < members.count; i++ {
+                if(members[i].getStatus() == "Active") {
+                    totalHealth += members[i].getHealth()!
+                    totalActiveMembers++
                 }
             }
         }
