@@ -31,6 +31,7 @@ class GameMapViewController: UIViewController {
             scrollView.backgroundColor = UIColor.blackColor()
             scrollView.contentSize = imageView.bounds.size
             scrollView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+            scrollView.contentOffset = CGPointMake(170,30);
             
             scrollView.addSubview(imageView)
             view.addSubview(scrollView)
@@ -40,7 +41,7 @@ class GameMapViewController: UIViewController {
             // first button (scott hut)
             let frame1 = CGRect(x: 495, y: 340, width: 30, height: 30 )
             let button1 = UIButton(frame: frame1)
-            button1.setTitle("x", forState: .Normal)
+            button1.setTitle("2", forState: .Normal)
             button1.backgroundColor = UIColor.redColor()
             button1.addTarget(self, action: "pressed1:", forControlEvents: .TouchUpInside)
             self.scrollView.addSubview(button1)
@@ -48,7 +49,7 @@ class GameMapViewController: UIViewController {
             // second button (back to ship)
             let frame2 = CGRect(x: 340, y: 426, width: 30, height: 30 )
             let button2 = UIButton(frame: frame2)
-            button2.setTitle("x", forState: .Normal)
+            button2.setTitle("1", forState: .Normal)
             button2.backgroundColor = UIColor.redColor()
             button2.addTarget(self, action: "pressed2:", forControlEvents: .TouchUpInside)
             self.scrollView.addSubview(button2)
@@ -86,9 +87,7 @@ class GameMapViewController: UIViewController {
             self.scrollView.addSubview(button6)
             
             self.view.bringSubviewToFront(navBar)
-            
-            
-            print("\n\n PLAYING AUDIO")
+
         self.view.bringSubviewToFront(navBar)
     }
     
