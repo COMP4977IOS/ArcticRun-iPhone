@@ -13,6 +13,7 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
     
     var toPass : String!
     var chapterNum : Int?
+    private let manager = GameConfigManager()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var missionPic: UIImageView!
@@ -51,25 +52,25 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
     
     // Will display appropriate picture, mission synopsis based on user choice
     func loadMission() {
-
-        
-        if(toPass == "Scott Hut") {
-            
-            missionPic.image = UIImage(named: "Reconnaissance")
-            missionSynop.text = "Yourself, Joyce, and Richards have been tasked to travel to Scott Hut and assess its potential as a base of operations. After being confined to the ship for weeks, this will be a welcome change."
+        if(toPass == "The Ship") {
+            manager.loadLevel(1)
             chapterNum = 1
             
+            let levelInfo:NSDictionary = manager.getLevelInfo()!
+            missionPic.image = UIImage(named: levelInfo["image"] as! String)
+            missionSynop.text = levelInfo["description"] as! String
             
-        }else if(toPass == "The Ship") {
-            
-            missionPic.image = UIImage(named: "OldWoodenShip")
-            missionSynop.text = "After discovering Scott Hut in good condtion, travel back to the ship and inform the expedtion of your findings."
+        }
+        else if(toPass == "Scott Hut") {
+            manager.loadLevel(2)
             chapterNum = 2
             
-        }else{}
-        
+            let levelInfo:NSDictionary = manager.getLevelInfo()!
+            missionPic.image = UIImage(named: levelInfo["image"] as! String)
+            missionSynop.text = levelInfo["description"] as! String
+
+        }
     }
-    
     
     func loadBG() {
         
