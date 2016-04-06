@@ -40,6 +40,20 @@ public class Game {
         audioPlayer.stopAudio()
     }
     
+    public func startTimeStamp(time : NSTimeInterval){
+        // start audio at specific timestamp
+        audioPlayer.startTime(time)
+    }
+    
+    public func isPaused() -> Bool{
+        return audioPlayer.isPaused
+    }
+    
+    public func getTimeStamp() -> NSTimeInterval{
+        return audioPlayer.getTimestamp()
+    }
+    
+    
     private func playSegment() {
         let segmentData = manager.getLevelSegment(curSegment)
         if (segmentData!["type"] as! String == "audio") {

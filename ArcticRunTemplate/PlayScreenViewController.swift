@@ -38,7 +38,6 @@ class PlayScreenViewController : UIViewController {
     
     var running = false
     var started:Bool = false
-    var paused : Bool = false
     
     var game:Game!
 
@@ -52,7 +51,7 @@ class PlayScreenViewController : UIViewController {
         
         titleLabel.text = "Passed Label Data"
         
-        //playPause()
+        playPause()
         
     }
     
@@ -64,6 +63,17 @@ class PlayScreenViewController : UIViewController {
             
         }
         */
+        
+        if(!CustomAudioPlayer.sharedInstance.isPaused){
+            print("Starting a new game")
+            game = Game()
+        } else {
+            print("\n\nusing previous game")
+            let time = game.getTimeStamp()
+            print(time)
+            game.startTimeStamp(time)
+        }
+        
         if !running {
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -97,25 +107,17 @@ class PlayScreenViewController : UIViewController {
         game.pauseLevel()
         getTimeStamp()
         */
-        paused = true
         running = false
         if(started) {
             pedometer.stopPedometerUpdates()
             self.started = false
         }
+        print("trying to pause")
         game.pauseLevel()
         
     }
     
     @IBAction func playAndPause(sender: AnyObject) {
-        //playPause()
-        if(!paused){
-            print("Starting a new game")
-            game = Game()
-        } else {
-            print("using previous game")
-        }
-        paused = true
         playPause()
     }
     
