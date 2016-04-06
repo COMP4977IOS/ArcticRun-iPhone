@@ -18,6 +18,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     private var viewController:UIViewController
+    private var delayTimer:NSTimer?
     
     public init(viewController:UIViewController) {
         self.viewController = viewController
@@ -40,10 +41,18 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     
     public func pauseLevel() {
         audioPlayer.pauseAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func stopLevel() {
         audioPlayer.stopAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func startTimeStamp(time : NSTimeInterval){
@@ -91,7 +100,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
             
             // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
             
         }
     }
