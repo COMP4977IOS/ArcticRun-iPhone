@@ -114,73 +114,81 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let priceString = tableData[indexPath.row]
         let price = Int(priceString)
-        
-        if useCur1 == true {
-            let totalString = currency1Label.text
-            let total = Int(totalString!)
-
-            if(price > total) {
-                let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
-                alertController.addAction(okAction)
-                self.presentViewController(alertController, animated: true, completion: nil)
+        if(isICloudContainerAvailable()){
+            if useCur1 == true {
+                let totalString = currency1Label.text
+                let total = Int(totalString!)
+                
+                if(price > total) {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
+                    alertController.addAction(okAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
+                        .ActionSheet)
+                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
+                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
+                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
+                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
+                    let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
+                    alertController.addAction(party1)
+                    alertController.addAction(party2)
+                    alertController.addAction(party3)
+                    alertController.addAction(party4)
+                    alertController.addAction(cancel)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             } else {
-                let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
-                .ActionSheet)
-                let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency1Label.text = String(total! - price!) } )
-                let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
-                alertController.addAction(party1)
-                alertController.addAction(party2)
-                alertController.addAction(party3)
-                alertController.addAction(party4)
-                alertController.addAction(cancel)
-                self.presentViewController(alertController, animated: true, completion: nil)
+                let totalString = currency2Label.text
+                let total = Int(totalString!)
+                
+                if(price > total) {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
+                    alertController.addAction(okAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
+                        .ActionSheet)
+                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                    let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
+                    alertController.addAction(party1)
+                    alertController.addAction(party2)
+                    alertController.addAction(party3)
+                    alertController.addAction(party4)
+                    alertController.addAction(cancel)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
-        } else {
-            let totalString = currency2Label.text
-            let total = Int(totalString!)
+        }else{
+            let myalert = UIAlertController(title: "iCloud Account", message: "Please loggin to your iCloud Account",preferredStyle: UIAlertControllerStyle.Alert);
             
-            if(price > total) {
-                let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
-                alertController.addAction(okAction)
-                self.presentViewController(alertController, animated: true, completion: nil)
-            } else {
-                let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
-                    .ActionSheet)
-                let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
-                alertController.addAction(party1)
-                alertController.addAction(party2)
-                alertController.addAction(party3)
-                alertController.addAction(party4)
-                alertController.addAction(cancel)
-                self.presentViewController(alertController, animated: true, completion: nil)
+            let dismissAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){(ACTION) in print("ok button tapped");
             }
+            
+            myalert.addAction(dismissAction);
+            
+            self.presentViewController(myalert, animated:true, completion: nil)
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func isICloudContainerAvailable()->Bool {
+        if let currentToken = NSFileManager.defaultManager().ubiquityIdentityToken {
+            return true
+        }
+        else {
+            return false
+        }
     }
-    */
 
 }
