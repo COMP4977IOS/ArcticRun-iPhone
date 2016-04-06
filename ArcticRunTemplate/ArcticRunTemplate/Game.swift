@@ -137,10 +137,12 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     // Change the health of a party member
     // Pass in the party member's last name, the amount to change their health by, and the direction to change it
     public func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
-        
+        print("in change health function")
         Member.getAllMembers { (members: [Member]) -> Void in
+            print("in members ")
             for var i = 0; i < members.count; i++ {
                 if (members[i].getLastName() == partyMemberLastName) {
+                    print("found Joyce")
                     var tempHealth = members[i].getHealth()
                     if(healthMovement == "Up") {
                         tempHealth = tempHealth! + healthChange
@@ -156,6 +158,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                         members[i].setHealth(tempHealth!)
                     }
                 }
+                print("didnt find joyce")
             }
         }
     }

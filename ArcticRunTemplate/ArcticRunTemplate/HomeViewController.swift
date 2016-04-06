@@ -89,6 +89,12 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        print("running text to speech");
+        var g :Game = Game(viewController: self)
+        
+        g.textToSpeech("Hi this is a computer")
+        g.changeMembersHealth("Joyce", healthChange: 10, healthMovement: "Down")
+        
     }
  
     func loadBG() {
