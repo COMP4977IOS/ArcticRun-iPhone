@@ -15,6 +15,7 @@ class PlayScreenViewController : UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
     var passData : String!
+    var chapterNum : Int!
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -68,11 +69,14 @@ class PlayScreenViewController : UIViewController {
         if(!CustomAudioPlayer.sharedInstance.isPaused){
             print("Starting a new game")
             game = Game(viewController: self)
+            game.playLevel(chapterNum)
         } else if(game == nil){
             game = Game(viewController: self)
+            game.playLevel(chapterNum)
         } else {
             print("\n\nusing previous game")
             game = Game(viewController: self)
+            game.playLevel(chapterNum)
             let time = game.getTimeStamp()
             print(time)
             game.startTimeStamp(time)

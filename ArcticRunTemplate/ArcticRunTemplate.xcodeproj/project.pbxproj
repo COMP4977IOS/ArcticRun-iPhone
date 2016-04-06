@@ -75,6 +75,7 @@
 		8EC3D6DC1C8A438800D1C62B /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC3D6DA1C8A438800D1C62B /* Shop.storyboard */; };
 		9203A4E91CB03FAA006CE8E3 /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9203A4E81CB03FAA006CE8E3 /* Level1.plist */; };
 		9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203A4EA1CB041D1006CE8E3 /* Game.swift */; };
+		921DB34A1CB4C64B006C7572 /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921DB3491CB4C64B006C7572 /* Level2.plist */; };
 		98C7716F6DFB4E493EAF563F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D32CCC755B6F9E5A4901CE /* Pods.framework */; };
 		9CF1C82E1CB325DF00F008B8 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */; };
 		B3C416011CB413B200C5A37E /* recordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C415FF1CB413B200C5A37E /* recordsCell.swift */; };
@@ -190,6 +191,7 @@
 		8EC3D6DB1C8A438800D1C62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shop.storyboard; sourceTree = "<group>"; };
 		9203A4E81CB03FAA006CE8E3 /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level1.plist; sourceTree = "<group>"; };
 		9203A4EA1CB041D1006CE8E3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		921DB3491CB4C64B006C7572 /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level2.plist; sourceTree = "<group>"; };
 		9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = "Pods/../build/Debug-iphoneos/SwiftCharts.framework"; sourceTree = "<group>"; };
 		B3C415FF1CB413B200C5A37E /* recordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recordsCell.swift; sourceTree = "<group>"; };
 		B3C416001CB413B200C5A37E /* RecordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				9203A4E81CB03FAA006CE8E3 /* Level1.plist */,
+				921DB3491CB4C64B006C7572 /* Level2.plist */,
 			);
 			name = LevelConfig;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				7CDACBEA1CACBAB3003914D5 /* gamemap.png in Resources */,
 				5B89F1CB1C862040009D9779 /* Settings.storyboard in Resources */,
 				87E705291CACC48C0098CFC0 /* BackgroundAudio.mp3 in Resources */,
+				921DB34A1CB4C64B006C7572 /* Level2.plist in Resources */,
 				87E7052B1CACC48C0098CFC0 /* chap1_segment1.mp3 in Resources */,
 				5BF8C2C11C8B925200C1DFFF /* Stats.storyboard in Resources */,
 				C20377FD1CA23AE800EE057C /* GameCenter.storyboard in Resources */,
