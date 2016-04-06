@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import AVKit
+import AVFoundation
 
-public class Game {
+public class Game : NSObject, AVAudioPlayerDelegate {
     
     private let manager = GameConfigManager()
     private var curLevel = 0
@@ -16,7 +18,8 @@ public class Game {
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     
-    init() {
+    public override init() {
+        super.init()
         playLevel(1)
     }
     
@@ -51,6 +54,7 @@ public class Game {
             }
             
             let fileName:String = segmentData!["filename"] as! String
+            audioPlayer.localDelegate = self
             audioPlayer.playAudio(fileName)
 
         } else {
@@ -68,6 +72,10 @@ public class Game {
             NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
             
         }
+    }
+    
+    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        finish()
     }
     
     @objc public func finish() {

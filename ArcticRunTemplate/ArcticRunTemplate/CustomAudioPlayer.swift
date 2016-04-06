@@ -15,8 +15,11 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
     var audioPlayer:AVAudioPlayer = AVAudioPlayer()
     var isPlaying:Bool = false
     var isPaused:Bool = false
+    var localDelegate:AVAudioPlayerDelegate?
     
     private override init() {
+        super.init()
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             print("AVAudioSession Category Playback OK")
@@ -29,6 +32,8 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
+        localDelegate = self
     }
 
     func playAudio(fileName : String){
@@ -44,7 +49,7 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
         
         do {
             try audioPlayer = AVAudioPlayer(contentsOfURL: fileURL)
-            
+            audioPlayer.delegate = localDelegate
             audioPlayer.play()
             isPlaying = true
         } catch{
@@ -65,9 +70,12 @@ public class CustomAudioPlayer : NSObject, AVAudioPlayerDelegate {
         }
     }
     
-    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+    public func finish() {
         isPlaying = false
         isPaused = false
-        print("FINISHED")
+    }
+    
+    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        finish()
     }
 }
