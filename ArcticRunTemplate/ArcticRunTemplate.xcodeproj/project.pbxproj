@@ -12,6 +12,7 @@
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
 		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
+		57B771AD1CB539B6000F0830 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */; };
 		5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */; };
 		5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */; };
 		5B2E79601C9A17710072ED7F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */; };
@@ -120,6 +121,7 @@
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
 		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5769B9461C87FAE5007356E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnail.swift; sourceTree = "<group>"; };
 		5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */,
 				5712EE801C903934002624D6 /* CloudKitHelper.swift */,
+				57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				8E9829B91C9F7F33001B98EC /* Resource.swift in Sources */,
 				097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */,
 				EB4211A01C88E9350025CA53 /* ShopViewController.swift in Sources */,
+				57B771AD1CB539B6000F0830 /* KDCircularProgress.swift in Sources */,
 				C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */,
 				EB42119E1C88E8230025CA53 /* PartyController.swift in Sources */,
 				7CDACBF01CACBC4C003914D5 /* CAGradientLayer+Convienence.swift in Sources */,

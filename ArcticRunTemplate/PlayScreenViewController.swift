@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreMotion
+import CloudKit
 
 class PlayScreenViewController : UIViewController {
     
@@ -41,12 +42,28 @@ class PlayScreenViewController : UIViewController {
     var started:Bool = false
     
     var game:Game!
-
+    var startDate:NSDate?
+    var setTime = false
     
+    var missionProgress:Double = 0
+    var currentSteps = 0
+    var currentCaloriesBurned = 0
+    var steps: Int = 0
+    var distance: Double = 0
+    var missionPercentage:Double = 0
+    @IBOutlet weak var pauseButton: UIButton!
+    
+    @IBOutlet weak var circularProgressBar: KDCircularProgress!
+    
+    var maxTime:Double = 1.0
+    
+    @IBOutlet weak var percentageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBG()
-        
+        circularProgressBar.angle = 0
+        let container = CKContainer.defaultContainer()
+        let publicData = container.publicCloudDatabase
         // TODO: Pass data from MissionViewController to label, not working like it is from GameMap
         titleLabel.text = passData
         
@@ -58,6 +75,14 @@ class PlayScreenViewController : UIViewController {
     }
     
     private func playPause() {
+        if (!setTime) {
+            startDate = NSDate()
+            setTime = true
+        }
+        
+        playBtn.backgroundColor = UIColor.redColor()
+        pauseButton.backgroundColor = UIColor.clearColor()
+        
         let aSelector : Selector = "updateCounter"
         /*
         if(timeStamp != ""){
@@ -96,6 +121,8 @@ class PlayScreenViewController : UIViewController {
                             self.stepsLabel.text = "\(data!.numberOfSteps)"
                             self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data!.distance as! Double))"
                             self.started = true
+                            self.steps = data!.numberOfSteps as Int
+                            self.distance = data!.distance as! Double
                         }
                     }
                 }
@@ -115,12 +142,13 @@ class PlayScreenViewController : UIViewController {
         game.pauseLevel()
         getTimeStamp()
         */
+        playBtn.backgroundColor = UIColor.clearColor()
+        pauseButton.backgroundColor = UIColor.redColor()
         running = false
         if(started) {
             pedometer.stopPedometerUpdates()
             self.started = false
         }
-        print("trying to pause")
         game.pauseLevel()
         
     }
@@ -174,15 +202,42 @@ class PlayScreenViewController : UIViewController {
         let interval = Int(timeStamp)
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
-        
+        missionProgress = Double(interval) / 60
+        missionPercentage = missionProgress * 100.00
+        percentageLabel.text = String(round(missionPercentage)) + "%"
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-        
+        print(missionPercentage)
         timerLabel.text = "\(strMinutes):\(strSeconds)"
-        
+        if (missionProgress != maxTime) {
+            let newAngleValue = 360 * (missionProgress/maxTime)
+            //print(newAngleValue)
+            circularProgressBar.animateToAngle(newAngleValue, duration: 0.1, completion: nil)
+        } else if (missionProgress >= maxTime) {
+            
+            if(started) {
+                pedometer.stopPedometerUpdates()
+                self.started = false
+            }
+            timer.invalidate()
+            timerLabel.text = "\(00):\(00)"
+            running = false
+            game.stopLevel()
+            saveWorkout(steps, distance: distance)
+            var calories = steps / 20
+            let alert = UIAlertController(title: "Mission Complete!", message: "You have Received \(steps) Coins and \(calories) Gems!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { dismiss }()))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
     
     @IBAction func dismiss(sender: AnyObject) {
+        if(started) {
+            pedometer.stopPedometerUpdates()
+            self.started = false
+        }
         timer.invalidate()
         timerLabel.text = "\(00):\(00)"
         running = false
@@ -209,5 +264,62 @@ class PlayScreenViewController : UIViewController {
         return timeStamp
     }
      */
+    
+    func saveWorkout(steps: Int, distance: Double) {
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.currentSteps = crews[i].getStepPoints()!
+            }
+        }
+        let resultSteps = currentSteps + steps
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                crews[i].setStepPoints(resultSteps)
+                crews[i].save()
+            }
+        }
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.currentCaloriesBurned = crews[i].getCaloriePoints()!
+            }
+        }
+        let resultCalories = currentCaloriesBurned + steps
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                crews[i].setCaloriePoints(resultCalories)
+                crews[i].save()
+            }
+        }
+        
+        let caloriesBurned:Int = steps / 20
+        
+        let wk = Workout.init(caloriesBurned: caloriesBurned, distance: distance, endDate: NSDate(), fastestSpeed: 0, startDate: startDate!, steps: steps)
+        
+        wk.save()
+
+    }
+    
+    func saveProgress() {
+        let container = CKContainer.defaultContainer()
+        let publicData = container.publicCloudDatabase
+        
+        let record = CKRecord(recordType: "Mission")
+        
+        record.setValue(missionProgress, forKey: "progress")
+        record.setValue(passData, forKey: "title")
+        publicData.saveRecord(record, completionHandler: { record, error in
+            if error != nil {
+                print(error)
+            }
+        })
+    }
+    
+    func getProgress() {
+        
+    }
     
 }

@@ -18,9 +18,10 @@ public class Crew {
         self.record = crewRecord
     }
     
-    init(caloriesPoints: Int, challengeID: Int, gameLevel: Int, members: [CKReference], name: String, resources:[CKReference], user: CKReference){
+    init(caloriesPoints: Int, stepPoints: Int, challengeID: Int, gameLevel: Int, members: [CKReference], name: String, resources:[CKReference], user: CKReference){
         self.record = CKRecord(recordType: "Crew")
         
+        self.record?.setObject(stepPoints, forKey: "stepPoints")
         self.record?.setObject(caloriesPoints, forKey: "caloriePoints")
         self.record?.setObject(challengeID, forKey: "challengeID")
         self.record?.setObject(gameLevel, forKey: "gameLevel")
@@ -30,12 +31,21 @@ public class Crew {
         self.record?.setObject(user, forKey: "user")
     }
     
+    
     func getCaloriePoints() -> Int? {
         return self.record?.objectForKey("caloriePoints") as? Int
     }
     
     func setCaloriePoints(caloriesPoints:Int) -> Void {
         self.record?.setObject(caloriesPoints, forKey: "caloriePoints")
+    }
+    
+    func getStepPoints() -> Int? {
+        return self.record?.objectForKey("stepPoints") as? Int
+    }
+    
+    func setStepPoints(stepPoints:Int) -> Void {
+        self.record?.setObject(stepPoints, forKey: "stepPoints")
     }
     
     func getChallengeID() -> Int? {
