@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import AVKit
+import AVFoundation
 
-public class Game {
+public class Game : NSObject, AVAudioPlayerDelegate {
     
     private let manager = GameConfigManager()
     private var curLevel = 0
@@ -16,10 +18,13 @@ public class Game {
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     
-    init() {
+    public override init() {
+        super.init()
         playLevel(1)
     }
     
+    // Plays a certain level. It uses the corresponding plist file for configuration.
+    // eg playLevel(1) would load Level1.plist
     public func playLevel(level:Int) {
         levelData = manager.loadLevel(level)!
         if levelData == .None {
@@ -54,6 +59,8 @@ public class Game {
     }
     
     
+    // Internal function that is used to play individual segments of a level
+    // This is called by playLevel()
     private func playSegment() {
         let segmentData = manager.getLevelSegment(curSegment)
         if (segmentData!["type"] as! String == "audio") {
@@ -65,6 +72,7 @@ public class Game {
             }
             
             let fileName:String = segmentData!["filename"] as! String
+            audioPlayer.localDelegate = self
             audioPlayer.playAudio(fileName)
 
         } else {
@@ -84,6 +92,10 @@ public class Game {
         }
     }
     
+    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        finish()
+    }
+
     // Function used to create time delay between audio segments
     // Takes in an int - This int should come from a database query of all active party members health divided by total active party members. This number should range from 0-100.
     private func generateTimeDelay(partyHealth:Int) -> Int {
@@ -116,8 +128,8 @@ public class Game {
         }
         return totalHealth / totalActiveMembers
     }
-        
-        
+    
+    // Called when the current level segment is finished
     @objc public func finish() {
         if (curSegment < levelData.count) {
             curSegment += 1
