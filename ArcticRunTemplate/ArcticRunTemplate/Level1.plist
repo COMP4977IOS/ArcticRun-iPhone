@@ -38,6 +38,8 @@
 		<string>pause</string>
 		<key>length</key>
 		<integer>5</integer>
+		<key>speech</key>
+		<string>Start Running Now</string>
 	</dict>
 	<key>segment5</key>
 	<dict>
