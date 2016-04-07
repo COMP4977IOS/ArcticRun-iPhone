@@ -49,13 +49,14 @@ class PlayScreenViewController : UIViewController {
     var currentSteps = 0
     var currentCaloriesBurned = 0
     var steps: Int = 0
+    var calories: Int = 0
     var distance: Double = 0
-    var missionPercentage:Double = 0
+    var missionPercentage:Int = 0
     @IBOutlet weak var pauseButton: UIButton!
     
     @IBOutlet weak var circularProgressBar: KDCircularProgress!
     
-    var maxTime:Double = 1.0
+    var maxTime:Double = 1
     
     @IBOutlet weak var percentageLabel: UILabel!
     override func viewDidLoad() {
@@ -75,6 +76,8 @@ class PlayScreenViewController : UIViewController {
     }
     
     private func playPause() {
+        //sets time of each segment
+        
         if (!setTime) {
             startDate = NSDate()
             setTime = true
@@ -156,9 +159,9 @@ class PlayScreenViewController : UIViewController {
     }
     
     @IBAction func stopGame(sender: AnyObject) {
-        let alert = UIAlertController(title: "The Ship", message: "Are you sure you want to quit?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "\(passData)", message: "Are you sure you want to quit?", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "yes", style: UIAlertActionStyle.Default, handler: { dismiss }()))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { dismiss }()))
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -201,15 +204,16 @@ class PlayScreenViewController : UIViewController {
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
         missionProgress = Double(interval) / 60
-        missionPercentage = missionProgress * 100.00
-        percentageLabel.text = String(round(missionPercentage)) + "%"
+        missionPercentage = Int((missionProgress / maxTime) * 100.00)
+        percentageLabel.text = String(missionPercentage) + "%"
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
         timerLabel.text = "\(strMinutes):\(strSeconds)"
+        
         if (missionProgress != maxTime) {
             let newAngleValue = 360 * (missionProgress/maxTime)
             //print(newAngleValue)
-            circularProgressBar.animateToAngle(newAngleValue, duration: 0.1, completion: nil)
+            circularProgressBar.animateToAngle(newAngleValue, duration: 0.05, completion: nil)
         } else if (missionProgress >= maxTime) {
             
             if(started) {
@@ -220,8 +224,9 @@ class PlayScreenViewController : UIViewController {
             timerLabel.text = "\(00):\(00)"
             running = false
             game.stopLevel()
+            
             saveWorkout(steps, distance: distance)
-            var calories = steps / 20
+            calories = steps / 20
             let alert = UIAlertController(title: "Mission Complete!", message: "You have Received \(steps) Coins and \(calories) Gems!", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { dismiss }()))
             
@@ -231,6 +236,7 @@ class PlayScreenViewController : UIViewController {
     }
     
     @IBAction func dismiss(sender: AnyObject) {
+        saveWorkout(steps, distance: distance)
         if(started) {
             pedometer.stopPedometerUpdates()
             self.started = false

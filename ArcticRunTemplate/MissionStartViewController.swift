@@ -28,7 +28,13 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
         super.viewDidLoad()
         loadMission()
         loadBG()
+        missionPic.layer.cornerRadius = 5
+        missionPic.layer.borderWidth = 1
+        missionPic.layer.borderColor = UIColor.blackColor().CGColor
         
+        missionSynop.layer.cornerRadius = 5
+        missionSynop.layer.borderWidth = 1
+        missionSynop.layer.borderColor = UIColor.blackColor().CGColor
         // Label will display whatever is selected
         missionText.font = UIFont(name:"Noteworthy", size: 36)
         missionText.text = toPass
