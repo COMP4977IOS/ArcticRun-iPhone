@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>information</key>
+	<dict>
+		<key>title</key>
+		<string>Safety Camp</string>
+		<key>description</key>
+		<string>Getting through the storm the team rests up at hut point and has dropped off the supplies. The team needs to ration up and now sets out for safety camp, where they will meet the most unexpected and dangerous creature.</string>
+		<key>image</key>
+		<string>OldWoodenShip</string>
+	</dict>
+</dict>
+</plist>

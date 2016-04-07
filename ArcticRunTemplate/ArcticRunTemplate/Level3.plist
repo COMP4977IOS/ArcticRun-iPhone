@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>information</key>
+	<dict>
+		<key>title</key>
+		<string>Hut Point</string>
+		<key>description</key>
+		<string>The team sets out for hut point through the roughest of the storms, daring to face the challenges that lie ahead.</string>
+		<key>image</key>
+		<string>OldWoodenShip</string>
+	</dict>
+</dict>
+</plist>
