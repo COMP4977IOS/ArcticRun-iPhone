@@ -23,6 +23,11 @@
                                 <items>
                                     <navigationItem title="Party" id="kXA-Cf-Prj">
                                         <barButtonItem key="leftBarButtonItem" image="menuButton" id="sye-8Y-iSC"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Back" id="q7d-qD-jO2">
+                                            <connections>
+                                                <segue destination="ng0-zA-L4S" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="G8l-cs-SSQ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -34,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lAe-Qn-T8r" id="WgM-Ty-sQ8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ja-x8-zYk">
@@ -300,4 +305,7 @@
         <image name="loading" width="2000" height="510"/>
         <image name="menuButton" width="57" height="57"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="G8l-cs-SSQ"/>
+    </inferredMetricsTieBreakers>
 </document>

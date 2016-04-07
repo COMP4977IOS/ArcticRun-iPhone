@@ -42,9 +42,11 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
     var ButtonAudioPlayer = AVAudioPlayer()
     var introPlayed : Bool = false
     var prefacePlayed : Bool = false
+    var current:Int = 0
+
+    @IBOutlet weak var goldCurrency: UILabel!
     
-    
-    
+    @IBOutlet weak var gemCurrency: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if(isICloudContainerAvailable() == true){
@@ -65,6 +67,19 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
         crewButton.layer.borderWidth = 1
         crewButton.layer.borderColor = UIColor.blackColor().CGColor
         
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getCaloriePoints()!
+            }
+            self.gemCurrency.text = String(self.current)
+        }
+        
+        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            for var i = 0; i < crews.count; i++ {
+                self.current = crews[i].getStepPoints()!
+            }
+            self.goldCurrency.text = String(self.current)
+        }
         // TODO: Remove, this is just for testing purposes
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -103,6 +118,7 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
     func numberOfComponentsInPickerView(pickerView: UIPickerView)->Int{
         return 2
     }
+    
 //    
 //    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component:Int)->Int{
 //        if component == 0 {
