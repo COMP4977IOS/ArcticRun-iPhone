@@ -12,6 +12,7 @@
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
 		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
+		57921BFE1CB7270D00341E1D /* ArcticrunChapters in Resources */ = {isa = PBXBuildFile; fileRef = 57921BFD1CB7270D00341E1D /* ArcticrunChapters */; };
 		57B771AD1CB539B6000F0830 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */; };
 		57B771AF1CB5F798000F0830 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B771AE1CB5F798000F0830 /* UIImage.swift */; };
 		5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */; };
@@ -122,6 +123,7 @@
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
 		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5769B9461C87FAE5007356E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		57921BFD1CB7270D00341E1D /* ArcticrunChapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ArcticrunChapters; sourceTree = "<group>"; };
 		57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		57B771AE1CB5F798000F0830 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 		EBC43BD41C90143D006EB045 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				57921BFD1CB7270D00341E1D /* ArcticrunChapters */,
 				87E7051C1CACC48C0098CFC0 /* BackgroundAudio.mp3 */,
 				87E7051D1CACC48C0098CFC0 /* ButtonAudio.wav */,
 				87E7051E1CACC48C0098CFC0 /* chap1_segment1.mp3 */,
@@ -592,6 +595,7 @@
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				87E705341CACC48C0098CFC0 /* introduction.mp3 in Resources */,
+				57921BFE1CB7270D00341E1D /* ArcticrunChapters in Resources */,
 				EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */,
 				7CDACBF61CACDF76003914D5 /* Home.storyboard in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
