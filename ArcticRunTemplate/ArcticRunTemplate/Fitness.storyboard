@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rd3-ny-h2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rd3-ny-h2z">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +23,11 @@
                                 <items>
                                     <navigationItem title="Fitness Stats" id="gbK-VX-tkI">
                                         <barButtonItem key="leftBarButtonItem" image="menuButton" id="Z6l-ci-iND"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Back" id="dNZ-Fd-kxo">
+                                            <connections>
+                                                <segue destination="5aj-S8-Kls" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="6AH-Kc-whl"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -748,6 +753,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7q-n5-pCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4244" y="2257"/>
+        </scene>
+        <!--mainhome-->
+        <scene sceneID="vbU-Ez-gTF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="mainhome" storyboardName="Main" referencedIdentifier="mainhome" id="5aj-S8-Kls" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Re-DH-SAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4815.5" y="1819"/>
         </scene>
     </scenes>
     <resources>
