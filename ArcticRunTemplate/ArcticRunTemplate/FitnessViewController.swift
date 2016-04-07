@@ -36,6 +36,7 @@ class FitnessViewController: UIViewController {
     private var pastDatesValues : [(String,Double)]=[]
     private var stepsToday: Int = 0
     private var chart: Chart? // arc
+    private var lastestValues: (calorie:Double, distance:Double) = (0,0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,13 +121,12 @@ class FitnessViewController: UIViewController {
             if error != nil || records == nil{
                 return  //found errors
             }else{
-                let calories:Double = records?.first?.objectForKey("caloriesBurned") as! Double
-                let distance:Double = records?.first?.objectForKey("distance") as! Double
+                let lastestDate = records?.first?.valueForKey("startDate")
                 var getDates = self.getPastDates()
                 let dateFormatter = NSDateFormatter()
                 let theDateFormat = NSDateFormatterStyle.ShortStyle
                 dateFormatter.dateStyle = theDateFormat
-                
+
                 for data in records! {
                     
                     let st:Double = data.valueForKey("caloriesBurned") as! Double
@@ -138,6 +138,11 @@ class FitnessViewController: UIViewController {
                         let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
                         
                         self.statsDate.append(date)
+                        
+                        if(date == dateFormatter.stringFromDate(lastestDate as! NSDate)){
+                            self.lastestValues.calorie += st
+                            self.lastestValues.distance += dist
+                        }
                         
                         if (getDates[date] != nil){
                             getDates[date]! += Double(steps)
@@ -156,8 +161,8 @@ class FitnessViewController: UIViewController {
                 
                 dispatch_async (dispatch_get_main_queue ()) {
                     
-                    self.caloriesBurnedValue.text = String(format:"%.0f", calories)
-                    self.distanceValue.text = String(format:"%.1f", distance)
+                    self.caloriesBurnedValue.text = String(format:"%.0f", self.lastestValues.calorie)
+                    self.distanceValue.text = String(format:"%.1f", self.lastestValues.distance)
                     self.dailyStepsCounter.text = "\(self.stepsToday)/5000 steps"
                     
                     for i in 0 ... 6 {
