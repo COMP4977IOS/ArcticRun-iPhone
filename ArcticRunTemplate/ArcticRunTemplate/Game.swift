@@ -18,6 +18,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     private var viewController:UIViewController
+    private var delayTimer:NSTimer?
     
     public init(viewController:UIViewController) {
         self.viewController = viewController
@@ -40,10 +41,18 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     
     public func pauseLevel() {
         audioPlayer.pauseAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func stopLevel() {
         audioPlayer.stopAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func startTimeStamp(time : NSTimeInterval){
@@ -91,7 +100,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
             
             // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
             
         }
     }
@@ -134,6 +143,41 @@ public class Game : NSObject, AVAudioPlayerDelegate {
         return totalHealth / totalActiveMembers
     }
     
+    // Change the health of a party member
+    // Pass in the party member's last name, the amount to change their health by, and the direction to change it
+    public func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
+        
+        Member.getAllMembers { (members: [Member]) -> Void in
+            for var i = 0; i < members.count; i++ {
+                if (members[i].getLastName() == partyMemberLastName) {
+                    var tempHealth = members[i].getHealth()
+                    if(healthMovement == "Up") {
+                        tempHealth = tempHealth! + healthChange
+                        if(tempHealth > 100) {
+                            tempHealth = 100
+                        }
+                        members[i].setHealth(tempHealth!)
+                    } else if (healthMovement == "Down"){
+                        tempHealth = tempHealth! - healthChange
+                        if(tempHealth < 0) {
+                            tempHealth = 0
+                        }
+                        members[i].setHealth(tempHealth!)
+                    }
+                }
+            }
+        }
+    }
+    
+    // Text to speech. *Not tested*
+    public func textToSpeech(input: String) {
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: "")
+        myUtterance = AVSpeechUtterance(string: input)
+        myUtterance.rate = 0.3
+        synth.speakUtterance(myUtterance)
+    }
+    
     // Called when the current level segment is finished
     @objc public func finish() {
         if (curSegment < levelData.count) {
@@ -143,5 +187,6 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             viewController.dismissViewControllerAnimated(true, completion: {});
         }
     }
+    
     
 }
