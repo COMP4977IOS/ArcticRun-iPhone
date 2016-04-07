@@ -34,20 +34,20 @@ class FitnessViewController: UIViewController {
     private var weightValues : [String] = []
     private var waterDates : [String] = []
     private var waterValues : [String] = []
+    private var pastDatesValues : [(String,Double)]=[]
     private var stepsToday: Int = 0
     private var chart: Chart? // arc
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.getPastDates()
         caloriesBurnedValue.text = "..."
         distanceValue.text = "..."
         dailyStepsCounter.text = "..."
-       
+        
         db = CKContainer(identifier: "iCloud.com.terratap.arcticrun").publicCloudDatabase
         self.loadCloudData()
-
+        
         if (self.revealViewController() != nil) {
             print("REVEAL")
             menuButton.target = self.revealViewController()
@@ -108,7 +108,7 @@ class FitnessViewController: UIViewController {
                 }
             }
         }
-
+        
         
         
         
@@ -122,11 +122,11 @@ class FitnessViewController: UIViewController {
             }else{
                 print("======== PRINTING WEIGHT ===========")
                 print(records)
-            
+                
                 for data in records! {
                     
                     let st:Double = data.valueForKey("weight") as! Double
-         
+                    
                     if let stDate = data.valueForKey("date") {
                         
                         print(stDate)
@@ -145,11 +145,11 @@ class FitnessViewController: UIViewController {
                     }
                     
                     self.weightValues.append(String(format:"%.0f",st) + " kg")
-       
+                    
                 }
             }
         }
-
+        
         
         
         //create records variable with query.
@@ -162,9 +162,16 @@ class FitnessViewController: UIViewController {
             }else{
                 print("======== PRINTING RECORDS ===========")
                 print(records)
-
+                
                 let calories:Double = records?.first?.objectForKey("caloriesBurned") as! Double
                 let distance:Double = records?.first?.objectForKey("distance") as! Double
+                
+                var getDates = self.getPastDates()
+                let dateFormatter = NSDateFormatter()
+                let theDateFormat = NSDateFormatterStyle.ShortStyle
+                dateFormatter.dateStyle = theDateFormat
+                //let sortedKeys = getDates.sort{ dateFormatter.dateFromString($0.0)!.compare(dateFormatter.dateFromString($1.0)!) == .OrderedAscending}
+                //print(sortedKeys)
                 
                 for data in records! {
                     
@@ -175,9 +182,9 @@ class FitnessViewController: UIViewController {
                     
                     if let stDate = data.valueForKey("startDate") {
                         
-                        print(stDate)
-                        
-                        print("\(NSDate()) date today")
+//                        print(stDate)
+//                        
+//                        print("\(NSDate()) date today")
                         
                         let dateFormatter = NSDateFormatter()//3
                         
@@ -188,8 +195,12 @@ class FitnessViewController: UIViewController {
                         //dateFormatter.timeStyle = theTimeFormat//9
                         
                         let date = dateFormatter.stringFromDate(stDate as! NSDate)//11
-                    
+                        
                         self.statsDate.append(date)
+                        
+                        if (getDates[date] != nil){
+                            getDates[date]! += Double(steps)
+                        }
                         
                         
                         if date == dateFormatter.stringFromDate(NSDate()){
@@ -197,20 +208,31 @@ class FitnessViewController: UIViewController {
                         }
                     }
                     
+                   
                     
-   
                     self.caloriesArray.append(String(format:"%.0f",st) + " Cal")
                     self.distanceArray.append(String(format:"%.2f", dist) + " km")
                     //self.statsDate.append(stDate)
                 }
                 
+                self.pastDatesValues = getDates.sort{ dateFormatter.dateFromString($0.0)!.compare(dateFormatter.dateFromString($1.0)!) == .OrderedAscending}
+                print("======== CHART VALUES ===========")
+                
+                
+                
                 print("\(self.stepsToday) steps today")
-                 //print(self.caloriesArray)
+                //print(self.caloriesArray)
                 dispatch_async (dispatch_get_main_queue ()) {
+                    
                     self.caloriesBurnedValue.text = String(format:"%.0f", calories)
                     self.distanceValue.text = String(format:"%.0f", distance)
                     
                     self.dailyStepsCounter.text = "\(self.stepsToday)/5000 steps"
+                    for i in 0 ... 6 {
+                        self.pastDatesValues[i].1 = self.pastDatesValues[i].1/1000
+                       // self.pastDatesValues[i].1 = self.roundToPlaces(Double(self.pastDatesValues[i].1)/1000, places: 1)
+                    }
+                    
                     self.showChart()
                 }
             }
@@ -219,11 +241,19 @@ class FitnessViewController: UIViewController {
         
     }
     
+    func roundToPlaces(value:Double, places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return round(value * divisor) / divisor
+    }
+    
     func showChart() {
+        print("INSIDE SHOWCHART====")
+        print(self.pastDatesValues)
         activityIndicator.stopAnimating()
         self.activityIndicator.hidden = true
         let chartConfig = BarsChartConfig(
             valsAxisConfig: ChartAxisConfig(from: 0, to: 8, by: 2)
+            
         )
         let chart = BarsChart(
             frame: CGRectMake(self.chartView.frame.origin.x, self.chartView.frame.origin.y + 90, self.chartView.frame.size.width, self.chartView.frame.size.height),
@@ -231,30 +261,31 @@ class FitnessViewController: UIViewController {
             xTitle: "steps taken in the past 7 days",
             yTitle: "",
             bars: [
-                ("1", 2),
-                ("2", 4.5),
-                ("3", 3),
-                ("4", 5.4),
-                ("5", 6.8),
-                ("6", 0.5),
-                ("7", 1.5)
+                ("1", self.pastDatesValues[0].1),
+                ("2", self.pastDatesValues[1].1),
+                ("3", self.pastDatesValues[2].1),
+                ("4", self.pastDatesValues[3].1),
+                ("5", self.pastDatesValues[4].1),
+                ("6", self.pastDatesValues[5].1),
+                ("7", self.pastDatesValues[6].1)
             ],
             color: UIColor.redColor(),
             barWidth: 20
         )
-
         
         self.view.addSubview(chart.view)
         self.chart = chart
     }
     
-    func getPastDates() -> [String:Int]{
-    
-   
+    func getPastDates() -> [String:Double]{
         
-        var dates = [String:Int]()
+
+        var dates = [String:Double]()
         var dates2 = [NSDate:Int]()
-        
+        let dateFormatter = NSDateFormatter()
+        let theDateFormat = NSDateFormatterStyle.ShortStyle
+        dateFormatter.dateStyle = theDateFormat
+
         
         for i in 2 ... 8 {
             // move back in time by one day:
@@ -262,15 +293,16 @@ class FitnessViewController: UIViewController {
             
             dates2[backDate] = 0
             
-            let dateFormatter = NSDateFormatter()
-            let theDateFormat = NSDateFormatterStyle.ShortStyle
-            dateFormatter.dateStyle = theDateFormat
+//            let dateFormatter = NSDateFormatter()
+//            let theDateFormat = NSDateFormatterStyle.ShortStyle
+            //dateFormatter.dateStyle = theDateFormat
             let date = dateFormatter.stringFromDate(backDate)
             dates[date] =  0
             
         }
         print("======== CHART VALUES ===========")
-        print(dates2)
+//        let sortedKeys = dates.sort{ dateFormatter.dateFromString($0.0)!.compare(dateFormatter.dateFromString($1.0)!) == .OrderedAscending}
+//        print(sortedKeys)
         
         return dates
     }
@@ -296,8 +328,8 @@ class FitnessViewController: UIViewController {
             viewController.recordDates = self.waterDates
         }
     }
-
-
+    
+    
 }
 
 //let yourDict = ["One": "X", "Two": "B", "Three": "Z", "Four": "A"]
@@ -311,7 +343,7 @@ class FitnessViewController: UIViewController {
 //        let myRecord = CKRecord(recordType: "Weight")
 //        myRecord.setObject(180, forKey: "weight")
 //        myRecord.setObject(currentDateTime, forKey: "date")
-//       
+//
 //        db!.saveRecord(myRecord, completionHandler:
 //            ({returnRecord, error in
 //                if let err = error {
@@ -321,19 +353,19 @@ class FitnessViewController: UIViewController {
 //                    dispatch_async(dispatch_get_main_queue()) {
 //                        print("Record saved successfully")
 //                }
-//   
+//
 //                }
 //            }))
 //    }
 
-    /*
-    // MARK: Navigation -
-    
-    // In a storyboard-based application,you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController
-    // Pass the selected object to the new view controller
-    }
-    */
-    
-    
+/*
+// MARK: Navigation -
+
+// In a storyboard-based application,you will often want to do a little preparation before navigation
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+// Get the new view controller using segue.destinationViewController
+// Pass the selected object to the new view controller
+}
+*/
+
+
