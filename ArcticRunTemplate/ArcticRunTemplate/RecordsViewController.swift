@@ -10,16 +10,14 @@ import UIKit
 import CloudKit
 
 class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recordImage: UIImageView!
-    
     @IBOutlet weak var recordTextField: UITextField!
-    
     @IBOutlet weak var recordAddBtn: UIButton!
     @IBOutlet weak var recordTitle: UINavigationBar!
     
-    var recordType: String = ""
+    var recordType: String = "" // identify which segue
     var recordValues: [String] = []
     var recordDates: [String] = []
     
@@ -42,7 +40,7 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
             recordImage.image = UIImage(named: "water")
             recordAddBtn.backgroundColor = UIColor(red: 66.0/255, green: 186.0/255, blue: 255.0/255, alpha: 1.0)
             recordTextField.placeholder = "Enter Amount of water consumed"
-             recordTitle.topItem?.title = "Record Water"
+            recordTitle.topItem?.title = "Record Water"
         }
         
     }
@@ -51,17 +49,16 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if recordType == "weight" {
             if let value = Double(recordTextField.text!) {
-               
-               addtoCloudKit(value)
+                addtoCloudKit(value)
             }else{
                 self.showAlert("Record Weight", message: "Invalid Input")
             }
- 
+            
         }else if recordType == "water" {
             if let value = Int(recordTextField.text!) {
                 addtoCloudKit(value)
             }else{
-                 self.showAlert("Record Water", message: "Invalid Input")
+                self.showAlert("Record Water", message: "Invalid Input")
             }
         }
     }
@@ -72,42 +69,41 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
-
+        
     }
     
     func addtoCloudKit(value : NSObject){
-            let currentDateTime = NSDate()
+        let currentDateTime = NSDate()
+        
+        var record : CKRecord!
+        
+        if(recordType == "weight"){
             
-            var record : CKRecord!
-        
-            if(recordType == "weight"){
-                
-                record = CKRecord(recordType: "Weight")
-                record.setObject(value as! Double, forKey: "weight")
-            }else if(recordType == "water"){
-                record = CKRecord(recordType: "Water")
-                record.setObject(value as! Int, forKey: "water")
-            }
- 
-            record!.setObject(currentDateTime, forKey: "date")
-            print(record!)
-        
-            db!.saveRecord(record, completionHandler:
-                ({returnRecord, error in
-                    if let err = error {
-                        print("Save Error" +
-                            err.localizedDescription)
-                    } else {
-                        dispatch_async(dispatch_get_main_queue()) {
-                            print("Record saved successfully")
-                            self.showAlert("Record", message: "Record saved successfully")
-                            self.recordTextField.text = ""
-                    }
-       
-                    }
-                }))
+            record = CKRecord(recordType: "Weight")
+            record.setObject(value as! Double, forKey: "weight")
+        }else if(recordType == "water"){
+            record = CKRecord(recordType: "Water")
+            record.setObject(value as! Int, forKey: "water")
         }
-
+        
+        record!.setObject(currentDateTime, forKey: "date")
+        
+        db!.saveRecord(record, completionHandler:
+            ({returnRecord, error in
+                if let err = error {
+                    print("Save Error" +
+                        err.localizedDescription)
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        print("Record saved successfully")
+                        self.showAlert("Record", message: "Record saved successfully")
+                        self.recordTextField.text = ""
+                    }
+                    
+                }
+            }))
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -123,16 +119,4 @@ class RecordsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
