@@ -44,14 +44,20 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getCaloriePoints()!
             }
-            self.currency2Label.text = String(self.current)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.currency2Label.text = String(self.current)
+            }
+            
         }
         
         Crew.getAllCrews { (crews: [Crew]) -> Void in
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getStepPoints()!
             }
-            self.currency1Label.text = String(self.current)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.currency1Label.text = String(self.current)
+            }
+
         }
 
         

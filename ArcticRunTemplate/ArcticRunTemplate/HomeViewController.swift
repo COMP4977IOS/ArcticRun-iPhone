@@ -71,14 +71,19 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getCaloriePoints()!
             }
-            self.gemCurrency.text = String(self.current)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.gemCurrency.text = String(self.current)
+            }
         }
         
         Crew.getAllCrews { (crews: [Crew]) -> Void in
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getStepPoints()!
             }
-            self.goldCurrency.text = String(self.current)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.goldCurrency.text = String(self.current)
+            }
+
         }
         // TODO: Remove, this is just for testing purposes
         
