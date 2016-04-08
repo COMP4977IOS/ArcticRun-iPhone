@@ -12,7 +12,9 @@
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
 		5769B9471C87FAE5007356E3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9461C87FAE5007356E3 /* HealthKit.framework */; };
+		57921BFE1CB7270D00341E1D /* ArcticrunChapters in Resources */ = {isa = PBXBuildFile; fileRef = 57921BFD1CB7270D00341E1D /* ArcticrunChapters */; };
 		57B771AD1CB539B6000F0830 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */; };
+		57B771AF1CB5F798000F0830 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B771AE1CB5F798000F0830 /* UIImage.swift */; };
 		5B2E795C1C9A114B0072ED7F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */; };
 		5B2E795E1C9A119A0072ED7F /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */; };
 		5B2E79601C9A17710072ED7F /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */; };
@@ -78,7 +80,7 @@
 		9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9203A4EA1CB041D1006CE8E3 /* Game.swift */; };
 		921DB34A1CB4C64B006C7572 /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921DB3491CB4C64B006C7572 /* Level2.plist */; };
 		98C7716F6DFB4E493EAF563F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D32CCC755B6F9E5A4901CE /* Pods.framework */; };
-		9CF1C82E1CB325DF00F008B8 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */; };
+		9CF1C82E1CB325DF00F008B8 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1C82D1CB325DF00F008B8 /* SwiftCharts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B3C416011CB413B200C5A37E /* recordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C415FF1CB413B200C5A37E /* recordsCell.swift */; };
 		B3C416021CB413B200C5A37E /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C416001CB413B200C5A37E /* RecordsViewController.swift */; };
 		C20377FB1CA2319B00EE057C /* GameCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20377FA1CA2319B00EE057C /* GameCenterViewController.swift */; };
@@ -121,7 +123,9 @@
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
 		5769B9441C87FADB007356E3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5769B9461C87FAE5007356E3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		57921BFD1CB7270D00341E1D /* ArcticrunChapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ArcticrunChapters; sourceTree = "<group>"; };
 		57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		57B771AE1CB5F798000F0830 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5B2E795B1C9A114B0072ED7F /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		5B2E795D1C9A119A0072ED7F /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnail.swift; sourceTree = "<group>"; };
 		5B2E795F1C9A17710072ED7F /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */,
 				5712EE801C903934002624D6 /* CloudKitHelper.swift */,
 				57B771AC1CB539B6000F0830 /* KDCircularProgress.swift */,
+				57B771AE1CB5F798000F0830 /* UIImage.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 		EBC43BD41C90143D006EB045 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				57921BFD1CB7270D00341E1D /* ArcticrunChapters */,
 				87E7051C1CACC48C0098CFC0 /* BackgroundAudio.mp3 */,
 				87E7051D1CACC48C0098CFC0 /* ButtonAudio.wav */,
 				87E7051E1CACC48C0098CFC0 /* chap1_segment1.mp3 */,
@@ -589,6 +595,7 @@
 				5B89F1C81C862010009D9779 /* Fitness.storyboard in Resources */,
 				5B89F1C61C861FFD009D9779 /* Pedometer.storyboard in Resources */,
 				87E705341CACC48C0098CFC0 /* introduction.mp3 in Resources */,
+				57921BFE1CB7270D00341E1D /* ArcticrunChapters in Resources */,
 				EB904DA01C93931B00ABD3C1 /* BackgroundAudio.mp3 in Resources */,
 				7CDACBF61CACDF76003914D5 /* Home.storyboard in Resources */,
 				7C3EBA141C7AA6220093037E /* LaunchScreen.storyboard in Resources */,
@@ -707,6 +714,7 @@
 				5BE4EE8B1C8EA3D6009451C7 /* DrawerTableViewController.swift in Sources */,
 				9203A4EB1CB041D1006CE8E3 /* Game.swift in Sources */,
 				8E9829BB1C9F7F33001B98EC /* Stat.swift in Sources */,
+				57B771AF1CB5F798000F0830 /* UIImage.swift in Sources */,
 				7C3EBA481C7AADE00093037E /* CustomCell.swift in Sources */,
 				87BA4A561C8907480027788A /* CharacterViewController.swift in Sources */,
 				7C3EBA3B1C7AA6F70093037E /* SWRevealViewController.m in Sources */,
@@ -932,6 +940,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -955,6 +964,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ArcticRunTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.terratap.arcticrun;
 				PRODUCT_NAME = "$(TARGET_NAME)";

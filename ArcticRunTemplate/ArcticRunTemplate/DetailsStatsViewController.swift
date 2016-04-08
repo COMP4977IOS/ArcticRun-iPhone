@@ -13,6 +13,9 @@ class DetailStatsViewController: UIViewController , UITableViewDelegate, UITable
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var navbar: UINavigationBar!
+    
+    var id : String = ""
     
     @IBAction func btnCancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -27,11 +30,13 @@ class DetailStatsViewController: UIViewController , UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         i = statsArray.count
-        print(dateArray)
-        // Do any additional setup after loading the view.
+        
+        if id == "cal" {
+            navbar.topItem?.title = "Calories Burnt"
+        }else if id == "dist" {
+            navbar.topItem?.title = "Distance Traveled"
+        }
     }
     
    

@@ -18,6 +18,8 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var levelData:NSDictionary = NSDictionary()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     private var viewController:UIViewController
+    private var delayTimer:NSTimer?
+    private var speechSynthesizer = AVSpeechSynthesizer()
     
     public init(viewController:UIViewController) {
         self.viewController = viewController
@@ -39,14 +41,27 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     }
     
     public func pauseLevel() {
+        speechSynthesizer.pauseSpeakingAtBoundary(AVSpeechBoundary.Word)
         audioPlayer.pauseAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func stopLevel() {
+        speechSynthesizer.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
         audioPlayer.stopAudio()
+        if (delayTimer != nil) {
+            delayTimer?.invalidate()
+            delayTimer = nil
+        }
     }
     
     public func startTimeStamp(time : NSTimeInterval){
+        if speechSynthesizer.paused {
+            speechSynthesizer.continueSpeaking()
+        }
         // start audio at specific timestamp
         audioPlayer.startTime(time)
     }
@@ -91,7 +106,13 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
             
             // temporary, to simulate time going by
-            NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            
+            // run text to speech if applicable
+            let textSpeech:String? = segmentData!["speech"] as? String
+            if (textSpeech != nil) {
+                textToSpeech(textSpeech!)
+            }
             
         }
     }
@@ -165,16 +186,16 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     
     // Text to speech. *Not tested*
     public func textToSpeech(input: String) {
-        let synth = AVSpeechSynthesizer()
         var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: input)
         myUtterance.rate = 0.3
-        synth.speakUtterance(myUtterance)
+        speechSynthesizer.speakUtterance(myUtterance)
     }
     
     // Called when the current level segment is finished
     @objc public func finish() {
-        if (curSegment < levelData.count) {
+        let levelCount = levelData.count - 1    // All segments minus the level information part in plist
+        if (curSegment < levelCount) {
             curSegment += 1
             playSegment()
         } else {
