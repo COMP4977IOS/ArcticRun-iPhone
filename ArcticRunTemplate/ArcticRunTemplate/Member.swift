@@ -95,6 +95,16 @@ public class Member {
         self.record?.setObject(status, forKey: "status")
     }
     
+    func save() -> Void{
+        Crew.publicDB.saveRecord(self.record!) { (record: CKRecord?, error:NSError?) -> Void in
+            if error == nil {
+                print("record saved")
+            } else{
+                print(error)
+            }
+        }
+    }
+    
     static func getMembers(crewRecord: CKRecord, onComplete: ([Member]) -> Void) -> Void {
         let predicate:NSPredicate = NSPredicate(format: "user == %@", crewRecord)
         let query:CKQuery = CKQuery(recordType: "Member", predicate: predicate)
@@ -119,10 +129,11 @@ public class Member {
         let predicate:NSPredicate = NSPredicate(value: true)
         let query:CKQuery = CKQuery(recordType: "Member", predicate: predicate)
         
-        print("in getAllMembers")
         self.publicDB.performQuery(query, inZoneWithID: nil) { (records: [CKRecord]?, error: NSError?) -> Void in
             if error != nil || records == nil {
-                print("errors in getAllMembers")
+                
+                print(error?.localizedDescription)
+                
                 return //found errors
             }
             

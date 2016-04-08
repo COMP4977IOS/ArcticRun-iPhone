@@ -20,6 +20,8 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var viewController:UIViewController
     private var delayTimer:NSTimer?
     private var speechSynthesizer = AVSpeechSynthesizer()
+    private var totalActiveMembers = 0
+    private var totalHealth = 0
     
     public init(viewController:UIViewController) {
         self.viewController = viewController
@@ -99,14 +101,15 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                 print("PAUSE BACKGROUND")
             }
             let initialTimeInt = segmentData!["length"] as! Int
-            let partyHealth = getMembersHealth()
-            let calcTimeInt = generateTimeDelay(Float(initialTimeInt), partyHealth: partyHealth)
-            let pauseTime = NSTimeInterval(calcTimeInt)
-            
-            print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
-            
-            // temporary, to simulate time going by
-            delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            getMembersHealth() {value in
+                let calcTimeInt = self.generateTimeDelay(Float(initialTimeInt), partyHealth: value)
+                let pauseTime = NSTimeInterval(calcTimeInt)
+                
+                print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
+                
+                // temporary, to simulate time going by
+                self.delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+            }
             
             // run text to speech if applicable
             let textSpeech:String? = segmentData!["speech"] as? String
@@ -141,29 +144,25 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     }
     
     // Query the database for all active members, add up their health, then divide by total active members and return the average
-    private func getMembersHealth() -> Int {
-        var totalActiveMembers = 1
-        var totalHealth = 1
+    public func getMembersHealth(complete: (value:Int) -> Void) {
         Member.getAllMembers { (members: [Member]) -> Void in
             for var i = 0; i < members.count; i++ {
                 if(members[i].getStatus() == "Active") {
-                    totalHealth += members[i].getHealth()!
-                    totalActiveMembers++
+                    self.totalHealth += members[i].getHealth()!
+                    self.totalActiveMembers++
                 }
             }
+            let returnValue = self.totalHealth / self.totalActiveMembers
+            complete(value: returnValue)
         }
-        return totalHealth / totalActiveMembers
     }
     
     // Change the health of a party member
     // Pass in the party member's last name, the amount to change their health by, and the direction to change it
     public func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
-        print("in change health function")
         Member.getAllMembers { (members: [Member]) -> Void in
-            print("in members ")
             for var i = 0; i < members.count; i++ {
                 if (members[i].getLastName() == partyMemberLastName) {
-                    print("found Joyce")
                     var tempHealth = members[i].getHealth()
                     if(healthMovement == "Up") {
                         tempHealth = tempHealth! + healthChange
@@ -171,15 +170,16 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                             tempHealth = 100
                         }
                         members[i].setHealth(tempHealth!)
+                        members[i].save()
                     } else if (healthMovement == "Down"){
                         tempHealth = tempHealth! - healthChange
                         if(tempHealth < 0) {
                             tempHealth = 0
                         }
                         members[i].setHealth(tempHealth!)
+                        members[i].save()
                     }
                 }
-                print("didnt find joyce")
             }
         }
     }
