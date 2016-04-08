@@ -939,6 +939,7 @@
 			baseConfigurationReference = 017F50F9611DD14408600CCB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -963,6 +964,7 @@
 			baseConfigurationReference = 09535E5E90BDA997F1EF795C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ArcticRunTemplate/ArcticRunTemplate.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
