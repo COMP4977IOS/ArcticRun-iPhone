@@ -119,8 +119,10 @@ public class Member {
         let predicate:NSPredicate = NSPredicate(value: true)
         let query:CKQuery = CKQuery(recordType: "Member", predicate: predicate)
         
+        print("in getAllMembers")
         self.publicDB.performQuery(query, inZoneWithID: nil) { (records: [CKRecord]?, error: NSError?) -> Void in
             if error != nil || records == nil {
+                print("errors in getAllMembers")
                 return //found errors
             }
             
