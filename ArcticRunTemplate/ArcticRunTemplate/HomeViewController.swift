@@ -104,6 +104,11 @@ class HomeViewController: UIViewController, AVAudioPlayerDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        //let g :Game = Game(viewController: self)
+        //var test = String(g.getMembersHealth())
+        //print(test + " member health")
+//        g.changeMembersHealth("Joyce", healthChange: 10, healthMovement: "Down")
+        
     }
  
     func loadBG() {

@@ -107,7 +107,6 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                 let pauseTime = NSTimeInterval(calcTimeInt)
                 
                 print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
-                
                 dispatch_async(dispatch_get_main_queue(),{
                     self.delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
                 })
@@ -162,7 +161,6 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     // Change the health of a party member
     // Pass in the party member's last name, the amount to change their health by, and the direction to change it
     public func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
-        
         Member.getAllMembers { (members: [Member]) -> Void in
             for var i = 0; i < members.count; i++ {
                 if (members[i].getLastName() == partyMemberLastName) {
@@ -173,12 +171,14 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                             tempHealth = 100
                         }
                         members[i].setHealth(tempHealth!)
+                        members[i].save()
                     } else if (healthMovement == "Down"){
                         tempHealth = tempHealth! - healthChange
                         if(tempHealth < 0) {
                             tempHealth = 0
                         }
                         members[i].setHealth(tempHealth!)
+                        members[i].save()
                     }
                 }
             }
