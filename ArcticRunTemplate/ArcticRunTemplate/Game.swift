@@ -15,7 +15,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private let manager = GameConfigManager()
     private var curLevel = 0
     private var curSegment = 0
-    private var levelData:NSDictionary = NSDictionary()
+    private var levelData:NSArray = NSArray()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     private var viewController:UIViewController
     private var delayTimer:NSTimer?
@@ -101,14 +101,15 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                 print("PAUSE BACKGROUND")
             }
             let initialTimeInt = segmentData!["length"] as! Int
-            getMembersHealth() {value in
-                let calcTimeInt = self.generateTimeDelay(Float(initialTimeInt), partyHealth: value)
+            
+            getMembersHealth() { newHealth in
+                let calcTimeInt = self.generateTimeDelay(Float(initialTimeInt), partyHealth: newHealth)
                 let pauseTime = NSTimeInterval(calcTimeInt)
                 
                 print("-- Waiting for " + String(calcTimeInt) + " seconds before playing next level segment --")
-                
-                // temporary, to simulate time going by
-                self.delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.delayTimer = NSTimer.scheduledTimerWithTimeInterval(pauseTime, target: self, selector: "finish", userInfo: nil, repeats: false)
+                })
             }
             
             // run text to speech if applicable
@@ -144,7 +145,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     }
     
     // Query the database for all active members, add up their health, then divide by total active members and return the average
-    public func getMembersHealth(complete: (value:Int) -> Void) {
+    public func getMembersHealth(complete: (newHealth:Int) -> Void) {
         Member.getAllMembers { (members: [Member]) -> Void in
             for var i = 0; i < members.count; i++ {
                 if(members[i].getStatus() == "Active") {
@@ -153,7 +154,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
                 }
             }
             let returnValue = self.totalHealth / self.totalActiveMembers
-            complete(value: returnValue)
+            complete(newHealth: returnValue)
         }
     }
     

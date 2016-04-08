@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		097FC6711CAC8CF6003DEE77 /* GameConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */; };
+		3F3A3B8E1CB729930064BAEA /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A3B8D1CB729930064BAEA /* Level3.plist */; };
+		3F3A3B901CB72A050064BAEA /* Level4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F3A3B8F1CB72A050064BAEA /* Level4.plist */; };
 		5712EE811C903934002624D6 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712EE801C903934002624D6 /* CloudKitHelper.swift */; };
 		5769B9421C87FAB2007356E3 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */; };
 		5769B9451C87FADB007356E3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769B9441C87FADB007356E3 /* CloudKit.framework */; };
@@ -118,6 +120,8 @@
 		09535E5E90BDA997F1EF795C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		097FC6701CAC8CF6003DEE77 /* GameConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameConfigManager.swift; sourceTree = "<group>"; };
 		28D32CCC755B6F9E5A4901CE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F3A3B8D1CB729930064BAEA /* Level3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level3.plist; sourceTree = "<group>"; };
+		3F3A3B8F1CB72A050064BAEA /* Level4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level4.plist; sourceTree = "<group>"; };
 		5712EE801C903934002624D6 /* CloudKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		5769B9411C87FAB2007356E3 /* HealthKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		5769B9431C87FAD8007356E3 /* ArcticRunTemplate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ArcticRunTemplate.entitlements; sourceTree = "<group>"; };
@@ -404,6 +408,8 @@
 			children = (
 				9203A4E81CB03FAA006CE8E3 /* Level1.plist */,
 				921DB3491CB4C64B006C7572 /* Level2.plist */,
+				3F3A3B8D1CB729930064BAEA /* Level3.plist */,
+				3F3A3B8F1CB72A050064BAEA /* Level4.plist */,
 			);
 			name = LevelConfig;
 			sourceTree = "<group>";
@@ -620,6 +626,8 @@
 				87E7052A1CACC48C0098CFC0 /* ButtonAudio.wav in Resources */,
 				7C3EBA0F1C7AA6220093037E /* Main.storyboard in Resources */,
 				87E705351CACC48C0098CFC0 /* preface.mp3 in Resources */,
+				3F3A3B8E1CB729930064BAEA /* Level3.plist in Resources */,
+				3F3A3B901CB72A050064BAEA /* Level4.plist in Resources */,
 				87E7052E1CACC48C0098CFC0 /* chap1_segment4.mp3 in Resources */,
 				9203A4E91CB03FAA006CE8E3 /* Level1.plist in Resources */,
 				87E7052F1CACC48C0098CFC0 /* chap2_segment1.mp3 in Resources */,

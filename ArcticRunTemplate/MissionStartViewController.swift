@@ -62,19 +62,16 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
             manager.loadLevel(1)
             chapterNum = 1
             
-            let levelInfo:NSDictionary = manager.getLevelInfo()!
-            missionPic.image = UIImage(named: levelInfo["image"] as! String)
-            missionSynop.text = levelInfo["description"] as! String
-            
         }
         else if(toPass == "Scott Hut") {
             manager.loadLevel(2)
             chapterNum = 2
-            
+        }
+        
+        if (chapterNum != nil) {
             let levelInfo:NSDictionary = manager.getLevelInfo()!
             missionPic.image = UIImage(named: levelInfo["image"] as! String)
             missionSynop.text = levelInfo["description"] as! String
-
         }
     }
     
