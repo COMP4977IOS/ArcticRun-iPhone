@@ -162,7 +162,9 @@ class PlayScreenViewController : UIViewController {
     }
     
     @IBAction func playAndPause(sender: AnyObject) {
-        playPause()
+        if (!running) {
+            playPause()
+        }
     }
     
     @IBAction func stopGame(sender: AnyObject) {
