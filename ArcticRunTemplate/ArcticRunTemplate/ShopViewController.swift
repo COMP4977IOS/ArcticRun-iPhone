@@ -20,10 +20,10 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var currency2Label: UILabel!
     var useCur1 = true
     var current = 0
-    
-    var tableData: [String] = ["500", "1000", "2000", "3000", "4000", "5000", "10000", "12500",
-        "15000", "17500", "20000", "25000", "30000", "35000", "40000", "50000"]
-
+    //Array of costs for each item
+    var itemCostTable: [String] = ["6", "3", "5", "6", "20", "15", "30", "15",
+        "40", "50", "60", "100", "20", "25", "30", "50"]
+    //Array of images for each item
     var images = [UIImage(named: "Beetroot_Soup"), UIImage(named: "Bread"), UIImage(named: "Fish"),
                     UIImage(named: "Mushroom_Stew"), UIImage(named: "Cooked_Chicken"), UIImage(named: "Cooked_Fish"),
                     UIImage(named: "Cooked_Porkchop"), UIImage(named: "health_potion"), UIImage(named: "Hat"),
@@ -35,11 +35,11 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     override func viewDidLoad() {
-    
+        //Set the colour of the current currencey
         currency1Label.textColor = UIColor.redColor()
         currency2Label.textColor = UIColor.blueColor()
         
-        
+
         Crew.getAllCrews { (crews: [Crew]) -> Void in
             for var i = 0; i < crews.count; i++ {
                 self.current = crews[i].getCaloriePoints()!
@@ -53,6 +53,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
             self.currency1Label.text = String(self.current)
         }
+
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -63,7 +64,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    
+    //Sets the points of each crew and saves to DB?
     func updatePoints(price: Int) -> String {
         
         Crew.getAllCrews { (crews: [Crew]) -> Void in
@@ -80,7 +81,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         return String(result)
     }
-
+    //Go through the crew and set the step points and save them (in DB?)
     func updateStepPoints(price: Int) -> String {
         
         Crew.getAllCrews { (crews: [Crew]) -> Void in
@@ -97,7 +98,33 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         return String(result)
     }
-    
+    // Change the health of a party member
+    // Pass in the party member's last name, the amount to change their health by, and the direction to change it
+    func changeMembersHealth(partyMemberLastName: String, healthChange: Int, healthMovement: String) {
+        Member.getAllMembers { (members: [Member]) -> Void in
+            for var i = 0; i < members.count; i++ {
+                if (members[i].getLastName() == partyMemberLastName) {
+                    var tempHealth = members[i].getHealth()
+                    if(healthMovement == "Up") {
+                        tempHealth = tempHealth! + healthChange
+                        if(tempHealth > 100) {
+                            tempHealth = 100
+                        }
+                        members[i].setHealth(tempHealth!)
+                        members[i].save()
+                    } else if (healthMovement == "Down"){
+                        tempHealth = tempHealth! - healthChange
+                        if(tempHealth < 0) {
+                            tempHealth = 0
+                        }
+                        members[i].setHealth(tempHealth!)
+                        members[i].save()
+                    }
+                }
+            }
+        }
+    }
+    //Same as below
     @IBAction func useCurrency1(sender: AnyObject) {
         if useCur1 == false {
             useCur1 = true
@@ -105,7 +132,7 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             currency2Label.textColor = UIColor.blueColor()
         }
     }
-    
+    //Select the currency you want to spend
     @IBAction func useCurrency2(sender: AnyObject) {
         if useCur1 == true {
             useCur1 = false
@@ -113,15 +140,15 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
             currency2Label.textColor = UIColor.redColor()
         }
     }
-    
+    //Returns the number of images
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
-    
+    //Sets up contraints
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: colvwCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! colvwCell
 
-        cell.lblCell.text = tableData[indexPath.row]
+        cell.lblCell.text = itemCostTable[indexPath.row]
         //let image = UIImage(named: tableImages[indexPath.row])
         cell.imgCell.image = images[indexPath.row]
         cell.frame.size.height = 120
@@ -136,50 +163,37 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
 //    }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let priceString = tableData[indexPath.row]
+        let priceString = itemCostTable[indexPath.row]
         let price = Int(priceString)
+        //If cloudkit is available
         if(isICloudContainerAvailable()){
+            //What is useCur1? 1st currency
             if useCur1 == true {
                 let totalString = currency1Label.text
                 let total = Int(totalString!)
-                
+                //If the item is too expensive
                 if(price > total) {
+                    //Alert the user
                     let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
                     let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
                     alertController.addAction(okAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
-                } else {
-                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
-                        .ActionSheet)
-                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
-                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
-                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
-                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)  } )
-                    let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
-                    alertController.addAction(party1)
-                    alertController.addAction(party2)
-                    alertController.addAction(party3)
-                    alertController.addAction(party4)
-                    alertController.addAction(cancel)
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
                 }
-            } else {
-                let totalString = currency2Label.text
-                let total = Int(totalString!)
-                
-                if(price > total) {
-                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
-                    let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
-                    alertController.addAction(okAction)
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                } else {
+                else {
+                    //Prompt user to purchase an item and to which party member
                     let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
                         .ActionSheet)
-                    let party1 = UIAlertAction(title: "Party Member 1", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                    let party2 = UIAlertAction(title: "Party Member 2", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                    let party3 = UIAlertAction(title: "Party Member 3", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
-                    let party4 = UIAlertAction(title: "Party Member 4", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!) } )
+                    let party1 = UIAlertAction(title: "Aeneas Mackintosh", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)
+                        self.changeMembersHealth("Mackintosh", healthChange: price!, healthMovement: "Up")} )
+                    let party2 = UIAlertAction(title: "Arnold Spencer-Smith", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)
+                        self.changeMembersHealth("Spencer-Smith", healthChange: price!, healthMovement: "Up")} )
+                    let party3 = UIAlertAction(title: "Richards", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)
+                        self.changeMembersHealth("Richards", healthChange: price!, healthMovement: "Up")} )
+                    let party4 = UIAlertAction(title: "Joyce", style: .Default, handler: { action in self.currency1Label.text = self.updateStepPoints(price!)
+                        self.changeMembersHealth("Joyce", healthChange: price!, healthMovement: "Up")} )
                     let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
+                    //?
                     alertController.addAction(party1)
                     alertController.addAction(party2)
                     alertController.addAction(party3)
@@ -188,7 +202,41 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
             }
-        }else{
+            //If curr1 is not true, then repeat the same process
+            else {
+                let totalString = currency2Label.text
+                let total = Int(totalString!)
+                
+                if(price > total) {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "You do not have enough points.", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Destructive) { (action) -> Void in print("test") }
+                    alertController.addAction(okAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+                else {
+                    let alertController = UIAlertController(title: "Item \(indexPath.row + 1)", message: "Purchase?", preferredStyle:
+                        .ActionSheet)
+                    let party1 = UIAlertAction(title: "Aeneas Mackintosh", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!)
+                        self.changeMembersHealth("Mackintosh", healthChange: price!, healthMovement: "Up")} )
+                    let party2 = UIAlertAction(title: "Spencer-Smith", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!)
+                        self.changeMembersHealth("Spencer-Smith", healthChange: price!, healthMovement: "Up")} )
+                    let party3 = UIAlertAction(title: "Richards", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!)
+                        self.changeMembersHealth("Richards", healthChange: price!, healthMovement: "Up")} )
+                    let party4 = UIAlertAction(title: "Joyce", style: .Default, handler: { action in self.currency2Label.text = self.updatePoints(price!)
+                        self.changeMembersHealth("Richards", healthChange: price!, healthMovement: "Up")} )
+                    let cancel = UIAlertAction(title: "Cancel", style: .Destructive) { (action) -> Void in print("cancelled") }
+                    
+                    alertController.addAction(party1)
+                    alertController.addAction(party2)
+                    alertController.addAction(party3)
+                    alertController.addAction(party4)
+                    alertController.addAction(cancel)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        //If Cloudkit is not available
+        else{
             let myalert = UIAlertController(title: "iCloud Account", message: "Please loggin to your iCloud Account",preferredStyle: UIAlertControllerStyle.Alert);
             
             let dismissAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default){(ACTION) in print("ok button tapped");
@@ -205,9 +253,9 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //Function that checks if Cloudkit is available
     func isICloudContainerAvailable()->Bool {
-        if let currentToken = NSFileManager.defaultManager().ubiquityIdentityToken {
+        if let _ = NSFileManager.defaultManager().ubiquityIdentityToken {
             return true
         }
         else {
