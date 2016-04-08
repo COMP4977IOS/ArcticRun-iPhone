@@ -19,8 +19,8 @@
 	<dict>
 		<key>damage</key>
 		<dict>
-			<key>Mackintosh</key>
-			<string>-20</string>
+			<key>Stenhouse</key>
+			<integer>10</integer>
 		</dict>
 		<key>type</key>
 		<string>pause</string>
