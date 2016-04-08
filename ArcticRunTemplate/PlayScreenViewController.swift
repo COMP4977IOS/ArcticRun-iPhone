@@ -57,6 +57,7 @@ class PlayScreenViewController : UIViewController {
     @IBOutlet weak var circularProgressBar: KDCircularProgress!
     
     var maxTime:Double = 1
+    var lastTime:NSTimeInterval = 0
     
     @IBOutlet weak var percentageLabel: UILabel!
     override func viewDidLoad() {

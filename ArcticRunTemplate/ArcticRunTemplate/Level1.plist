@@ -11,6 +11,8 @@
 		<string>Reconnaissance</string>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>38</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
@@ -28,6 +30,8 @@
 		<integer>4</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>33</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
@@ -40,6 +44,8 @@
 		<integer>5</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>33</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
@@ -52,6 +58,8 @@
 		<integer>10</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>41</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
@@ -64,6 +72,8 @@
 		<integer>10</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>71</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
@@ -76,6 +86,8 @@
 		<integer>10</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>106</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>

@@ -43,6 +43,10 @@ public class Game : NSObject, AVAudioPlayerDelegate {
         }
     }
     
+    public func getLevelLength() -> Int {
+        return manager.getLevelDuration()
+    }
+    
     public func pauseLevel() {
         speechSynthesizer.pauseSpeakingAtBoundary(AVSpeechBoundary.Word)
         audioPlayer.pauseAudio()
