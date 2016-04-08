@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Er3-xD-LFh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lAe-Qn-T8r" id="WgM-Ty-sQ8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ja-x8-zYk">
@@ -146,22 +146,15 @@
                                     <rect key="frame" x="64" y="78" width="273" height="22"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXQ-0h-r2b">
-                                <rect key="frame" x="206" y="433" width="119" height="30"/>
-                                <state key="normal" title="Back To Home"/>
-                                <connections>
-                                    <segue destination="ng0-zA-L4S" kind="show" id="HuK-so-mj3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVZ-Gy-nyh">
-                                <rect key="frame" x="107" y="385" width="54" height="30"/>
+                                <rect key="frame" x="97" y="405" width="54" height="30"/>
                                 <state key="normal" title="Twitter"/>
                                 <connections>
                                     <action selector="TwitterShare:" destination="wg2-Vn-JJK" eventType="touchUpInside" id="bw0-FM-zok"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tML-an-QhP">
-                                <rect key="frame" x="356" y="385" width="67" height="30"/>
+                                <rect key="frame" x="356" y="405" width="67" height="30"/>
                                 <state key="normal" title="Facebook"/>
                                 <connections>
                                     <action selector="FacebookShare:" destination="wg2-Vn-JJK" eventType="touchUpInside" id="xpG-Xu-2lP"/>
@@ -239,15 +232,22 @@
                                     <rect key="frame" x="79" y="454" width="241" height="86"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXQ-0h-r2b">
+                                <rect key="frame" x="202" y="462" width="119" height="30"/>
+                                <state key="normal" title="Back To Home"/>
+                                <connections>
+                                    <segue destination="ng0-zA-L4S" kind="show" id="HuK-so-mj3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="qXQ-0h-r2b" secondAttribute="bottom" constant="50" id="HPV-Ob-ICp"/>
-                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="tML-an-QhP" secondAttribute="bottom" constant="136" id="INk-nU-NVQ"/>
-                            <constraint firstItem="tML-an-QhP" firstAttribute="leading" secondItem="yVZ-Gy-nyh" secondAttribute="trailing" constant="110" id="NCK-fT-uEb"/>
-                            <constraint firstItem="yVZ-Gy-nyh" firstAttribute="leading" secondItem="OUX-zW-5CS" secondAttribute="leadingMargin" constant="87" id="Ro1-xk-hf6"/>
-                            <constraint firstItem="qXQ-0h-r2b" firstAttribute="centerX" secondItem="OUX-zW-5CS" secondAttribute="centerX" id="jHp-eE-HIy"/>
-                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="yVZ-Gy-nyh" secondAttribute="bottom" constant="139" id="qJ9-Hf-fRO"/>
+                            <constraint firstItem="qXQ-0h-r2b" firstAttribute="centerX" secondItem="OUX-zW-5CS" secondAttribute="centerX" id="0HZ-hg-ybs"/>
+                            <constraint firstItem="yVZ-Gy-nyh" firstAttribute="leading" secondItem="OUX-zW-5CS" secondAttribute="leadingMargin" constant="40" id="HU8-Qi-0yM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tML-an-QhP" secondAttribute="trailing" constant="25" id="JrH-gq-vwo"/>
+                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="tML-an-QhP" secondAttribute="bottom" constant="100" id="MK8-zk-1hR"/>
+                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="yVZ-Gy-nyh" secondAttribute="bottom" constant="100" id="obI-h0-kn2"/>
+                            <constraint firstItem="dNV-bu-lMY" firstAttribute="top" secondItem="qXQ-0h-r2b" secondAttribute="bottom" constant="20" id="tFQ-L7-TJY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -306,6 +306,6 @@
         <image name="menuButton" width="57" height="57"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G8l-cs-SSQ"/>
+        <segue reference="HuK-so-mj3"/>
     </inferredMetricsTieBreakers>
 </document>
