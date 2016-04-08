@@ -13,7 +13,7 @@ public class GameConfigManager {
         case FileDoesNotExist
     }
     var level:String?
-    var currentLevel:NSDictionary?
+    var currentLevel:NSArray?
     var sourcePath:String? {
         guard let path = NSBundle.mainBundle().pathForResource(level, ofType: "plist") else { return .None }
         return path
@@ -21,14 +21,14 @@ public class GameConfigManager {
     
     // Loads a level configuration file (PList) into the manager object
     // File format: LevelX.plist - Where 'X' is the level number specified
-    func loadLevel(level:Int) ->NSDictionary? {
+    func loadLevel(level:Int) ->NSArray? {
         self.level = "Level" + String(level)
         let fileManager = NSFileManager.defaultManager()
         guard let source = sourcePath else { return nil }
         guard fileManager.fileExistsAtPath(source) else { return nil }
 
         if fileManager.fileExistsAtPath(source) {
-            guard let dict = NSDictionary(contentsOfFile: source) else { return .None }
+            guard let dict = NSArray(contentsOfFile: source) else { return .None }
             self.currentLevel = dict
             return dict
         } else {
@@ -40,7 +40,7 @@ public class GameConfigManager {
     // Segment format: segmentX - Where 'X' is the segment number specified
     func getLevelSegment(segmentNum:Int) ->NSDictionary? {
         if (self.currentLevel != nil) {
-            let levelSegment = (self.currentLevel?.objectForKey("segment" + String(segmentNum))) as! NSDictionary
+            let levelSegment = (self.currentLevel![segmentNum]) as! NSDictionary
             return levelSegment
         } else {
             return .None
@@ -50,7 +50,7 @@ public class GameConfigManager {
     // Returns the title, image name, and description for a specific level
     func getLevelInfo() -> NSDictionary? {
         if (self.currentLevel != nil) {
-            let levelInfo = (self.currentLevel?.objectForKey("information")) as! NSDictionary
+            let levelInfo = (self.currentLevel![0]) as! NSDictionary
             return levelInfo
         } else {
             return .None

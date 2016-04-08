@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>information</key>
+<array>
 	<dict>
 		<key>title</key>
 		<string>Scott Hut</string>
@@ -11,28 +10,24 @@
 		<key>image</key>
 		<string>Reconnaissance</string>
 	</dict>
-	<key>segment1</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>preface</string>
 	</dict>
-	<key>segment2</key>
 	<dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
 		<integer>4</integer>
 	</dict>
-	<key>segment3</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>introduction</string>
 	</dict>
-	<key>segment4</key>
 	<dict>
 		<key>type</key>
 		<string>pause</string>
@@ -41,54 +36,47 @@
 		<key>speech</key>
 		<string>Start Running Now</string>
 	</dict>
-	<key>segment5</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment1</string>
 	</dict>
-	<key>segment6</key>
 	<dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
 		<integer>10</integer>
 	</dict>
-	<key>segment7</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment2</string>
 	</dict>
-	<key>segment8</key>
 	<dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
 		<integer>10</integer>
 	</dict>
-	<key>segment9</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment3</string>
 	</dict>
-	<key>segment10</key>
 	<dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
 		<integer>10</integer>
 	</dict>
-	<key>segment11</key>
 	<dict>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap1_segment4</string>
 	</dict>
-</dict>
+</array>
 </plist>

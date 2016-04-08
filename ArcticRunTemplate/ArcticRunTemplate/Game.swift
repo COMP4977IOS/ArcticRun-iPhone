@@ -15,7 +15,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private let manager = GameConfigManager()
     private var curLevel = 0
     private var curSegment = 0
-    private var levelData:NSDictionary = NSDictionary()
+    private var levelData:NSArray = NSArray()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
     private var viewController:UIViewController
     private var delayTimer:NSTimer?
