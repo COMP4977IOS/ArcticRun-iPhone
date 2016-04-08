@@ -38,7 +38,6 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
         missionSynop.layer.borderColor = UIColor.blackColor().CGColor
         // Label will display whatever is selected
         missionText.font = UIFont(name:"Noteworthy", size: 36)
-        missionText.text = toPass
         
         
         //TextView
@@ -70,6 +69,7 @@ class MissionStartViewController : UIViewController, UIViewControllerTransitioni
         
         if (chapterNum != nil) {
             let levelInfo:NSDictionary = manager.getLevelInfo()!
+            missionText.text = levelInfo["title"] as? String
             missionPic.image = UIImage(named: levelInfo["image"] as! String)
             missionSynop.text = levelInfo["description"] as! String
         }

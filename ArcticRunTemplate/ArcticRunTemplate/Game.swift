@@ -26,6 +26,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     public init(viewController:UIViewController) {
         self.viewController = viewController
         super.init()
+        audioPlayer.localDelegate = self
     }
     
     // Plays a certain level. It uses the corresponding plist file for configuration.
@@ -113,9 +114,14 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             }
             
             // run text to speech if applicable
-            let textSpeech:String? = segmentData!["speech"] as? String
-            if (textSpeech != nil) {
-                textToSpeech(textSpeech!)
+            let crewDamage = segmentData!["damage"] as? NSDictionary
+            if (crewDamage != nil) {
+                for (crewMember, damageAmount) in crewDamage! {
+                    let crewMemberString:String! = crewMember as! String
+                    let damageAmountInt:Int! = damageAmount as! Int
+                    textToSpeech(crewMemberString + " has taken " + String(damageAmountInt) + " points of damage")
+                    changeMembersHealth(crewMemberString, healthChange: damageAmountInt, healthMovement: "Down")
+                }
             }
             
         }
@@ -189,7 +195,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     public func textToSpeech(input: String) {
         var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: input)
-        myUtterance.rate = 0.3
+        myUtterance.rate = 0.5
         speechSynthesizer.speakUtterance(myUtterance)
     }
     

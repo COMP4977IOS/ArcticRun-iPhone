@@ -65,12 +65,10 @@ class PlayScreenViewController : UIViewController {
         circularProgressBar.angle = 0
         let container = CKContainer.defaultContainer()
         let publicData = container.publicCloudDatabase
-        // TODO: Pass data from MissionViewController to label, not working like it is from GameMap
+
         titleLabel.text = passData
-        
-        //titleLabel.text = "Passed Label Data"
-        
         print("View Loading")
+        
         playPause()
         
     }
@@ -189,7 +187,13 @@ class PlayScreenViewController : UIViewController {
         
         timerLabel.text = "\(strMinutes):\(strSeconds)"
          */
-        let timeStamp = CustomAudioPlayer.sharedInstance.getTimestamp()
+        var timeStamp:NSTimeInterval = NSTimeInterval(0)
+        
+        if (CustomAudioPlayer.sharedInstance == .None) {
+            timeStamp = NSTimeInterval(0)
+        } else {
+            timeStamp = CustomAudioPlayer.sharedInstance.getTimestamp()
+        }
         
         /*
         let minutes = UInt8(elapsedTime / 60.0)

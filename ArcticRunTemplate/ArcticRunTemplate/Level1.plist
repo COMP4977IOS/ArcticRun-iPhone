@@ -17,6 +17,11 @@
 		<string>preface</string>
 	</dict>
 	<dict>
+		<key>damage</key>
+		<dict>
+			<key>Stenhouse</key>
+			<integer>10</integer>
+		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
@@ -33,8 +38,6 @@
 		<string>pause</string>
 		<key>length</key>
 		<integer>5</integer>
-		<key>speech</key>
-		<string>Start Running Now</string>
 	</dict>
 	<dict>
 		<key>type</key>
