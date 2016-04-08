@@ -187,7 +187,6 @@ class PlayScreenViewController : UIViewController {
             currentAudioTime += delta
         }
         lastTimeFrame = NSDate.timeIntervalSinceReferenceDate()
-        print(currentAudioTime)
         
         
         let interval = Int(currentAudioTime)
@@ -206,7 +205,6 @@ class PlayScreenViewController : UIViewController {
         if (interval != maxLevelTime) {
             let maxProgress:Double = Double(maxLevelTime) / 60
             let newAngleValue = 360 * (missionProgress/maxProgress)
-            //print(newAngleValue)
             circularProgressBar.animateToAngle(newAngleValue, duration: 0.05, completion: nil)
         }
         if (game.isFinished) {
