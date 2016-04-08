@@ -26,6 +26,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     public init(viewController:UIViewController) {
         self.viewController = viewController
         super.init()
+        audioPlayer.localDelegate = self
     }
     
     // Plays a certain level. It uses the corresponding plist file for configuration.
@@ -189,7 +190,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     public func textToSpeech(input: String) {
         var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: input)
-        myUtterance.rate = 0.3
+        myUtterance.rate = 0.5
         speechSynthesizer.speakUtterance(myUtterance)
     }
     
