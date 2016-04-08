@@ -268,26 +268,14 @@ class PlayScreenViewController : UIViewController {
         Crew.getAllCrews { (crews: [Crew]) -> Void in
             for var i = 0; i < crews.count; i++ {
                 self.currentSteps = crews[i].getStepPoints()!
-            }
-        }
-        let resultSteps = currentSteps + steps
-        
-        Crew.getAllCrews { (crews: [Crew]) -> Void in
-            for var i = 0; i < crews.count; i++ {
-                crews[i].setStepPoints(resultSteps)
-                crews[i].save()
-            }
-        }
-        
-        Crew.getAllCrews { (crews: [Crew]) -> Void in
-            for var i = 0; i < crews.count; i++ {
                 self.currentCaloriesBurned = crews[i].getCaloriePoints()!
             }
-        }
-        let resultCalories = currentCaloriesBurned + steps
-        
-        Crew.getAllCrews { (crews: [Crew]) -> Void in
+            
+            let resultSteps = self.currentSteps + self.steps
+            let resultCalories = self.currentCaloriesBurned + self.steps
+            
             for var i = 0; i < crews.count; i++ {
+                crews[i].setStepPoints(resultSteps)
                 crews[i].setCaloriePoints(resultCalories)
                 crews[i].save()
             }
