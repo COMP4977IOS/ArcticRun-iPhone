@@ -11,30 +11,48 @@
 		<string>OldWoodenShip</string>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>72</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap2_segment1</string>
 	</dict>
 	<dict>
+		<key>damage</key>
+		<dict>
+			<key>Stenhouse</key>
+			<integer>12</integer>
+			<key>Joyce</key>
+			<integer>15</integer>
+		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
-		<integer>10</integer>
+		<integer>14</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>72</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>
 		<string>chap2_segment2</string>
 	</dict>
 	<dict>
+		<key>damage</key>
+		<dict>
+			<key>Spencer-Smith</key>
+			<integer>23</integer>
+		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
 		<integer>10</integer>
 	</dict>
 	<dict>
+		<key>duration</key>
+		<integer>215</integer>
 		<key>type</key>
 		<string>audio</string>
 		<key>filename</key>

@@ -19,15 +19,10 @@
 		<string>preface</string>
 	</dict>
 	<dict>
-		<key>damage</key>
-		<dict>
-			<key>Stenhouse</key>
-			<integer>10</integer>
-		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
-		<integer>4</integer>
+		<integer>2</integer>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -55,7 +50,7 @@
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -66,10 +61,15 @@
 		<string>chap1_segment2</string>
 	</dict>
 	<dict>
+		<key>damage</key>
+		<dict>
+			<key>Mackintosh</key>
+			<integer>10</integer>
+		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
-		<integer>10</integer>
+		<integer>12</integer>
 	</dict>
 	<dict>
 		<key>duration</key>
@@ -80,6 +80,11 @@
 		<string>chap1_segment3</string>
 	</dict>
 	<dict>
+		<key>damage</key>
+		<dict>
+			<key>Richards</key>
+			<integer>30</integer>
+		</dict>
 		<key>type</key>
 		<string>pause</string>
 		<key>length</key>
