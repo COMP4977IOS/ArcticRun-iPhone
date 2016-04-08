@@ -56,5 +56,27 @@ public class GameConfigManager {
             return .None
         }
     }
+    
+    // Returns the summed duration of all of the audio segments in a level
+    func getLevelDuration(level:Int) -> Int {
+        let count:Int = Int((self.currentLevel?.count)!)
+        var duration:Int = 0
+        
+        if (self.currentLevel == nil) {
+            loadLevel(level)
+        }
+        
+        if (self.currentLevel != nil) {
+            for i in 1..<count {
+                let temp:NSDictionary = currentLevel![i] as! NSDictionary
+                if (temp["type"] as! String == "audio") {
+                    duration += temp["duration"] as! Int
+                }
+            }
+            return duration
+        } else {
+            return 0
+        }
+    }
 
 }

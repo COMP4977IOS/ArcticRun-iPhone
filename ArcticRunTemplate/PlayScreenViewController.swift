@@ -56,7 +56,12 @@ class PlayScreenViewController : UIViewController {
     
     @IBOutlet weak var circularProgressBar: KDCircularProgress!
     
-    var maxTime:Double = 1
+    var maxTime:Double = 3.22
+    
+    var lastTimeFrame:NSTimeInterval = 0
+    var currentOverallTime:NSTimeInterval = 0
+    var currentAudioTime:NSTimeInterval = 0
+    var maxLevelTime:Int = 0
     
     @IBOutlet weak var percentageLabel: UILabel!
     override func viewDidLoad() {
@@ -68,6 +73,11 @@ class PlayScreenViewController : UIViewController {
 
         titleLabel.text = passData
         print("View Loading")
+        
+        lastTimeFrame = NSDate.timeIntervalSinceReferenceDate()
+        game = Game()
+        maxLevelTime = game.getLevelLength(chapterNum)
+        print("MAX LEVEL: " + String(maxLevelTime))
         
         playPause()
         
@@ -94,15 +104,14 @@ class PlayScreenViewController : UIViewController {
         
         if(!CustomAudioPlayer.sharedInstance.isPaused){
             print("Starting a new game")
-            game = Game(viewController: self)
+            game = Game()
             game.playLevel(chapterNum)
         } else if(game == nil){
-            game = Game(viewController: self)
+            game = Game()
             game.playLevel(chapterNum)
         } else {
             print("\n\nusing previous game")
             let time = game.getTimeStamp()
-            print(time)
             game.startTimeStamp(time)
         }
         
@@ -172,53 +181,35 @@ class PlayScreenViewController : UIViewController {
     }
     
     func updateCounter() {
-        /*
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
-        var elapsedTime: NSTimeInterval = currentTime - startTime
-        
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        
-        timerLabel.text = "\(strMinutes):\(strSeconds)"
-         */
-        var timeStamp:NSTimeInterval = NSTimeInterval(0)
-        
-        if (CustomAudioPlayer.sharedInstance == .None) {
-            timeStamp = NSTimeInterval(0)
-        } else {
-            timeStamp = CustomAudioPlayer.sharedInstance.getTimestamp()
+        let delta =  NSDate.timeIntervalSinceReferenceDate() - lastTimeFrame
+        currentOverallTime += delta
+        if (running && game.isAudioSegment) {
+            currentAudioTime += delta
         }
-        
-        /*
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        */
+        lastTimeFrame = NSDate.timeIntervalSinceReferenceDate()
+        print(currentAudioTime)
         
         
-        let interval = Int(timeStamp)
-        let seconds = interval % 60
-        let minutes = (interval / 60) % 60
+        let interval = Int(currentAudioTime)
         missionProgress = Double(interval) / 60
-        missionPercentage = Int((missionProgress / maxTime) * 100.00)
+        missionPercentage = Int(Double((missionProgress / Double(maxLevelTime / 60)) * 100.00))
         percentageLabel.text = String(missionPercentage) + "%"
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
+        
+        
+        let overallInterval = Int(currentOverallTime)
+        let overallSeconds = overallInterval % 60
+        let overallMinutes = (overallInterval / 60) % 60
+        let strMinutes = String(format: "%02d", overallMinutes)
+        let strSeconds = String(format: "%02d", overallSeconds)
         timerLabel.text = "\(strMinutes):\(strSeconds)"
         
-        if (missionProgress != maxTime) {
-            let newAngleValue = 360 * (missionProgress/maxTime)
+        if (interval != maxLevelTime) {
+            let maxProgress:Double = Double(maxLevelTime) / 60
+            let newAngleValue = 360 * (missionProgress/maxProgress)
             //print(newAngleValue)
             circularProgressBar.animateToAngle(newAngleValue, duration: 0.05, completion: nil)
-        } else if (missionProgress >= maxTime) {
+        }
+        if (game.isFinished) {
             
             if(started) {
                 pedometer.stopPedometerUpdates()

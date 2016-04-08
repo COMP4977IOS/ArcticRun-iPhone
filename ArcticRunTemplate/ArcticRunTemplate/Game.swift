@@ -17,14 +17,15 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private var curSegment = 0
     private var levelData:NSArray = NSArray()
     private var audioPlayer = CustomAudioPlayer.sharedInstance
-    private var viewController:UIViewController
     private var delayTimer:NSTimer?
     private var speechSynthesizer = AVSpeechSynthesizer()
     private var totalActiveMembers = 0
     private var totalHealth = 0
     
-    public init(viewController:UIViewController) {
-        self.viewController = viewController
+    public var isAudioSegment:Bool = false
+    public var isFinished:Bool = false
+    
+    public override init() {
         super.init()
         audioPlayer.localDelegate = self
     }
@@ -39,7 +40,18 @@ public class Game : NSObject, AVAudioPlayerDelegate {
         } else {
             curLevel = level
             curSegment = 1
+            isFinished = false
             playSegment()
+        }
+    }
+    
+    public func getLevelLength(level:Int) -> Int {
+        levelData = manager.loadLevel(level)!
+        if levelData == .None {
+            print("Unable to get Plist")
+            return 0
+        } else {
+            return manager.getLevelDuration(level)
         }
     }
     
@@ -83,6 +95,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     private func playSegment() {
         let segmentData = manager.getLevelSegment(curSegment)
         if (segmentData!["type"] as! String == "audio") {
+            isAudioSegment = true
             
             if UIApplication.sharedApplication().applicationState == .Active {
                 print("AUDIO FOREGROUND")
@@ -95,6 +108,7 @@ public class Game : NSObject, AVAudioPlayerDelegate {
             audioPlayer.playAudio(fileName)
 
         } else {
+            isAudioSegment = false
             
             if UIApplication.sharedApplication().applicationState == .Active {
                 print("PAUSE FOREGROUND")
@@ -201,12 +215,14 @@ public class Game : NSObject, AVAudioPlayerDelegate {
     
     // Called when the current level segment is finished
     @objc public func finish() {
+        isAudioSegment = false
+        
         let levelCount = levelData.count - 1    // All segments minus the level information part in plist
         if (curSegment < levelCount) {
             curSegment += 1
             playSegment()
         } else {
-            viewController.dismissViewControllerAnimated(true, completion: {});
+            isFinished = true
         }
     }
     
