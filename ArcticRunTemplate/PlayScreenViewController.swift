@@ -163,6 +163,7 @@ class PlayScreenViewController : UIViewController {
     
     @IBAction func playAndPause(sender: AnyObject) {
         if (!running) {
+            lastTimeFrame = NSDate.timeIntervalSinceReferenceDate()
             playPause()
         }
     }
@@ -183,6 +184,7 @@ class PlayScreenViewController : UIViewController {
     }
     
     func updateCounter() {
+        if (running) {
         let delta =  NSDate.timeIntervalSinceReferenceDate() - lastTimeFrame
         currentOverallTime += delta
         if (running && game.isAudioSegment) {
@@ -227,6 +229,7 @@ class PlayScreenViewController : UIViewController {
             
             self.presentViewController(alert, animated: true, completion: nil)
             
+        }
         }
     }
     
